@@ -1,10 +1,13 @@
 # github访问太慢解决方案
 
-  ```为了提高速度，可以使用HOSTS加速对Github的域名解析```
+  为了提高速度，可以使用HOSTS加速对Github的域名解析
 
-1. 修改hosts主机映射文件, 添加github一系列网址的IP地址、域名映射。但是github域名所对应IP好像是随时间变化的，挨个查询太麻烦，来个脚本先建立一个域名列表haha.txt，下面列表中的gist.github.com是代码片功能，被墙得死死地。无论如何打不开。 linux /private/etc/hosts windows C:\Windows\System32\drivers\etc\hosts
+### 修改hosts主机映射文件, 添加github一系列网址的IP地址、域名映射。但是github域名所对应IP好像是随时间变化的，挨个查询太麻烦，来个脚本先建立一个域名列表haha.txt，下面列表中的gist.github.com是代码片功能，被墙得死死地。无论如何打不开。
 
-```
+```shell
+linux /private/etc/hosts
+window C:\Windows\System32\drivers\etc\hosts
+
 github.com
 assets-cdn.github.com
 avatars0.githubusercontent.com
@@ -18,7 +21,10 @@ status.github.com
 training.github.com
 github.io
 ```
-2. 用python语言使用requests+beautifulsoup制作一个小爬虫
+
+
+
+### 用python语言使用requests+beautifulsoup制作一个小爬虫
 
 ``` python
 import requests
