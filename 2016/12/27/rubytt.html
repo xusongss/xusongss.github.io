@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">
+   <link rel="stylesheet" href="/assets/themes//css/bootstrap.min.css" media="screen and (min-device-width: 700px)"/>
+   <link rel="stylesheet" href="/assets/themes//css/pygments.css" />
+   <link rel="stylesheet" href="/assets/themes//css/style.css" media="screen"/>
+   <link rel="stylesheet" href="/assets/themes//css/mobile.css" media="handheld"/>
+   <script type="text/javascript" charset="utf-8" async="" src="/assets/themes//js/common.js"></script>
+
+   <header>
+       <meta charset="utf-8">
+       <meta charset="UTF-8"/>
+       
+       
+       <title>Ruby 程序的静态分析: rubytt | Yukang's Page</title>
+       
+
+       
+       <meta name="description" content="一个 Ruby 静态分析器的开发过程">
+       
+       <meta name="author" content="Yukang">
+
+       <script type="text/javascript"
+               href="/assets/themes/twitter/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       </script>
+
+       <!-- Le fav and touch icons -->
+       <link rel="shortcut icon" href="/images/favicon.ico">
+       <div class="navbar" id="navbar">
+           <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" id="brand" href="/">Yukang's Page</a>
+          <ul class="nav" id="navbar-inner">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">归档</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">标签</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="divider-vertical"></li>
+            <li><a href="/about.html">关于</a></li>
+            <li><a href="/links.html">链接</a></li>
+            <li><a href="/atom.xml">订阅</a></li>
+          </ul>
+          <span class="pull-right slogan"> Don't Panic </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+      <div class="container">
+      <div class="content" >
+        
+
+<div class="row post">
+    <div class="span8">
+        <h1 class="title">Ruby 程序的静态分析: rubytt</h1>
+
+            <p><a href="http://github.com/chenyukang/rubytt">rubytt</a>是一个 Ruby 程序的静态分析器，这个项目从16年年初一直到年底，断断续续持续了近一年。这里稍微总结一下自己的开发过程。</p>
+
+<h2>0. 缘由</h2>
+
+<p>14年开始，从我进入 DJI 之后开始接触 Rails 开发。Ruby 之前也接触过，不过都是写一些小脚本之类的东西。我们几乎用 Rails 写各种系统，开发的效率很快。对于经常变动的 Web 开发 rails 还是挺好的。在我经历过的一个对正确性要求很高的项目里，有一次系统出现一个致命的问题。我们6个开发人员在小黑屋里面足足找了一个下午。最后却发现不过是一个 type 错误引入的，导致后台任务一直执行错误。后来稍微多想了想，这样的类型错误应该是在开发阶段就及时发现的。 Rails 项目没有测试是不行的，所以我们后续补充了更多单元测试。另外我所使用过的静态语言几乎都能及早避免这样的错误，特别是在使用过 OCaml 这样的强类型语言后，我对类型有了更强的偏好。于是想我能不能做一个自动检测出类似 bug 的工具。据我所知<a href="https://github.com/yinwang0/rubysonar">王垠的rubysonar</a>  可以做类型分析，于是我 checkout 出来看了看代码。Java代码不是特别复杂，也发现了两个问题并提交了 <a href="https://github.com/yinwang0/rubysonar/pull/12">PR</a>。然后觉得这个东西还是比较好玩，干脆就自己另起一个项目来玩玩。</p>
+
+<h2>1. rubytt 的开发</h2>
+
+<p>首先得给这个坑起一个名字，想了想就 rubytt 吧，其实就是&quot;ruby to type&quot; 的意思吧。然后语言还是用了最近业余使用得比较多的 OCaml。这可能对后期其他开发参与进来不利，不过也无所谓了，业余的项目先依自己的偏好吧。</p>
+
+<h3>parser</h3>
+
+<p>首先面临的问题是 parser。rubysonar 的parser 也是依靠 Ruby 自己的<a href="http://ruby-doc.org/stdlib-2.0.0/libdoc/ripper/rdoc/Ripper.html">ripper</a>。主要是 parser 太过繁琐，如果从头开始写整个坑估计是填不完了。所以我也就直接拿来了 rubysonar 的<a href="https://github.com/yinwang0/rubysonar/blob/master/src/main/resources/org/yinwang/rubysonar/ruby/dump_ruby.rb">dump_ruby.rb</a>。 dump_ruby 把 ruby 源文件作为输入，输出一个 json 文件作为后端分析器的输入。这里我做了一些改动，rubysonar 里面是起来一个进程，把 dump_ruby 启动起来，用管道的方式一个个 parse 源程序。这样做的目的是避免 ruby 解释器频繁启动，避免整个速度会被拖慢。 我觉得还不如让dump_ruby 一次接收多个源程序，甚至可以是用 parallel 这个库来做并行。这样的结果是 parsing 的速度确实快了很多，一般大点的项目在10s 以内可以完成。这样项目的大概流程如下:</p>
+
+<p><img src="/images/rubytt.png" alt="rubytt" class="img-center" style="width:320px;height:310px;"/></p>
+
+<h3>type annoation</h3>
+
+<p>我想做自动的类型错误检查，所以需要类型分析。dump_ruby 出来的结果里面是带一些基本类型的，类型分析过程 rubysonar 里面有一个基本过程了。然后对于 Rails 项目来说，我们很多类型都可以在 db/schema.rb 里面可以分析出来，所以如果我把 schema.rb 文件也扫描分析一边，就可以为这些 model 加上不少类型。结果做出来还可以，至少目前可以分析出来很多 rubysonar 没有的类型。运行<code>rubytt -s source_dir -t type -o res</code>把结果输出到 res 目录。这里还有不少东西未做，比如函数的分析还是很复杂，目前做了一个初步。类型错误报出可以做一些了，但是还未来得及实现。因为我突然想到另外一个有趣的东西。</p>
+
+<h3>visualize rails project</h3>
+
+<p>我既在 traverse 整个 AST，可以做很多好玩的事啊。比如把类之间的继承关系找出来，做一个类的继承关系图。于是就有了<a href="/images/rubytt_class.png">类似这样的结果(看大图)</a>：</p>
+
+<p><img src="/images/rubytt_class.png" alt="rubytt_class" class="img-center" style="width:320px;height:300px;"/></p>
+
+<p>既然我能解析 schema.rb，也可以把数据模型给展示出来，然后再通过 model 文件里面分析模型之间的关系(has_one, has_many 等)， 于是就有了<a href="/images/rubytt_db.png">这样的结果</a>：</p>
+
+<p><img src="/images/rubytt_db.png" alt="rubytt_db" class="img-center" style="width:320px;height:300px;"/></p>
+
+<p>不过做了一些之后我发现这两个 feature 有点鸡肋。特别是第一个，要找出 ruby 程序内部对象之间的继承关系其实很简单，比如我之前写过的<a href="http://cyukang.com/2012/12/26/browser-objs-in-ruby.html">一篇文章</a>。第二个模型的关系图还好，不过项目稍微大一些的时候这些图看起来很复杂。</p>
+
+<h3>variable bug finder</h3>
+
+<p>在做完上面两个蛋疼的 feature 之后，碰巧碰到了项目里面另外一个 bug。是因为重构的时候不小心引入了一个 copy &amp; paste  bug。类似代码如下：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">event</span> <span class="o">=</span> <span class="p">(</span><span class="n">order</span><span class="o">.</span><span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;success&#39;</span><span class="p">)</span> <span class="p">?</span> <span class="s1">&#39;success&#39;</span> <span class="p">:</span> <span class="s1">&#39;fail&#39;</span>
+<span class="no">Job</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="o">[</span><span class="s1">&#39;Worker&#39;</span><span class="o">]</span><span class="p">,</span> <span class="p">{</span><span class="s1">&#39;order_id&#39;</span> <span class="o">=&gt;</span> <span class="n">order</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="s1">&#39;event&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;success&#39;</span><span class="p">})</span>
+</code></pre></div>
+<p>可以看到这个 event 本来应该使用的，结果却因为重构的时候 copy 了代码忘记把<code>&#39;event&#39; =&gt; &#39;success&#39;</code>改成<code>&#39;event&#39; =&gt; event</code>。event这个变量是未使用的变量，对于编译型语言来说这样的问题是可以在编译的时候发出报警的。因为一个变量未使用必然意味这要么是冗余代码，要么是 bug。那我可否通过 rubytt 给出类似报警？然后我就继续写了这么一个 checker，去检查ruby 程序中各种没使用的变量。最后还真能找出项目中一些其他的类似问题，比如：</p>
+<div class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span></span><span class="n">result</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="n">trans</span> <span class="o">=</span> <span class="nb">self</span><span class="o">.</span><span class="n">transactions</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="o">..</span><span class="n">blah</span><span class="o">...</span><span class="p">)</span>
+<span class="n">trans</span><span class="o">.</span><span class="n">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">tran</span><span class="o">|</span>
+   <span class="n">result</span><span class="o">[</span><span class="ss">:amount</span><span class="o">]</span> <span class="o">=</span> <span class="n">trans</span><span class="o">.</span><span class="n">amount_cent</span>  <span class="o">&lt;-------</span> <span class="ss">bug</span><span class="p">:</span> <span class="sb">`trans`</span> <span class="n">is</span> <span class="n">typo</span> <span class="n">of</span> <span class="s1">&#39;tran&#39;</span>
+   <span class="o">...</span><span class="n">blah</span><span class="o">...</span>
+<span class="k">end</span>
+</code></pre></div>
+<p>当然还是能找到函数中未使用的参数等问题。修复的办法是如果确定这些变量是不被使用的，就在前面加<code>_</code>，这样rubytt 这样的 lint 类检查工具就跳过。后续我也正在做未定义变量的检查。</p>
+
+<h2>2. OCaml的程序发布</h2>
+
+<p>在做完上面的几个 feature 之后，我觉得可以尝试着把这个项目推广一下给同事们玩玩。如果让从来没接触过 OCaml 的朋友从头开始编译安装会显得很麻烦。所以我就尝试着把 rubytt 合并到 OCaml 的包管理仓库。于是在经过几次和 travis CI 的斗争后，终于发布了<a href="https://opam.ocaml.org/packages/rubytt/rubytt.0.1/">rubytt.0.1</a> 。</p>
+
+<p>安装方法如下：</p>
+<div class="highlight"><pre><code class="language-shell" data-lang="shell"><span></span>gem install parallel ruby-progressbar
+sudo apt-get install --force-yes ocaml ocaml-native-compilers camlp4-extra opam
+// brew install opam   <span class="o">(</span>MacOS<span class="o">)</span>
+<span class="nb">eval</span> <span class="sb">`</span>opam config env<span class="sb">`</span>
+opam install rubytt
+</code></pre></div>
+<p>OCaml 的圈子比较小众，不过其实很多工具还是挺好用的，比如这个 OPAM 包管理器。</p>
+
+<h2>3. 其他心得</h2>
+
+<p>做这个程序这么久，除了好玩还是收获不少。</p>
+
+<p>OOP 和 FP 哪个好？通过这个项目的实践，我好好体会了一把 FP 写稍微大些的程序的感觉。说不上哪个好，我倒认为 type 确实很重要，rubytt 的过程中自动类型推导帮我发现了好多代码错误。编程语言应该让程序员能够精确无误地表达自己，尽量地避免人为引入的错误。</p>
+
+<p>构建测试脚手架，这也是第一份工作带给我的习惯。把每一个 feature 或者 bug 都写测试来覆盖。每次提交的时候都 review 一下测试用例的改动，这样才能不断保持质量。</p>
+
+<p>希望来年能继续保持对这个程序的热情。</p>
+
+            
+            <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">          
+                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>打赏</span>
+                </button>
+                <div id="QR" style="display: none;">      
+                    <div id="wechat" style="display: inline-block">
+                        <a href="/images/yukang_wechat.jpg" rel="group" ><img id="wechat_qr" src="/images/yukang_wechat.jpg" style="width: 255px;height:235px;"  alt="Yukang WeChat Pay"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="pager" id="page-nav">
+                
+                <li class="next"><a href="/2016/12/11/qianlong-history.html" title="读《饥饿的盛世》">读《饥饿的盛世》&rarr;</a></li>
+                
+
+                
+                <li class="previous"><a href="/2017/01/24/disease-of-programmer.html" title="程序员病">&larr; 程序员病</a></li>
+                
+            </ul>
+
+            <!--*********************************************************-->
+            <!--****** 看见这个时候，删掉下面的统计代码啊~ ******-->
+            <!--*********************************************************-->
+            <div id="comment_thread"></div>
+            <div class="ds-thread" data-thread-key="/2016/12/27/rubytt.html" data-title="Ruby 程序的静态分析: rubytt" data-url="/2016/12/27/rubytt.html"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"cyukang"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0] 
+                     || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!--*********************************************************-->
+
+        </div>
+
+
+        <div class="span4 sidebar">
+            
+            <h4 class="date">日期：<span>27 December 2016</span></h4>
+            
+
+            
+            <h4>标签</h4>
+            <ul class="tag_box">
+                
+                
+
+
+  
+     
+    	<li><a href="/tags.html#Ruby-ref">Ruby <span>6</span></a></li>
+     
+    	<li><a href="/tags.html#Programming-ref">Programming <span>50</span></a></li>
+     
+    	<li><a href="/tags.html#OCaml-ref">OCaml <span>5</span></a></li>
+    
+  
+
+
+
+            </ul>
+            
+
+            <div class="violet-aside-post">
+                <h4 class="v-section-tit">最近</h4>
+                <ul>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2017/01/24/disease-of-programmer.html" title="程序员病" rel="bookmark">程序员病</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/12/27/rubytt.html" title="Ruby 程序的静态分析: rubytt" rel="bookmark">Ruby 程序的静态分析: rubytt</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/12/11/qianlong-history.html" title="读《饥饿的盛世》" rel="bookmark">读《饥饿的盛世》</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/11/30/nginx-traffic-limit.html" title="Nginx限流" rel="bookmark">Nginx限流</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/08/09/dao-yu-ju.html" title="菊与刀" rel="bookmark">菊与刀</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/07/22/capistrano-syntax-check-for-rails.html" title="Add syntax check for Capistrano" rel="bookmark">Add syntax check for Capistrano</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/07/08/fun-on-hackerrank.html" title="刷刷算法和 OJ" rel="bookmark">刷刷算法和 OJ</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/09/29/programming-language-and-interpreters.html" title="Tiny Interpreters" rel="bookmark">Tiny Interpreters</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/08/09/reading-notes.html" title="最近读的一些杂书" rel="bookmark">最近读的一些杂书</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/04/26/lazy-eval-and-stream.html" title="惰性求值和流" rel="bookmark">惰性求值和流</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/07/types-and-programming-languages-3.html" title="Types and Programming Languages (3)" rel="bookmark">Types and Programming Languages (3)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/07/types-and-programming-languages-2.html" title="Types and Programming Languages (2)" rel="bookmark">Types and Programming Languages (2)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/01/types-and-programming-languages.html" title="Types and Programming Languages (1)" rel="bookmark">Types and Programming Languages (1)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/02/10/understanding-computation.html" title="Understanding Computation" rel="bookmark">Understanding Computation</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/01/19/refer.html" title="广告" rel="bookmark">广告</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="violet-aside-post">
+                <h4 class="v-section-tit">页面</h4>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/archive.html" >归档</a></li>
+                        <li><a href="/tags.html">标签</a></li>
+                        <li><a href="/links.html" >链接</a></li>
+                        <li><a href="/about.html" >关于</a></li>
+                        <li><a href="/atom.xml" target="_blank" >RSS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+</div>
+
+
+
+
+      </div>
+
+      <footer id="footer">
+        <p>&copy; <a href="mailto:moorekang@gmail.com">Yukang</a> 2016.
+          Proudly powered by <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll</a>
+        </p>
+
+      </footer>
+    </div> <!-- /container -->
+
+    <!--*********************************************************-->
+    <!--****** 看见这个时候，删掉下面的统计代码啊~ ******-->
+    <!--*********************************************************-->
+    
+    <script>
+     var _hmt = _hmt || [];
+     (function() {
+         var hm = document.createElement("script");
+         hm.src = "//hm.baidu.com/hm.js?ba1315646a61cc7bd6f574a6b5221640";
+         var s = document.getElementsByTagName("script")[0]; 
+         s.parentNode.insertBefore(hm, s);
+     })();
+
+     (function() {
+         var width = document.body.offsetWidth;
+         if(width < 701) {
+             var nav = document.getElementById("navbar-inner");
+             nav.remove();
+         };
+     })();
+    </script>
+
+    <!--*********************************************************-->
+
+  </body>
+  
+</html>
+

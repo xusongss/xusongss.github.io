@@ -1,0 +1,323 @@
+
+<!DOCTYPE html>
+<html>
+    <meta name="viewport" content="width=device-width, maximum-scale=1.0, user-scalable=0">
+   <link rel="stylesheet" href="/assets/themes//css/bootstrap.min.css" media="screen and (min-device-width: 700px)"/>
+   <link rel="stylesheet" href="/assets/themes//css/pygments.css" />
+   <link rel="stylesheet" href="/assets/themes//css/style.css" media="screen"/>
+   <link rel="stylesheet" href="/assets/themes//css/mobile.css" media="handheld"/>
+   <script type="text/javascript" charset="utf-8" async="" src="/assets/themes//js/common.js"></script>
+
+   <header>
+       <meta charset="utf-8">
+       <meta charset="UTF-8"/>
+       
+       
+       <title>面试：杯子倒水 | Yukang's Page</title>
+       
+
+       
+       <meta name="author" content="Yukang">
+
+       <script type="text/javascript"
+               href="/assets/themes/twitter/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+       </script>
+
+       <!-- Le fav and touch icons -->
+       <link rel="shortcut icon" href="/images/favicon.ico">
+       <div class="navbar" id="navbar">
+           <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" id="brand" href="/">Yukang's Page</a>
+          <ul class="nav" id="navbar-inner">
+            
+            
+            
+
+
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/archive">归档</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags">标签</a></li>
+      	
+      
+    
+  
+
+
+
+
+            <li class="divider-vertical"></li>
+            <li><a href="/about.html">关于</a></li>
+            <li><a href="/links.html">链接</a></li>
+            <li><a href="/atom.xml">订阅</a></li>
+          </ul>
+          <span class="pull-right slogan"> Don't Panic </span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <body>
+      <div class="container">
+      <div class="content" >
+        
+
+<div class="row post">
+    <div class="span8">
+        <h1 class="title">面试：杯子倒水</h1>
+
+            前些天纳拓的面试有一道题目:
+<blockquote>给你一个3升的杯子和一个5升的(杯子是没有刻度的)，要你取4升水来(水可以无限取)，请问该如何操作。</blockquote>
+这个题目今年面试出现了很多次,不过这次变化了一些。如何抽象出一个模型,如果写程序如何解,如果要求得杯子倒水的过程如何做?
+
+当时并没有一下想出来,看起来有点像取石子那样的游戏,想找规律。然后被提示搜索,对,搜索问题。
+
+搜索得确定状态的表示,状态之间的转移方式,起点和终止状态，如果这些都确定那么就基本完成了。
+
+如果我要求最快的解法,BFS。如果要求所有的解法,递归DFS。这里状态的总数目比较少,如果用一个整数来表示,10位表示A杯子的水量,个位表示B杯子的水量,这样要的空间最大也为60个整数。再想想如果用两个整数，最多64bit，也能表示出状态，能省下空间。
+
+很久没做题了,有些生疏了,看来还得好好补一下。
+
+<a href="http://chenyukang.github.com/imgaes/shuibei.zip">代码_下载</a>
+
+            
+            <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">          
+                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+                    <span>打赏</span>
+                </button>
+                <div id="QR" style="display: none;">      
+                    <div id="wechat" style="display: inline-block">
+                        <a href="/images/yukang_wechat.jpg" rel="group" ><img id="wechat_qr" src="/images/yukang_wechat.jpg" style="width: 255px;height:235px;"  alt="Yukang WeChat Pay"></a>
+                    </div>
+                </div>
+            </div>
+            
+            <ul class="pager" id="page-nav">
+                
+                <li class="next"><a href="/2010/10/06/a-complaint-free-world.html" title="A Complaint Free World">A Complaint Free World&rarr;</a></li>
+                
+
+                
+                <li class="previous"><a href="/2010/10/27/forc.html" title="给C瓜同学吧">&larr; 给C瓜同学吧</a></li>
+                
+            </ul>
+
+            <!--*********************************************************-->
+            <!--****** 看见这个时候，删掉下面的统计代码啊~ ******-->
+            <!--*********************************************************-->
+            <div id="comment_thread"></div>
+            <div class="ds-thread" data-thread-key="/2010/10/14/beizidaoshui.html" data-title="面试：杯子倒水" data-url="/2010/10/14/beizidaoshui.html"></div>
+            <script type="text/javascript">
+                var duoshuoQuery = {short_name:"cyukang"};
+                (function() {
+                    var ds = document.createElement('script');
+                    ds.type = 'text/javascript';ds.async = true;
+                    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                    ds.charset = 'UTF-8';
+                    (document.getElementsByTagName('head')[0] 
+                     || document.getElementsByTagName('body')[0]).appendChild(ds);
+                })();
+            </script>
+            <!--*********************************************************-->
+
+        </div>
+
+
+        <div class="span4 sidebar">
+            
+            <h4 class="date">日期：<span>14 October 2010</span></h4>
+            
+
+            
+            <h4>标签</h4>
+            <ul class="tag_box">
+                
+                
+
+
+  
+     
+    	<li><a href="/tags.html#Programming-ref">Programming <span>50</span></a></li>
+     
+    	<li><a href="/tags.html#工作-ref">工作 <span>3</span></a></li>
+    
+  
+
+
+
+            </ul>
+            
+
+            <div class="violet-aside-post">
+                <h4 class="v-section-tit">最近</h4>
+                <ul>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2017/01/24/disease-of-programmer.html" title="程序员病" rel="bookmark">程序员病</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/12/27/rubytt.html" title="Ruby 程序的静态分析: rubytt" rel="bookmark">Ruby 程序的静态分析: rubytt</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/12/11/qianlong-history.html" title="读《饥饿的盛世》" rel="bookmark">读《饥饿的盛世》</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/11/30/nginx-traffic-limit.html" title="Nginx限流" rel="bookmark">Nginx限流</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/08/09/dao-yu-ju.html" title="菊与刀" rel="bookmark">菊与刀</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/07/22/capistrano-syntax-check-for-rails.html" title="Add syntax check for Capistrano" rel="bookmark">Add syntax check for Capistrano</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2016/07/08/fun-on-hackerrank.html" title="刷刷算法和 OJ" rel="bookmark">刷刷算法和 OJ</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/09/29/programming-language-and-interpreters.html" title="Tiny Interpreters" rel="bookmark">Tiny Interpreters</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/08/09/reading-notes.html" title="最近读的一些杂书" rel="bookmark">最近读的一些杂书</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/04/26/lazy-eval-and-stream.html" title="惰性求值和流" rel="bookmark">惰性求值和流</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/07/types-and-programming-languages-3.html" title="Types and Programming Languages (3)" rel="bookmark">Types and Programming Languages (3)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/07/types-and-programming-languages-2.html" title="Types and Programming Languages (2)" rel="bookmark">Types and Programming Languages (2)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/03/01/types-and-programming-languages.html" title="Types and Programming Languages (1)" rel="bookmark">Types and Programming Languages (1)</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/02/10/understanding-computation.html" title="Understanding Computation" rel="bookmark">Understanding Computation</a>
+                    </li>
+                    
+                    <li class="v-aside-li">
+                        <a href="/2015/01/19/refer.html" title="广告" rel="bookmark">广告</a>
+                    </li>
+                    
+                </ul>
+            </div>
+
+            <div class="violet-aside-post">
+                <h4 class="v-section-tit">页面</h4>
+                <nav class="nav">
+                    <ul>
+                        <li><a href="/archive.html" >归档</a></li>
+                        <li><a href="/tags.html">标签</a></li>
+                        <li><a href="/links.html" >链接</a></li>
+                        <li><a href="/about.html" >关于</a></li>
+                        <li><a href="/atom.xml" target="_blank" >RSS</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+</div>
+
+
+
+
+      </div>
+
+      <footer id="footer">
+        <p>&copy; <a href="mailto:moorekang@gmail.com">Yukang</a> 2016.
+          Proudly powered by <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll</a>
+        </p>
+
+      </footer>
+    </div> <!-- /container -->
+
+    <!--*********************************************************-->
+    <!--****** 看见这个时候，删掉下面的统计代码啊~ ******-->
+    <!--*********************************************************-->
+    
+    <script>
+     var _hmt = _hmt || [];
+     (function() {
+         var hm = document.createElement("script");
+         hm.src = "//hm.baidu.com/hm.js?ba1315646a61cc7bd6f574a6b5221640";
+         var s = document.getElementsByTagName("script")[0]; 
+         s.parentNode.insertBefore(hm, s);
+     })();
+
+     (function() {
+         var width = document.body.offsetWidth;
+         if(width < 701) {
+             var nav = document.getElementById("navbar-inner");
+             nav.remove();
+         };
+     })();
+    </script>
+
+    <!--*********************************************************-->
+
+  </body>
+  
+</html>
+
