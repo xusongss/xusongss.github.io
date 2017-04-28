@@ -1,0 +1,660 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="x264_t是一个控制X264编码的全局性结构体，该结构体控制着视频一帧一帧的编码，包括中间参考帧管理、码率控制、全局参数等一些重要参数和结构体。接下来我们详细分析该结构体的元素">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="struct x264_t分析">
+<meta property="og:url" content="http://yoursite.com/2017/04/28/struct-x264-t分析/index.html">
+<meta property="og:site_name" content="绿色回忆">
+<meta property="og:description" content="x264_t是一个控制X264编码的全局性结构体，该结构体控制着视频一帧一帧的编码，包括中间参考帧管理、码率控制、全局参数等一些重要参数和结构体。接下来我们详细分析该结构体的元素">
+<meta property="og:updated_time" content="2017-04-28T05:42:32.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="struct x264_t分析">
+<meta name="twitter:description" content="x264_t是一个控制X264编码的全局性结构体，该结构体控制着视频一帧一帧的编码，包括中间参考帧管理、码率控制、全局参数等一些重要参数和结构体。接下来我们详细分析该结构体的元素">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/28/struct-x264-t分析/"/>
+
+
+
+
+
+  <title>struct x264_t分析 | 绿色回忆</title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">绿色回忆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序猿 攻城狮</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/struct-x264-t分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                struct x264_t分析
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T01:54:20+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>x264_t是一个控制X264编码的全局性结构体，该结构体控制着视频一帧一帧的编码，包括中间参考帧管理、码率控制、全局参数等一些重要参数和结构体。接下来我们详细分析该结构体的元素 <a id="more"></a>该结构体定义在common/common.h中：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div><div class="line">165</div><div class="line">166</div><div class="line">167</div><div class="line">168</div><div class="line">169</div><div class="line">170</div><div class="line">171</div><div class="line">172</div><div class="line">173</div><div class="line">174</div><div class="line">175</div><div class="line">176</div><div class="line">177</div><div class="line">178</div><div class="line">179</div><div class="line">180</div><div class="line">181</div><div class="line">182</div><div class="line">183</div><div class="line">184</div><div class="line">185</div><div class="line">186</div><div class="line">187</div><div class="line">188</div><div class="line">189</div><div class="line">190</div><div class="line">191</div><div class="line">192</div><div class="line">193</div><div class="line">194</div><div class="line">195</div><div class="line">196</div><div class="line">197</div><div class="line">198</div><div class="line">199</div><div class="line">200</div><div class="line">201</div><div class="line">202</div><div class="line">203</div><div class="line">204</div><div class="line">205</div><div class="line">206</div><div class="line">207</div><div class="line">208</div><div class="line">209</div><div class="line">210</div><div class="line">211</div><div class="line">212</div><div class="line">213</div><div class="line">214</div><div class="line">215</div><div class="line">216</div><div class="line">217</div><div class="line">218</div><div class="line">219</div><div class="line">220</div><div class="line">221</div><div class="line">222</div><div class="line">223</div><div class="line">224</div><div class="line">225</div><div class="line">226</div><div class="line">227</div><div class="line">228</div><div class="line">229</div><div class="line">230</div><div class="line">231</div><div class="line">232</div><div class="line">233</div><div class="line">234</div><div class="line">235</div><div class="line">236</div><div class="line">237</div><div class="line">238</div><div class="line">239</div><div class="line">240</div><div class="line">241</div><div class="line">242</div><div class="line">243</div><div class="line">244</div><div class="line">245</div><div class="line">246</div><div class="line">247</div><div class="line">248</div><div class="line">249</div><div class="line">250</div><div class="line">251</div><div class="line">252</div><div class="line">253</div><div class="line">254</div><div class="line">255</div><div class="line">256</div><div class="line">257</div><div class="line">258</div><div class="line">259</div><div class="line">260</div><div class="line">261</div><div class="line">262</div><div class="line">263</div><div class="line">264</div><div class="line">265</div><div class="line">266</div><div class="line">267</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> <span class="title">x264_t</span></span></div><div class="line">&#123;</div><div class="line">	<span class="comment">/* encoder parameters */</span></div><div class="line">	<span class="keyword">x264_param_t</span>    param;		<span class="comment">// 编码器编码参数，包括量化步长、编码级别等等一些参数</span></div><div class="line"></div><div class="line">	<span class="keyword">x264_t</span>   *thread[X264_THREAD_MAX+<span class="number">1</span>];</div><div class="line">	<span class="keyword">x264_t</span>   *lookahead_thread[X264_LOOKAHEAD_THREAD_MAX];</div><div class="line">	<span class="keyword">int</span>    b_thread_active;</div><div class="line">	<span class="keyword">int</span>    i_thread_phase; 			<span class="comment">/* which thread to use for the next frame */</span></div><div class="line">	<span class="keyword">int</span>    i_thread_idx;   			<span class="comment">/* which thread this is */</span></div><div class="line">	<span class="keyword">int</span>    i_threadslice_start; 		<span class="comment">/* first row in this thread slice */</span></div><div class="line">	<span class="keyword">int</span>    i_threadslice_end; 		<span class="comment">/* row after the end of this thread slice */</span></div><div class="line">	<span class="keyword">int</span>    i_threadslice_pass; 		<span class="comment">/* which pass of encoding we are on */</span></div><div class="line">	<span class="keyword">x264_threadpool_t</span>  *threadpool;</div><div class="line">	<span class="keyword">x264_threadpool_t</span>  *lookaheadpool;</div><div class="line">	<span class="keyword">x264_pthread_mutex_t</span> mutex;</div><div class="line">	<span class="keyword">x264_pthread_cond_t</span>   cv;</div><div class="line"></div><div class="line">	 <span class="comment">/* bitstream output */</span></div><div class="line">	<span class="class"><span class="keyword">struct</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span>    i_nal;</div><div class="line">		<span class="keyword">int</span>    i_nals_allocated;</div><div class="line">		<span class="keyword">int</span>    i_bitstream;    		<span class="comment">/* size of p_bitstream */</span></div><div class="line">		<span class="keyword">uint8_t</span>   *p_bitstream;   	<span class="comment">/* will hold data for all nal */</span></div><div class="line">		<span class="keyword">bs_t</span>  bs;</div><div class="line">		<span class="keyword">x264_nal_t</span>  *nal;</div><div class="line">	&#125; out;</div><div class="line"></div><div class="line">	<span class="keyword">uint8_t</span> *nal_buffer;</div><div class="line">	<span class="keyword">int</span>    nal_buffer_size;</div><div class="line">	<span class="keyword">int</span>    reconfig;</div><div class="line">	<span class="keyword">x264_t</span>  *reconfig_h;</div><div class="line"></div><div class="line">	<span class="comment">/**** thread synchronization starts here ****/</span></div><div class="line">	<span class="comment">/* frame number/poc */</span></div><div class="line">	<span class="keyword">int</span>    i_frame;				<span class="comment">// 编码帧号，用于计算POC（picture of count 标识视频帧的解码顺序）</span></div><div class="line">	<span class="keyword">int</span>    i_frame_num;</div><div class="line">	<span class="keyword">int</span>    i_thread_frames;			<span class="comment">// Number of different frames being encoded by threads;</span></div><div class="line">							<span class="comment">// 1 when sliced-threads is on.</span></div><div class="line">	<span class="keyword">int</span>         i_nal_type;			<span class="comment">// Nal单元的类型，这些类型值定义在x264.h中，需要理解的类型有：</span></div><div class="line">							<span class="comment">// 不分区（一帧作为一个片）非IDR图像的片；片分区A、片分区B、片分区C、</span></div><div class="line">							<span class="comment">// IDR图像中的片、序列参数集、图像参数集</span></div><div class="line">	<span class="keyword">int</span>         i_nal_ref_idc;			<span class="comment">// Nal单元的优先级别,取值范围[0,1,2,3]，值越大表示优先级越高，此Nal单元就越重要</span></div><div class="line">	<span class="keyword">int64_t</span>   i_disp_fields;			<span class="comment">// Number of displayed fields (both coded and implied via pic_struct)</span></div><div class="line">	<span class="keyword">int</span>         i_disp_fields_last_frame;</div><div class="line">	<span class="keyword">int64_t</span>   i_prev_duration; 		<span class="comment">// Duration of previous frame</span></div><div class="line">	<span class="keyword">int64_t</span>   i_coded_fields; 		<span class="comment">// Number of coded fields (both coded and implied via pic_struct)</span></div><div class="line">	<span class="keyword">int64_t</span>   i_cpb_delay;			<span class="comment">// Equal to number of fields preceding this field since last buffering_period SEI</span></div><div class="line">	<span class="keyword">int64_t</span>   i_coded_fields_lookahead;	<span class="comment">// Use separate counters for lookahead</span></div><div class="line">	<span class="keyword">int64_t</span>   i_cpb_delay_lookahead;</div><div class="line">	<span class="keyword">int64_t</span>   i_cpb_delay_pir_offset;</div><div class="line">	<span class="keyword">int64_t</span>   i_cpb_delay_pir_offset_next;</div><div class="line">	<span class="keyword">int64_t</span>   i_last_idr_pts;</div><div class="line">	<span class="keyword">int</span>         b_queued_intra_refresh;</div><div class="line">	<span class="keyword">int</span>         i_idr_pic_id;</div><div class="line"></div><div class="line">	<span class="comment">/* quantization matrix for decoding, [cqm][qp%6][coef] */</span></div><div class="line">	<span class="keyword">int</span>       (*dequant4_mf[<span class="number">4</span>])[<span class="number">16</span>];   			<span class="comment">/* [4][6][16] */</span></div><div class="line">	<span class="keyword">int</span>       (*dequant8_mf[<span class="number">4</span>])[<span class="number">64</span>];   			<span class="comment">/* [4][6][64] */</span></div><div class="line">	<span class="comment">/* quantization matrix for trellis, [cqm][qp][coef] */</span></div><div class="line">	<span class="keyword">int</span>      (*unquant4_mf[<span class="number">4</span>])[<span class="number">16</span>];   			<span class="comment">/* [4][QP_MAX_SPEC][16] */</span></div><div class="line">	<span class="keyword">int</span>      (*unquant8_mf[<span class="number">4</span>])[<span class="number">64</span>];   			<span class="comment">/* [4][QP_MAX_SPEC][64] */</span></div><div class="line">	<span class="comment">/* quantization matrix for deadzone */</span></div><div class="line">	udctcoef        (*quant4_mf[<span class="number">4</span>])[<span class="number">16</span>];     		<span class="comment">/* [4][QP_MAX_SPEC][16] */</span></div><div class="line">	udctcoef        (*quant8_mf[<span class="number">4</span>])[<span class="number">64</span>];     		<span class="comment">/* [4][QP_MAX_SPEC][64] */</span></div><div class="line">	udctcoef        (*quant4_bias[<span class="number">4</span>])[<span class="number">16</span>];   		<span class="comment">/* [4][QP_MAX_SPEC][16] */</span></div><div class="line">	udctcoef        (*quant8_bias[<span class="number">4</span>])[<span class="number">64</span>];   		<span class="comment">/* [4][QP_MAX_SPEC][64] */</span></div><div class="line">	udctcoef        (*quant4_bias0[<span class="number">4</span>])[<span class="number">16</span>];  		<span class="comment">/* [4][QP_MAX_SPEC][16] */</span></div><div class="line">	udctcoef        (*quant8_bias0[<span class="number">4</span>])[<span class="number">64</span>];  		<span class="comment">/* [4][QP_MAX_SPEC][64] */</span></div><div class="line">	udctcoef        (*nr_offset_emergency)[<span class="number">4</span>][<span class="number">64</span>];</div><div class="line"></div><div class="line">	<span class="comment">/* mv/ref cost arrays. */</span></div><div class="line">	<span class="keyword">uint16_t</span> *cost_mv[QP_MAX+<span class="number">1</span>];</div><div class="line">	<span class="keyword">uint16_t</span> *cost_mv_fpel[QP_MAX+<span class="number">1</span>][<span class="number">4</span>];</div><div class="line"></div><div class="line">	<span class="comment">/* includes both the nonlinear luma-&gt;chroma mapping and chroma_qp_offset */</span></div><div class="line">	<span class="keyword">const</span> <span class="keyword">uint8_t</span>   *chroma_qp_table;</div><div class="line"></div><div class="line">	<span class="comment">/* Slice header，条带头结构体定义在common/common.h中 */</span></div><div class="line">	<span class="keyword">x264_slice_header_t</span> sh;</div><div class="line"></div><div class="line">	<span class="comment">/* SPS / PPS，我们只是用一个sps和一个pps */</span></div><div class="line">	<span class="keyword">x264_sps_t</span>   sps[<span class="number">1</span>];</div><div class="line">	<span class="keyword">x264_pps_t</span>   pps[<span class="number">1</span>];</div><div class="line"></div><div class="line">	<span class="comment">/* Slice header backup, for SEI_DEC_REF_PIC_MARKING */</span></div><div class="line">	<span class="keyword">int</span>   b_sh_backup;</div><div class="line">	<span class="keyword">x264_slice_header_t</span> sh_backup;</div><div class="line"></div><div class="line">	<span class="comment">/* cabac context */</span></div><div class="line">	<span class="keyword">x264_cabac_t</span>   cabac;</div><div class="line"></div><div class="line">	<span class="comment">/* 指示和控制帧编码过程的结构 */</span></div><div class="line">	<span class="class"><span class="keyword">struct</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="comment">/* Frames to be encoded (whose types have been decided) */</span></div><div class="line">		<span class="comment">/* 这个结构体涉及到X264编码过程中的帧管理，理解这个结构体中的变量在编码标准的理论意义是非常重要的 */</span></div><div class="line">		<span class="keyword">x264_frame_t</span> **current;	<span class="comment">// 已确定帧类型，待编码帧，每一个GOP在编码前，每一帧的类型在编码前已经确定。</span></div><div class="line">							<span class="comment">// 当进行编码时，从这里取出一帧数据</span></div><div class="line">		<span class="comment">/* Unused frames: 0 = fenc, 1 = fdec */</span></div><div class="line">		<span class="keyword">x264_frame_t</span> **unused[<span class="number">2</span>];	<span class="comment">// 这个数组用于回收那些在编码中分配的frame空间，</span></div><div class="line">							<span class="comment">// 当有新的需要时，直接拿过来用，不用重新分配新的空间，提高效率</span></div><div class="line">		<span class="comment">/* Unused blank frames (for duplicates) */</span></div><div class="line">		<span class="keyword">x264_frame_t</span> **blank_unused;</div><div class="line"></div><div class="line">		<span class="comment">/* frames used for reference + sentinels */</span></div><div class="line">		<span class="keyword">x264_frame_t</span> *reference[X264_REF_MAX+<span class="number">2</span>];	<span class="comment">// 参考帧队列，注意参考帧都是重建帧</span></div><div class="line"></div><div class="line">		<span class="keyword">int</span>  i_last_keyframe; 		<span class="comment">// Frame number of the last keyframe，上一个关键字的帧序号</span></div><div class="line">		<span class="keyword">int</span>  i_last_idr;            		<span class="comment">// Frame number of the last IDR (not RP)，上一个IDR帧的帧序号，</span></div><div class="line">							<span class="comment">// 配合前面的i_frame，可以用来计算POC</span></div><div class="line">		<span class="keyword">int</span>  i_poc_last_open_gop; 	<span class="comment">// Poc of the I frame of the last open-gop. The value is only assigned during the</span></div><div class="line">							<span class="comment">// period between that I frame and the next P or I frame, else -1</span></div><div class="line">		<span class="keyword">int</span>  i_input;    			<span class="comment">// Number of input frames already accepted，已经接收的输入帧数</span></div><div class="line">							<span class="comment">// frames结构体中i_input指示当前输入的帧的（播放顺序）序号。</span></div><div class="line">		<span class="keyword">int</span>  i_max_dpb;  		<span class="comment">// Number of frames allocated in the decoded picture buffer</span></div><div class="line">		<span class="keyword">int</span>  i_max_ref0;			<span class="comment">// 最大前向参考帧数量</span></div><div class="line">		<span class="keyword">int</span>  i_max_ref1;			<span class="comment">// 最大后向参考帧数量</span></div><div class="line">		<span class="keyword">int</span>  i_delay;   			<span class="comment">// Number of frames buffered for B reordering；缓存的帧数，用于B帧重排序</span></div><div class="line">		<span class="keyword">int</span>  i_bframe_delay;</div><div class="line">		<span class="keyword">int64_t</span> i_bframe_delay_time;</div><div class="line">		<span class="keyword">int64_t</span> i_first_pts;</div><div class="line">		<span class="keyword">int64_t</span> i_prev_reordered_pts[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int64_t</span> i_largest_pts;</div><div class="line">		<span class="keyword">int64_t</span> i_second_largest_pts;</div><div class="line">		<span class="keyword">int</span>  b_have_lowres;  		<span class="comment">// Whether 1/2 resolution luma planes are being used，亮度是否使用半像素精度</span></div><div class="line">		<span class="keyword">int</span>  b_have_sub8x8_esa;</div><div class="line">	&#125; frames;	<span class="comment">// 指示和控制帧编码过程的结构</span></div><div class="line"></div><div class="line">	<span class="comment">/* current frame being encoded */</span></div><div class="line">	<span class="keyword">x264_frame_t</span>    *fenc;			<span class="comment">// 指向当前编码帧</span></div><div class="line"></div><div class="line">	<span class="comment">/* frame being reconstructed */</span></div><div class="line">	<span class="keyword">x264_frame_t</span>    *fdec;			<span class="comment">// 指向当前重建帧，重建帧的帧号要比当前编码帧的帧号小1</span></div><div class="line"></div><div class="line">	<span class="comment">/* references lists */</span></div><div class="line">	<span class="keyword">int</span>    i_ref[<span class="number">2</span>];				<span class="comment">// i_ref[0]和i_ref[1]分别表示前向和后向参考帧的数量</span></div><div class="line">	<span class="keyword">int</span>    b_ref_reorder[<span class="number">2</span>];</div><div class="line">	<span class="keyword">x264_frame_t</span>    *fref[<span class="number">2</span>][X264_REF_MAX+<span class="number">3</span>];	<span class="comment">// fref[0]和fref[1]分别表示存放前向和后向参考帧的数组（参考帧均是重建帧）</span></div><div class="line">	<span class="keyword">x264_frame_t</span>    *fref_nearest[<span class="number">2</span>];</div><div class="line"></div><div class="line">	<span class="comment">/* hrd */</span></div><div class="line">	<span class="keyword">int</span>  initial_cpb_removal_delay;</div><div class="line">	<span class="keyword">int</span>  initial_cpb_removal_delay_offset;</div><div class="line">	<span class="keyword">int64_t</span>  i_reordered_pts_delay;</div><div class="line"></div><div class="line">	<span class="comment">/* Current MB DCT coeffs */</span></div><div class="line">	<span class="class"><span class="keyword">struct</span></span></div><div class="line">	&#123;</div><div class="line">        	ALIGNED_N( dctcoef luma16x16_dc[<span class="number">3</span>][<span class="number">16</span>] );</div><div class="line">        	ALIGNED_16( dctcoef chroma_dc[<span class="number">2</span>][<span class="number">8</span>] );</div><div class="line">        	<span class="comment">// FIXME share memory?</span></div><div class="line">        	ALIGNED_N( dctcoef luma8x8[<span class="number">12</span>][<span class="number">64</span>] );</div><div class="line">        	ALIGNED_N( dctcoef luma4x4[<span class="number">16</span>*<span class="number">3</span>][<span class="number">16</span>] );</div><div class="line">	&#125; dct;</div><div class="line"></div><div class="line">	<span class="comment">/* MB table and cache for current frame/mb */</span></div><div class="line">	<span class="class"><span class="keyword">struct</span></span></div><div class="line">	&#123;</div><div class="line">		<span class="keyword">int</span>     i_mb_width;</div><div class="line">		<span class="keyword">int</span>     i_mb_height;</div><div class="line">		<span class="keyword">int</span>     i_mb_count;                 <span class="comment">/* number of mbs in a frame */</span></div><div class="line"></div><div class="line">		<span class="comment">/* Chroma subsampling */</span></div><div class="line">		<span class="keyword">int</span>     chroma_h_shift;</div><div class="line">		<span class="keyword">int</span>     chroma_v_shift;</div><div class="line"></div><div class="line">		<span class="comment">/* Strides */</span></div><div class="line">		<span class="keyword">int</span>     i_mb_stride;</div><div class="line">		<span class="keyword">int</span>     i_b8_stride;</div><div class="line">		<span class="keyword">int</span>     i_b4_stride;</div><div class="line">		<span class="keyword">int</span>     left_b8[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     left_b4[<span class="number">2</span>];</div><div class="line"></div><div class="line">		<span class="comment">/* Current index */</span></div><div class="line">		<span class="keyword">int</span>     i_mb_x;</div><div class="line">		<span class="keyword">int</span>     i_mb_y;</div><div class="line">		<span class="keyword">int</span>     i_mb_xy;</div><div class="line">		<span class="keyword">int</span>     i_b8_xy;</div><div class="line">		<span class="keyword">int</span>     i_b4_xy;</div><div class="line"></div><div class="line">		<span class="comment">/* Search parameters */</span></div><div class="line">		<span class="keyword">int</span>     i_me_method;</div><div class="line">		<span class="keyword">int</span>     i_subpel_refine;</div><div class="line">		<span class="keyword">int</span>     b_chroma_me;</div><div class="line">		<span class="keyword">int</span>     b_trellis;</div><div class="line">		<span class="keyword">int</span>     b_noise_reduction;</div><div class="line">		<span class="keyword">int</span>     b_dct_decimate;</div><div class="line">		<span class="keyword">int</span>     i_psy_rd;			 <span class="comment">/* Psy RD strength--fixed point value*/</span></div><div class="line">		<span class="keyword">int</span>     i_psy_trellis; 		<span class="comment">/* Psy trellis strength--fixed point value*/</span></div><div class="line">		<span class="keyword">int</span>     b_interlaced;</div><div class="line">		<span class="keyword">int</span>     b_adaptive_mbaff; 	<span class="comment">/* MBAFF+subme 0 requires non-adaptive MBAFF i.e. all field mbs */</span></div><div class="line"></div><div class="line">		<span class="comment">/* Allowed qpel MV range to stay within the picture + emulated edge pixels */</span></div><div class="line">		<span class="keyword">int</span>     mv_min[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     mv_max[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     mv_miny_row[<span class="number">3</span>]; 	<span class="comment">/* 0 == top progressive, 1 == bot progressive, 2 == interlaced */</span></div><div class="line">		<span class="keyword">int</span>     mv_maxy_row[<span class="number">3</span>];</div><div class="line"></div><div class="line">		<span class="comment">/* Subpel MV range for motion search. same mv_min/max but includes levels' i_mv_range. */</span></div><div class="line">		<span class="keyword">int</span>     mv_min_spel[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     mv_max_spel[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     mv_miny_spel_row[<span class="number">3</span>];</div><div class="line">		<span class="keyword">int</span>     mv_maxy_spel_row[<span class="number">3</span>];</div><div class="line"></div><div class="line">		<span class="comment">/* Fullpel MV range for motion search */</span></div><div class="line">		ALIGNED_8( <span class="keyword">int16_t</span> mv_limit_fpel[<span class="number">2</span>][<span class="number">2</span>] ); 	<span class="comment">/* min_x, min_y, max_x, max_y */</span></div><div class="line">		<span class="keyword">int</span>     mv_miny_fpel_row[<span class="number">3</span>];</div><div class="line">		<span class="keyword">int</span>     mv_maxy_fpel_row[<span class="number">3</span>];</div><div class="line"></div><div class="line">		<span class="comment">/* neighboring MBs */</span></div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> i_neighbour;</div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> i_neighbour8[<span class="number">4</span>];		<span class="comment">/* neighbours of each 8x8 or 4x4 block that are available */</span></div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> i_neighbour4[<span class="number">16</span>];		<span class="comment">/* at the time the block is coded */</span></div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> i_neighbour_intra; 		<span class="comment">/* for constrained intra pred */</span></div><div class="line">		<span class="keyword">unsigned</span> <span class="keyword">int</span> i_neighbour_frame;		<span class="comment">/* ignoring slice boundaries */</span></div><div class="line">		<span class="keyword">int</span>     i_mb_type_top;</div><div class="line">		<span class="keyword">int</span>     i_mb_type_left[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     i_mb_type_topleft;</div><div class="line">		<span class="keyword">int</span>     i_mb_type_topright;</div><div class="line">		<span class="keyword">int</span>     i_mb_prev_xy;</div><div class="line">		<span class="keyword">int</span>     i_mb_left_xy[<span class="number">2</span>];</div><div class="line">		<span class="keyword">int</span>     i_mb_top_xy;</div><div class="line">		<span class="keyword">int</span>     i_mb_topleft_xy;</div><div class="line">		<span class="keyword">int</span>     i_mb_topright_xy;</div><div class="line">		<span class="keyword">int</span>     i_mb_top_y;</div><div class="line">		<span class="keyword">int</span>     i_mb_topleft_y;</div><div class="line">		<span class="keyword">int</span>     i_mb_topright_y;</div><div class="line">		<span class="keyword">const</span> <span class="keyword">x264_left_table_t</span> *left_index_table;</div><div class="line">		<span class="keyword">int</span>     i_mb_top_mbpair_xy;</div><div class="line">		<span class="keyword">int</span>     topleft_partition;</div><div class="line">		<span class="keyword">int</span>     b_allow_skip;</div><div class="line">		<span class="keyword">int</span>     field_decoding_flag;</div><div class="line"></div><div class="line">		<span class="comment">/**** thread synchronization ends here ****/</span></div><div class="line">		<span class="comment">/* subsequent variables are either thread-local or constant,</span></div><div class="line">		 * and won't be copied from one thread to another */</div><div class="line"></div><div class="line">		<span class="comment">/* mb table */</span></div><div class="line">		<span class="keyword">uint8_t</span> *base; 		<span class="comment">/* base pointer for all malloced data in this mb */</span></div><div class="line">		<span class="keyword">int8_t</span>  *type;  		<span class="comment">/* mb type */</span></div><div class="line">		<span class="keyword">uint8_t</span> *partition;  	<span class="comment">/* mb partition */</span></div><div class="line">		<span class="keyword">int8_t</span>  *qp;			<span class="comment">/* mb qp */</span></div><div class="line">		<span class="keyword">int16_t</span> *cbp;					<span class="comment">// mb cbp:0x0?:luma, 0x?0:chroma, 0x100:luma dc,</span></div><div class="line">									<span class="comment">// 0x0200 and 0x0400: chroma dc(all set for PCM)</span></div><div class="line">		<span class="keyword">int8_t</span>  (*intra4x4_pred_mode)[<span class="number">8</span>]; 	<span class="comment">/* intra4x4 pred mode. for non I4x4 set to I_PRED_4x4_DC(2) */</span></div><div class="line">									<span class="comment">/* actually has only 7 entries; set to 8 for write-combining optimizations */</span></div><div class="line">		<span class="keyword">uint8_t</span> (*non_zero_count)[<span class="number">16</span>*<span class="number">3</span>];		<span class="comment">/* nzc. for I_PCM set to 16 */</span></div><div class="line">		<span class="keyword">int8_t</span>  *chroma_pred_mode; 		<span class="comment">/* chroma_pred_mode. cabac only. for non intra I_PRED_CHROMA_DC(0) */</span></div><div class="line">		<span class="keyword">int16_t</span> (*mv[<span class="number">2</span>])[<span class="number">2</span>];				<span class="comment">/* mb mv. set to 0 for intra mb */</span></div><div class="line">		<span class="keyword">uint8_t</span> (*mvd[<span class="number">2</span>])[<span class="number">8</span>][<span class="number">2</span>];			<span class="comment">// absolute value of mb mv difference with predict, clipped to [0,33].</span></div><div class="line">									<span class="comment">// set to 0 if intra. cabac only</span></div><div class="line">		<span class="keyword">int8_t</span>   *ref[<span class="number">2</span>]; 					<span class="comment">/* mb ref. set to -1 if non used (intra or Lx only) */</span></div><div class="line">		<span class="keyword">int16_t</span> (*mvr[<span class="number">2</span>][X264_REF_MAX*<span class="number">2</span>])[<span class="number">2</span>];<span class="comment">/* 16x16 mv for each possible ref */</span></div><div class="line">		<span class="keyword">int8_t</span>  *skipbp; 				<span class="comment">/* block pattern for SKIP or DIRECT (sub)mbs. B-frames + cabac only */</span></div><div class="line">		<span class="keyword">int8_t</span>  *mb_transform_size; 	<span class="comment">/* transform_size_8x8_flag of each mb */</span></div><div class="line">		<span class="keyword">uint16_t</span> *slice_table; 			<span class="comment">/* sh-&gt;first_mb of the slice that the indexed mb is part of</span></div><div class="line">								 * <span class="doctag">NOTE:</span> this will fail on resolutions above 2^16 MBs... */</div><div class="line">		<span class="keyword">uint8_t</span> *field;</div><div class="line"></div><div class="line">		<span class="comment">/* buffer for weighted versions of the reference frames */</span></div><div class="line">		pixel *p_weight_buf[X264_REF_MAX];</div><div class="line"></div><div class="line"></div><div class="line">	&#125;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/28/neofetch/" rel="next" title="neofetch">
+                <i class="fa fa-chevron-left"></i> neofetch
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/28/H-264和x264的联系和区别/" rel="prev" title="H.264和x264的联系和区别">
+                H.264和x264的联系和区别 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="徐松" />
+          <p class="site-author-name" itemprop="name">徐松</p>
+           
+              <p class="site-description motion-element" itemprop="description">天黑请闭眼</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">徐松</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
