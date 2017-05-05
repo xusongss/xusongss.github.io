@@ -90,15 +90,19 @@
 
 
 
-<meta name="description" content="天黑请闭眼">
-<meta property="og:type" content="website">
-<meta property="og:title" content="绿色回忆">
-<meta property="og:url" content="http://yoursite.com/archives/2013/08/index.html">
+<meta name="description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LwIP">
+<meta property="og:url" content="http://yoursite.com/2017/05/05/lwip/index.html">
 <meta property="og:site_name" content="绿色回忆">
-<meta property="og:description" content="天黑请闭眼">
+<meta property="og:description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
+<meta property="og:image" content="http://yoursite.com/doc/lwip/Design_of_LwIP_Integration.png">
+<meta property="og:updated_time" content="2017-05-05T07:01:07.529Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绿色回忆">
-<meta name="twitter:description" content="天黑请闭眼">
+<meta name="twitter:title" content="LwIP">
+<meta name="twitter:description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
+<meta name="twitter:image" content="http://yoursite.com/doc/lwip/Design_of_LwIP_Integration.png">
 
 
 
@@ -126,13 +130,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2013/08/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/05/lwip/"/>
 
 
 
 
 
-  <title>归档 | 绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>LwIP | 绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -157,7 +161,7 @@
     
   
 
-  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left  page-archive  ">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -241,66 +245,169 @@
           <div id="content" class="content">
             
 
-  <section id="posts" class="posts-collapse">
-    <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-    <span class="archive-page-counter">
-      
-      
-      
-        
-      
-      嗯..! 目前共计 21 篇日志。 继续努力。
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/lwip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
     </span>
 
     
+      <header class="post-header">
 
-      
-      
-      
-
-      
         
-        <div class="collection-title">
-          <h2 class="archive-year motion-element" id="archive-year-2013">2013</h2>
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                LwIP
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T14:54:27+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="/doc/lwip/Design_of_LwIP_Integration.png" rel="gallery_cj2bhsaz30005swv9j3tmbir4"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/doc/lwip/Design_of_LwIP_Integration.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
         </div>
       
+
+      
+        <h1 id="LwIP-协议设计与实现"><a href="#LwIP-协议设计与实现" class="headerlink" title="LwIP 协议设计与实现"></a>LwIP 协议设计与实现</h1><p>LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。</p>
+<p>LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1]</p>
+<p>LwIP协议栈主要关注的是怎么样减少内存的使用和代码的大小，这样就可以让lwIP适用于资源有限的小型平台例如嵌入式系统。为了简化处理过程和内存要求，lwIP对API进行了裁减，可以不需要复制一些数据。</p>
+<p>LwIP由几个模块组成，除TCP/IP协议的实现模块外（ IP， ICMP， UDP， TCP），还有包括许多相关支持模块。这些支持模块包括：作业系统模拟层、缓冲与内存管理子系统、网络接口函数及一组Internet校验和计算函数。</p>
+<p><a href="/doc/lwip/Lwip-tw.pdf">LwIP 协议设计与实现 中文版</a></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
       
 
       
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h1 class="post-title">
         
-            <a class="post-title-link" href="/2013/08/04/各种狗及身价/" itemprop="url">
-              
-                <span itemprop="name">各种狗及身价</span>
-              
-            </a>
-        
-      </h1>
+      
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2013-08-04T19:53:03+08:00"
-              content="2013-08-04" >
-          08-04
-        </time>
-      </div>
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
 
-    </header>
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/04/cygwin/" rel="prev" title="cygwin">
+                cygwin <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </article>
 
 
 
-    
-
-  </section>
-
-  
-
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -308,6 +415,10 @@
 
 
           
+  <div class="comments" id="comments">
+    
+  </div>
+
 
         </div>
         
@@ -327,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.jpg"
@@ -381,6 +501,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LwIP-协议设计与实现"><span class="nav-number">1.</span> <span class="nav-text">LwIP 协议设计与实现</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -501,11 +637,9 @@
 
 
   
-  
-    <script type="text/javascript" id="motion.page.archive">
-      $('.archive-year').velocity('transition.slideLeftIn');
-    </script>
-  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
 
 
   
