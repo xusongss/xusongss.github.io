@@ -253,6 +253,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/zmq-chapter4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/02/zmq-chapter4/" itemprop="url">
+                  zmq-chapter4
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T00:00:40+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="可靠的请求-应答模式"><a href="#可靠的请求-应答模式" class="headerlink" title="可靠的请求-应答模式"></a>可靠的请求-应答模式</h2><p>第三章中我们使用实例介绍了高级请求-应答模式，本章我们会讲述请求-应答模式的可靠性问题，并使用ZMQ提供的套接字类型组建起可靠的请求-应答消息系统。</p>
+<p>本章将介绍的内容有：</p>
+<ul>
+<li>客户端请求-应答</li>
+<li>最近最少使用队列</li>
+<li>心跳机制</li>
+<li>面向服务的队列</li>
+<li>基于磁盘（脱机）队列</li>
+<li>主从备份服务</li>
+<li>无中间件的请求-应答</li>
+</ul>
+<h3 id="什么是可靠性？"><a href="#什么是可靠性？" class="headerlink" title="什么是可靠性？"></a>什么是可靠性？</h3><p>要给可靠性下定义，我们可以先界定它的相反面——故障。如果我们可以处理某些类型的故障，那么我们的模型对于这些故障就是可靠的。下面我们就来列举分布式ZMQ应用程序中可能发生的问题，从可能性高的故障开始：</p>
+<ul>
+<li>应用程序代码是最大的故障来源。程序会崩溃或中止，停止对数据来源的响应，或是响应得太慢，耗尽内存等。</li>
+<li>系统代码，如使用ZMQ编写的中间件，也会意外中止。系统代码应该要比应用程序代码更为可靠，但毕竟也有可能崩溃。特别是当系统代码与速度过慢的客户端交互时，很容易耗尽内存。</li>
+<li>消息队列溢出，典型的情况是系统代码中没有对蛮客户端做积极的处理，任由消息队列溢出。</li>
+<li>网络临时中断，造成消息丢失。这类错误ZMQ应用程序是无法及时发现的，因为ZMQ会自动进行重连。</li>
+<li>硬件系统崩溃，导致所有进程中止。</li>
+<li>网络会出现特殊情形的中断，如交换机的某个端口发生故障，导致部分网络无法访问。</li>
+<li>数据中心可能遭受雷击、地震、火灾、电压过载、冷却系统失效等。</li>
+</ul>
+<p>想要让软件系统规避上述所有的风险，需要大量的人力物力，故不在本指南的讨论范围之内。</p>
+<p>由于前五个故障类型涵盖了99.9%的情形（这一数据源自我近期进行的一项研究），所以我们会深入探讨。如果你的公司大到足以考虑最后两种情形，那请及时联系我，因为我正愁没钱将我家后院的大坑建成游泳池。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/02/zmq-chapter4/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/zmq-chapter3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -612,7 +758,7 @@
 
       
         
-          <h1 id="ZMQ-指南"><a href="#ZMQ-指南" class="headerlink" title="ZMQ 指南"></a>ZMQ 指南</h1><p><strong>作者: Pieter Hintjens <a href="&#x6d;&#x61;&#x69;&#x6c;&#x74;&#x6f;&#58;&#x70;&#x68;&#64;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#109;">&#x70;&#x68;&#64;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#109;</a>, CEO iMatix Corporation.</strong><br><strong>翻译: 张吉 <a href="&#109;&#x61;&#x69;&#108;&#116;&#111;&#x3a;&#x6a;&#105;&#x7a;&#104;&#97;&#x6e;&#103;&#64;&#97;&#x6e;&#x6a;&#117;&#107;&#x65;&#46;&#99;&#x6f;&#109;">&#x6a;&#105;&#x7a;&#104;&#97;&#x6e;&#103;&#64;&#97;&#x6e;&#x6a;&#117;&#107;&#x65;&#46;&#99;&#x6f;&#109;</a>, 安居客集团 好租网工程师</strong></p>
+          <h1 id="ZMQ-指南"><a href="#ZMQ-指南" class="headerlink" title="ZMQ 指南"></a>ZMQ 指南</h1><p><strong>作者: Pieter Hintjens <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#x6d;">&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#x6d;</a>, CEO iMatix Corporation.</strong><br><strong>翻译: 张吉 <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x6a;&#x69;&#x7a;&#x68;&#x61;&#110;&#103;&#64;&#97;&#x6e;&#106;&#x75;&#x6b;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x6a;&#x69;&#x7a;&#x68;&#x61;&#110;&#103;&#64;&#97;&#x6e;&#106;&#x75;&#x6b;&#x65;&#x2e;&#99;&#111;&#x6d;</a>, 安居客集团 好租网工程师</strong></p>
 <p>With thanks to Bill Desmarais, Brian Dorsey, CAF, Daniel Lin, Eric Desgranges, Gonzalo Diethelm, Guido Goldstein, Hunter Ford, Kamil Shakirov, Martin Sustrik, Mike Castleman, Naveen Chawla, Nicola Peduzzi, Oliver Smith, Olivier Chamoux, Peter Alexander, Pierre Rouleau, Randy Dryburgh, John Unwin, Alex Thomas, Mihail Minkov, Jeremy Avnet, Michael Compton, Kamil Kisiel, Mark Kharitonov, Guillaume Aubert, Ian Barber, Mike Sheridan, Faruk Akgul, Oleg Sidorov, Lev Givon, Allister MacLeod, Alexander D’Archangel, Andreas Hoelzlwimmer, Han Holl, Robert G. Jakabosky, Felipe Cruz, Marcus McCurdy, Mikhail Kulemin, Dr. Gergő Érdi, Pavel Zhukov, Alexander Else, Giovanni Ruggiero, Rick “Technoweenie”, Daniel Lundin, Dave Hoover, Simon Jefford, Benjamin Peterson, Justin Case, Devon Weller, Richard Smith, Alexander Morland, Wadim Grasza, Michael Jakl, and Zed Shaw for their contributions, and to Stathis Sideris for <a href="http://www.ditaa.org">Ditaa</a>.</p>
 <p>Please use the <a href="https://github.com/imatix/zguide/issues">issue tracker</a> for all comments and errata. This version covers the latest stable release of 0MQ and was published on Fri 14 April, 2017.</p>
 <p>The Guide is mainly <a href="http://zguide.zeromq.org/page:all">in C</a>, but also in <a href="http://zguide.zeromq.org/php:all">PHP</a> and <a href="http://zguide.zeromq.org/lua:all">Lua</a>.</p>
@@ -1407,7 +1553,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/Einstein/20160111004244.jpg" rel="gallery_cj2bjlmzi000g1cv9k1fffb2p"
+                 href="/img/Einstein/20160111004244.jpg" rel="gallery_cj2br8rhg000hn0v91nbfeg9b"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/Einstein/20160111004244.jpg" itemprop="contentUrl"/>
               </a>
@@ -1434,195 +1580,6 @@
             </a>
           </div>
           <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/04/13/音频协议介绍/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="徐松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="绿色回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/13/音频协议介绍/" itemprop="url">
-                  会议电视常用音频协议介绍
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-13T13:15:42+08:00">
-                2016-04-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/img/vioce/1467656815.jpg" rel="gallery_cj2bjlmzo000j1cv965h0zvhp"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/img/vioce/1467656815.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          
-            <h1 id="数字化音频原理："><a href="#数字化音频原理：" class="headerlink" title="数字化音频原理："></a>数字化音频原理：</h1><p>声音其实是一种能量波，因此也有频率和振幅的特征，频率对应于时间轴线，振幅对应于电平轴线。通常人耳可以听到的频率在20Hz到20KHz的声波称为为可听声，低于20Hz的成为次声，高于20KHz的为超声，多媒体技术中只研究可听声部分。</p>
-<p>可听声中，话音信号的频段在80Hz到3400Hz之间，音乐信号的频段在20Hz-20kHz之间，语音（话音）和音乐是多媒体技术重点处理的对象。</p>
-<p>由于模拟声音在时间上是连续的，麦克风采集的声音信号还需要经过数字化处理后才能由计算机处理。通常我们采用PCM编码（脉冲代码调制编码），即通过采样、量化、编码三个步骤将连续变化的模拟信号转换为数字编码。</p>
-<h2 id="采样"><a href="#采样" class="headerlink" title="采样"></a>采样</h2><p>采样，就是每隔一段时间间隔读一次声音的幅度。单位时间内采样的次数称为采样频率。显然采样频率越高，所得到的离散幅值的数据点就越逼近于连续的模拟音频信号曲线，同时采样的数据量也越大。</p>
-<p>为了保证数字化的音频能够准确(可逆)地还原成模拟音频进行输出，采样定理要求：采样频率必须大于等于模拟信号频谱中的最高频率的2倍。</p>
-<p>常用的音频采样率有：8kHz、11.025kHz、22.05kHz、16kHz、37.8kHz、44.1kHz、48kHz。</p>
-<p>例如:话音信号频率在0.3～3.4kHz范围内，用8kHz的抽样频率（fs），就可获得能取代原来连续话音信号的抽样信号，而一般CD采集采样频率为44.1kHz。</p>
-<h2 id="量化"><a href="#量化" class="headerlink" title="量化"></a>量化</h2><p>量化，就是把采样得到的声音信号幅度转换成数字值，用于表示信号强度。</p>
-<p>量化精度：用多少个二进位来表示每一个采样值，也称为量化位数。声音信号的量化位数一般是 4,6,8,12或16 bits 。</p>
-<p>由采样频率和量化精度可以知道，相对自然界的信号，音频编码最多只能做到无限接近，在计算机应用中，能够达到最高保真水平的就是PCM编码，通常PCM约定俗成了无损编码。</p>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>一个采样率为44.1kHz，量化精度为16bit，双声道的PCM编码输出，它的数据速率则为 44.1K×16×2 =1411.2 Kbps，存储一秒钟需要176.4KB的空间，1分钟则约为10.34M，因此，为了降低传输或存储的费用，就必须对数字音频信号进行编码压缩。</p>
-<p>到目前为止，音频信号经压缩后的数码率降低到32至256kbit/s，语音可以低至8kbit/s以下。</p>
-<p>对数字音频信息的编码进行压缩的目的是在不影响人们使用的情况下使数字音频信息的数据量最少。通常用如下6个属性来衡量：</p>
-<ul>
-<li>比特率；</li>
-<li>信号的带宽；</li>
-<li>主观/客观的语音质量；</li>
-<li>延迟；</li>
-<li>计算复杂度和对存储器的要求；</li>
-<li>对于通道误码的灵敏度；</li>
-</ul>
-<p>为使编码后的音频信息可以被广泛地使用，在进行音频信息编码时需要采用标准的算法。传统会议电视设备主要采用ITU-T推荐的G.711、G.722、G.728和AAC_LD等音频标准。</p>
-<h1 id="常用音频协议简介："><a href="#常用音频协议简介：" class="headerlink" title="常用音频协议简介："></a>常用音频协议简介：</h1><h2 id="ITU－T-G-728"><a href="#ITU－T-G-728" class="headerlink" title="ITU－T G.728"></a>ITU－T G.728</h2><p>  1992年ITU-T发布的电话声音信号编码方式推荐标准。采用LD-CELP编码方式，采样率为8KHz，以16kb/秒的速度传送声音信号，传送延迟时间极短，仅有0.625 ms 的算法编码延迟。</p>
-<h2 id="ITU－T-G-711"><a href="#ITU－T-G-711" class="headerlink" title="ITU－T G.711"></a>ITU－T G.711</h2><p>  标准公布于1972年，其语音信号编码是非均匀量化PCM。语音的采样率为8KHz，每个样值采用8bit量化，输出的数据率为64kbps。这种窄带编码支持对300到 3,400赫兹的音频进行压缩。但虽然压缩质量不错，但是消耗的带宽相对较大，主要用于数字PBX/ISDN上的数字式电话。</p>
-<h2 id="ITU－T-G-722"><a href="#ITU－T-G-722" class="headerlink" title="ITU－T G.722"></a>ITU－T G.722</h2><p>  ITU－T G.722标准是第一个用于 16 KHZ 采样率的标准化宽带语音编码算法，1984年被CCITT定义为标准，而且现今还在使用。.G.722 编解码器在 16 kHz 频率上接收 16 位数据（带宽从 50 Hz 至 7 kHz），并将其压缩为 64、56 与 48 Kbit/s，其总延迟约 3 ms，能够提供更好的通话质量。</p>
-<p>  G.722的优点是延时和传输位误差率非常低，且没有任何的专利技术,费用低廉。因此G.722在无线通信系统，VoIP生产商，个人通信服务，视频会议应用等广泛应用。</p>
-<h2 id="G-722-1"><a href="#G-722-1" class="headerlink" title="G.722.1"></a>G.722.1</h2><p>  G.722.1基于 Polycom 的第三代 Siren 7 压缩技术，1999年被ITU-T批准为G.722.1标准。G.722.1采用16 KHZ 采样频率，16 位数据量化，支持从 50 Hz 至 7 kHz频率范围的音频采样，并将其压缩为 32 与 24 Kbit/s。它采用20 ms封帧，提供40ms的算法延迟。</p>
-<p>  G722.1可实现比 G.722 编解码器更低的比特率以及更大的压缩。目标是以大约一半的比特率实现与 G.722 大致相当的质量。这种编码使用许可需要获得Polycom公司的授权。</p>
-<h2 id="G722-1-Annex-C"><a href="#G722-1-Annex-C" class="headerlink" title="G722.1 Annex C"></a>G722.1 Annex C</h2><p>  G722.1 Annex C基于 Polycom 的Siren 14 压缩技术, 采用32kHz采样频率，支持从 50 Hz 至 14 kHz频率范围的音频采样，并将其压缩为 24、32或48 kbps。采用20ms封帧，提供40毫秒演算延迟。</p>
-<p>  2005年中，国际电信联盟（ITU）批准Polycom Siren 14?    技术为14 kHz超宽带音频编码新标准。同时进入作为ITU-T建议的G.722.1 Annex C。    G722.1 Annex C具有低运算能力，低带宽的优点。适于处理语音、音乐与自然界声音。</p>
-<h2 id="AAC-LD"><a href="#AAC-LD" class="headerlink" title="AAC-LD"></a>AAC-LD</h2><p>  AAC（Advanced Audio Coding，高级音频编码）是由Fraunhofer研究院（MP3格式的创造者）、杜比（DOLBY）试验室和AT&amp;T（美国电话电报公司）共同研发出的一种音频压缩格式，是MPEG-2规范的一部分，并在1997年3月成为国际标准。随着MPEG－4标准在2000年成型后，MPEG2 AAC也被作为核心编码技术，并增加了一些新的编码特性，又叫MPEG-4 AAC。</p>
-<p>  MPEG-4 AAC家族目前共有九种编码规格，AAC-LD（Low Delay，低延迟规格）是用在低码率下编码。它支持8K～48K采样率的，可以64Kbps的码率输出接近 CD 音质的音频，并支持多声音通道，AAC-LD 算法延迟仅为 20ms。</p>
-<p>  AAC因为其模块化设计，功能更为强大。本身的框架结构能够被不断的新的东西填充，这就使得不同发展方面的内核相互融合，彼此吸收精华成为可能。</p>
-<h2 id="各种音频协议的主要参数对比："><a href="#各种音频协议的主要参数对比：" class="headerlink" title="各种音频协议的主要参数对比："></a>各种音频协议的主要参数对比：</h2><p>采样频率   支持音频带宽    输出码率    最低算法延迟</p>
-<p>G711   8KHz    300 Hz ~ 3,400 Hz    64 Kbps    &lt;1ms</p>
-<p>G722   16kHz    50 Hz ~ 7 kHz    64 Kbps    3ms</p>
-<p>G722.1   16kHz    50 Hz ~7 kHz    24、32 Kbps    40ms</p>
-<p>G722.1 C   32kHz    50 Hz~14 kHz    24、32、48Kbps    40ms</p>
-<p>AAC-LD   48kHz    20 Hz－20kHz    48～64 Kbps    20ms</p>
-<h1 id="AAC-LD与G722-Annex-C优缺点对比："><a href="#AAC-LD与G722-Annex-C优缺点对比：" class="headerlink" title="AAC_LD与G722. Annex C优缺点对比："></a>AAC_LD与G722. Annex C优缺点对比：</h1><p>G722.1 C   AAC_LD</p>
-<p>采样音频频率范围支持50 Hz~14 kHz，接近CD音质，但丢失了高频部分。</p>
-<p>支持20 Hz－20kHz全频段的采样，音频更加接近CD音质。</p>
-<p>输出码率24、32、48Kbps，带宽低于AAC－LD，但是以牺牲高频为代价的。</p>
-<p>48～64 Kbps,并支持大于64Kbps的输出，为更好的音频质量提供了可能。</p>
-<p>算法复杂性算法复杂度低，CPU占用率略好于AAC-LD   模块化设计，功能更为强大,有TI等专用芯片支持</p>
-<p>最低延迟采用20ms封帧，40ms算法延迟   20ms算法延迟，好于G722.1 C</p>
-<p>多声道可以支持双声道   AAC支持多达48个音轨、15个低频音轨</p>
-<p>标准通用性G722.1-C 由Polycom制定开发，使用需要Polycom授权，目前只有Polycom和极少数会议电视厂商使用。   作为MPEG4核心标准，受到Apple、诺基亚、松下等支持，并被泰德等众多会议电视厂商所采用，应用前景更广阔。</p>
-<p>由Fraunhofer研究院的调查对比图可以知道，在相同的采样频率下，AAC-LD可以提供比G722.1 C、MP3等更好的音质。AAC-LD实现了超宽频音频编码中最短的延时，并保证接近CD的音质，达到音质、比特率和延时三者的最佳组合，是会议电视领域的最优选择。</p>
-<hr>
-<ol>
-<li><a href="http://www.cisco.com/c/en/us/support/docs/voice/h323/8628-define-analog-voice.html" target="_blank" rel="external">Defining Analog Voice</a></li>
-<li><a href="http://www.doc88.com/p-0738361548494.html" target="_blank" rel="external">G.723.1算法ARM平台移植与优化</a></li>
-</ol>
-
-          
         
       
     </div>
@@ -1704,7 +1661,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
