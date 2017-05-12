@@ -90,19 +90,17 @@
 
 
 
-<meta name="description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
+<meta name="description" content="eventxevent.h123456class XEvent&amp;#123;public:	virtual void dump() = 0;	virtual void free() = 0;&amp;#125;; EventListenerxeventlistener.h123456789101112131415161718192021222324252627282930class XEvent;class">
 <meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LwIP">
-<meta property="og:url" content="http://yoursite.com/2017/05/05/lwip/index.html">
+<meta property="og:title" content="C++事件分发器">
+<meta property="og:url" content="http://yoursite.com/2017/05/12/C-事件分发器/index.html">
 <meta property="og:site_name" content="绿色回忆">
-<meta property="og:description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
-<meta property="og:image" content="http://yoursite.com/doc/lwip/Design_of_LwIP_Integration.png">
-<meta property="og:updated_time" content="2017-05-05T07:01:07.529Z">
+<meta property="og:description" content="eventxevent.h123456class XEvent&amp;#123;public:	virtual void dump() = 0;	virtual void free() = 0;&amp;#125;; EventListenerxeventlistener.h123456789101112131415161718192021222324252627282930class XEvent;class">
+<meta property="og:updated_time" content="2017-05-12T08:13:16.262Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LwIP">
-<meta name="twitter:description" content="LwIP 协议设计与实现LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。 LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1] Lw">
-<meta name="twitter:image" content="http://yoursite.com/doc/lwip/Design_of_LwIP_Integration.png">
+<meta name="twitter:title" content="C++事件分发器">
+<meta name="twitter:description" content="eventxevent.h123456class XEvent&amp;#123;public:	virtual void dump() = 0;	virtual void free() = 0;&amp;#125;; EventListenerxeventlistener.h123456789101112131415161718192021222324252627282930class XEvent;class">
 
 
 
@@ -130,13 +128,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/05/05/lwip/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/05/12/C-事件分发器/"/>
 
 
 
 
 
-  <title>LwIP | 绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  <title>C++事件分发器 | 绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -255,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/lwip/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/C-事件分发器/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="徐松">
@@ -276,7 +274,7 @@
             
             
               
-                LwIP
+                C++事件分发器
               
             
           </h1>
@@ -291,8 +289,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T14:54:27+08:00">
-                2017-05-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T16:05:27+08:00">
+                2017-05-12
               </time>
             
 
@@ -324,30 +322,14 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/doc/lwip/Design_of_LwIP_Integration.png" rel="gallery_cj2lkh2fg0009l0v9agjksybi"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/doc/lwip/Design_of_LwIP_Integration.png" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
-        <h1 id="LwIP-协议设计与实现"><a href="#LwIP-协议设计与实现" class="headerlink" title="LwIP 协议设计与实现"></a>LwIP 协议设计与实现</h1><p>LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。</p>
-<p>LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1]</p>
-<p>LwIP协议栈主要关注的是怎么样减少内存的使用和代码的大小，这样就可以让lwIP适用于资源有限的小型平台例如嵌入式系统。为了简化处理过程和内存要求，lwIP对API进行了裁减，可以不需要复制一些数据。</p>
-<p>LwIP由几个模块组成，除TCP/IP协议的实现模块外（ IP， ICMP， UDP， TCP），还有包括许多相关支持模块。这些支持模块包括：作业系统模拟层、缓冲与内存管理子系统、网络接口函数及一组Internet校验和计算函数。</p>
-<p><a href="/doc/lwip/Lwip-tw.pdf">LwIP 协议设计与实现 中文版</a></p>
-
+        <h1 id="event"><a href="#event" class="headerlink" title="event"></a>event</h1><p>xevent.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class XEvent</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	virtual void dump() = 0;</div><div class="line">	virtual void free() = 0;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h1 id="EventListener"><a href="#EventListener" class="headerlink" title="EventListener"></a>EventListener</h1><p>xeventlistener.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">class XEvent;</div><div class="line">class XEventListener &#123;</div><div class="line">public:</div><div class="line">	virtual int onEvent(XEvent *evt) = 0;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">template&lt;class Handler, class filter = XEvent&gt;</div><div class="line">class ClassEventListener : virtual public XEventListener</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	typedef int (Handler::*__XHandlerFunc)(XEvent *evt);</div><div class="line">	ClassEventListener(Handler *ptr, __XHandlerFunc func) :</div><div class="line">		handler(ptr),</div><div class="line">		func_(func)&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	virtual int onEvent(XEvent *evt)</div><div class="line">	&#123;</div><div class="line">		if (dynamic_cast&lt;filter*&gt;(evt))&#123;</div><div class="line">			if (handler &amp;&amp; func_)</div><div class="line">				return (handler-&gt;*func_)(evt);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	~ClassEventListener()&#123;&#125;;</div><div class="line">private:</div><div class="line">	Handler *handler;</div><div class="line">	__XHandlerFunc func_;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h1 id="EventDispatcher"><a href="#EventDispatcher" class="headerlink" title="EventDispatcher"></a>EventDispatcher</h1><p>xeventdispatcher.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;list&gt;</div><div class="line">class XEvent;</div><div class="line">class XEventListener;</div><div class="line">class XEventDispatcher</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	//添加监听器</div><div class="line">	virtual void addEventListener(XEventListener* listener, int fixedPriority = -1) = 0;</div><div class="line"></div><div class="line">	//删除指定监听器</div><div class="line">	virtual void removeEventListener(XEventListener* listener) = 0;</div><div class="line"></div><div class="line">	//启用事件分发器</div><div class="line">	virtual void setEnabled(bool isEnabled) = 0;</div><div class="line"></div><div class="line">	virtual bool isEnabled() const = 0;</div><div class="line">	//手动派发自定义事件</div><div class="line">	virtual void dispatchEvent(XEvent* event) = 0;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>main.cpp</p>
+<pre><code>
+</code></pre>
       
     </div>
 
@@ -383,18 +365,14 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/05/05/Coding-Rules-for-Writing-Safety-Critical-Program/" rel="next" title="Coding Rules for Writing Safety Critical Program">
-                <i class="fa fa-chevron-left"></i> Coding Rules for Writing Safety Critical Program
-              </a>
-            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/05/04/cygwin/" rel="prev" title="cygwin">
-                cygwin <i class="fa fa-chevron-right"></i>
+              <a href="/2017/05/05/linux-io-stack/" rel="prev" title="linux io stack">
+                linux io stack <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -515,7 +493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#LwIP-协议设计与实现"><span class="nav-number">1.</span> <span class="nav-text">LwIP 协议设计与实现</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#event"><span class="nav-number">1.</span> <span class="nav-text">event</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EventListener"><span class="nav-number">2.</span> <span class="nav-text">EventListener</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EventDispatcher"><span class="nav-number">3.</span> <span class="nav-text">EventDispatcher</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#test"><span class="nav-number">4.</span> <span class="nav-text">test</span></a></li></ol></div>
             
 
           </div>

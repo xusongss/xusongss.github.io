@@ -253,6 +253,153 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/zmq-chapter5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/02/zmq-chapter5/" itemprop="url">
+                  zmq-chapter5
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-02T00:00:45+08:00">
+                2017-03-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="第五章-高级发布-订阅模式"><a href="#第五章-高级发布-订阅模式" class="headerlink" title="第五章 高级发布-订阅模式"></a>第五章 高级发布-订阅模式</h2><p>第三章和第四章讲述了ZMQ中请求-应答模式的一些高级用法。如果你已经能够彻底理解了，那我要说声恭喜。这一章我们会关注发布-订阅模式，使用上层模式封装，提升ZMQ发布-订阅模式的性能、可靠性、状态同步及安全机制。</p>
+<p>本章涉及的内容有：</p>
+<ul>
+<li>处理慢订阅者（自杀的蜗牛模式）</li>
+<li>高速订阅者（黑箱模式）</li>
+<li>构建一个共享键值缓存（克隆模式）</li>
+</ul>
+<h3 id="检测慢订阅者（自杀的蜗牛模式）"><a href="#检测慢订阅者（自杀的蜗牛模式）" class="headerlink" title="检测慢订阅者（自杀的蜗牛模式）"></a>检测慢订阅者（自杀的蜗牛模式）</h3><p>在使用发布-订阅模式的时候，最常见的问题之一是如何处理响应较慢的订阅者。理想状况下，发布者能以全速发送消息给订阅者，但现实中，订阅者会需要对消息做较长时间的处理，或者写得不够好，无法跟上发布者的脚步。</p>
+<p>如何处理慢订阅者？最好的方法当然是让订阅者高效起来，不过这需要额外的工作。以下是一些处理慢订阅者的方法：</p>
+<ul>
+<li><p><strong>在发布者中贮存消息</strong>。这是Gmail的做法，如果过去的几小时里没有阅读邮件的话，它会把邮件保存起来。但在高吞吐量的应用中，发布者堆积消息往往会导致内存溢出，最终崩溃。特别是当同是有多个订阅者时，或者无法用磁盘来做一个缓冲，情况就会变得更为复杂。</p>
+</li>
+<li><p><strong>在订阅者中贮存消息</strong>。这种做法要好的多，其实ZMQ默认的行为就是这样的。如果非得有一个人会因为内存溢出而崩溃，那也只会是订阅者，而非发布者，这挺公平的。然而，这种做法只对瞬间消息量很大的应用才合理，订阅者只是一时处理不过来，但最终会赶上进度。但是，这还是没有解决订阅者速度过慢的问题。</p>
+</li>
+<li><p><strong>暂停发送消息</strong>。这也是Gmail的做法，当我的邮箱容量超过7.554GB时，新的邮件就会被Gmail拒收或丢弃。这种做法对发布者来说很有益，ZMQ中若设置了阈值（HWM），其默认行为也就是这样的。但是，我们仍不能解决慢订阅者的问题，我们只是让消息变得断断续续而已。</p>
+</li>
+<li><p><strong>断开与满订阅者的连接</strong>。这是hotmail的做法，如果连续两周没有登录，它就会断开，这也是为什么我正在使用第十五个hotmail邮箱。不过这种方案在ZMQ里是行不通的，因为对于发布者而言，订阅者是不可见的，无法做相应处理。</p>
+</li>
+</ul>
+<p>看来没有一种经典的方式可以满足我们的需求，所以我们就要进行创新了。我们可以让订阅者自杀，而不仅仅是断开连接。这就是“自杀的蜗牛”模式。当订阅者发现自身运行得过慢时（对于慢速的定义应该是一个配置项，当达到这个标准时就大声地喊出来吧，让程序员知道），它会哀嚎一声，然后自杀。</p>
+<p>订阅者如何检测自身速度过慢呢？一种方式是为消息进行编号，并在发布者端设置阈值。当订阅者发现消息编号不连续时，它就知道事情不对劲了。这里的阈值就是订阅者自杀的值。</p>
+<p>这种方案有两个问题：一、如果我们连接的多个发布者，我们要如何为消息进行编号呢？解决方法是为每一个发布者设定一个唯一的编号，作为消息编号的一部分。二、如果订阅者使用ZMQ_SUBSRIBE选项对消息进行了过滤，那么我们精心设计的消息编号机制就毫无用处了。</p>
+<p>有些情形不会进行消息的过滤，所以消息编号还是行得通的。不过更为普遍的解决方案是，发布者为消息标注时间戳，当订阅者收到消息时会检测这个时间戳，如果其差别达到某一个值，就发出警报并自杀。</p>
+<p>当订阅者有自身的客户端或服务协议，需要保证最大延迟时间时，自杀的蜗牛模式会很合适。撤销一个订阅者也许并不是最周全的方案，但至少不会引发后续的问题。如果订阅者收到了过时的消息，那可能会对数据造成进一步的破坏，而且很难被发现。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/03/02/zmq-chapter5/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/02/zmq-chapter4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -758,7 +905,7 @@
 
       
         
-          <h1 id="ZMQ-指南"><a href="#ZMQ-指南" class="headerlink" title="ZMQ 指南"></a>ZMQ 指南</h1><p><strong>作者: Pieter Hintjens <a href="&#109;&#x61;&#105;&#108;&#116;&#x6f;&#x3a;&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#x6d;">&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#x6f;&#x6d;</a>, CEO iMatix Corporation.</strong><br><strong>翻译: 张吉 <a href="&#x6d;&#x61;&#x69;&#108;&#x74;&#x6f;&#58;&#x6a;&#x69;&#x7a;&#x68;&#x61;&#110;&#103;&#64;&#97;&#x6e;&#106;&#x75;&#x6b;&#x65;&#x2e;&#99;&#111;&#x6d;">&#x6a;&#x69;&#x7a;&#x68;&#x61;&#110;&#103;&#64;&#97;&#x6e;&#106;&#x75;&#x6b;&#x65;&#x2e;&#99;&#111;&#x6d;</a>, 安居客集团 好租网工程师</strong></p>
+          <h1 id="ZMQ-指南"><a href="#ZMQ-指南" class="headerlink" title="ZMQ 指南"></a>ZMQ 指南</h1><p><strong>作者: Pieter Hintjens <a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#111;&#58;&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#111;&#109;">&#112;&#x68;&#x40;&#x69;&#109;&#x61;&#x74;&#105;&#x78;&#x2e;&#x63;&#111;&#109;</a>, CEO iMatix Corporation.</strong><br><strong>翻译: 张吉 <a href="&#109;&#97;&#105;&#108;&#x74;&#111;&#x3a;&#106;&#x69;&#122;&#104;&#97;&#110;&#103;&#64;&#97;&#110;&#106;&#x75;&#107;&#101;&#46;&#x63;&#x6f;&#x6d;">&#106;&#x69;&#122;&#104;&#97;&#110;&#103;&#64;&#97;&#110;&#106;&#x75;&#107;&#101;&#46;&#x63;&#x6f;&#x6d;</a>, 安居客集团 好租网工程师</strong></p>
 <p>With thanks to Bill Desmarais, Brian Dorsey, CAF, Daniel Lin, Eric Desgranges, Gonzalo Diethelm, Guido Goldstein, Hunter Ford, Kamil Shakirov, Martin Sustrik, Mike Castleman, Naveen Chawla, Nicola Peduzzi, Oliver Smith, Olivier Chamoux, Peter Alexander, Pierre Rouleau, Randy Dryburgh, John Unwin, Alex Thomas, Mihail Minkov, Jeremy Avnet, Michael Compton, Kamil Kisiel, Mark Kharitonov, Guillaume Aubert, Ian Barber, Mike Sheridan, Faruk Akgul, Oleg Sidorov, Lev Givon, Allister MacLeod, Alexander D’Archangel, Andreas Hoelzlwimmer, Han Holl, Robert G. Jakabosky, Felipe Cruz, Marcus McCurdy, Mikhail Kulemin, Dr. Gergő Érdi, Pavel Zhukov, Alexander Else, Giovanni Ruggiero, Rick “Technoweenie”, Daniel Lundin, Dave Hoover, Simon Jefford, Benjamin Peterson, Justin Case, Devon Weller, Richard Smith, Alexander Morland, Wadim Grasza, Michael Jakl, and Zed Shaw for their contributions, and to Stathis Sideris for <a href="http://www.ditaa.org">Ditaa</a>.</p>
 <p>Please use the <a href="https://github.com/imatix/zguide/issues">issue tracker</a> for all comments and errata. This version covers the latest stable release of 0MQ and was published on Fri 14 April, 2017.</p>
 <p>The Guide is mainly <a href="http://zguide.zeromq.org/page:all">in C</a>, but also in <a href="http://zguide.zeromq.org/php:all">PHP</a> and <a href="http://zguide.zeromq.org/lua:all">Lua</a>.</p>
@@ -1467,151 +1614,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/28/爱因斯坦与广义相对论/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="徐松">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="绿色回忆">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/10/28/爱因斯坦与广义相对论/" itemprop="url">
-                  爱因斯坦与广义相对论
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-28T22:26:59+08:00">
-                2016-10-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/img/Einstein/20160111004244.jpg" rel="gallery_cj2br8rhg000hn0v91nbfeg9b"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/img/Einstein/20160111004244.jpg" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
-
-      
-        
-          <!--
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"></script>
--->
-<h1 id="爱因斯坦与广义相对论"><a href="#爱因斯坦与广义相对论" class="headerlink" title="爱因斯坦与广义相对论"></a>爱因斯坦与广义相对论</h1><p>赵 峥 (北京师范大学物理系 北京 100875)</p>
-<h2 id="摘-要"><a href="#摘-要" class="headerlink" title="摘 要"></a>摘 要</h2><p>  文章介绍了爱因斯坦建立相对论，特别是广义相对论的伟大贡献。爱因斯坦提出了光速不变原理、广义相对性原理、马赫原理和等效原理。他不仅首先指出万有引力本质上是时空弯曲的几何效应，而且首先给出了广义相对论的基本方程。文章还讨论了为什么爱因斯坦是狭义相对论和广义相对论的唯一创建者。</p>
-<p>  今年是广义相对论创建100周年，也是狭义相对论创建110周年。 广义相对论是“关于时间、空间和引力的理论”。 这一理论可以看作是狭义相对论的推广，也可以看作是万有引力定律的发展。它认为万有引力不是一般意义上的力， 而是一种几何效应， 是时空弯曲的表现。我们将在本文中介绍爱因斯坦如何通过物理思想的多次突破，创建起相对论特别是广义相对论的大厦，并指出爱因斯坦是相对论的唯一创建者<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/10/28/爱因斯坦与广义相对论/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1661,7 +1663,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">23</span>
+                <span class="site-state-item-count">24</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
