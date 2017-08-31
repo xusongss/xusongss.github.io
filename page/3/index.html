@@ -476,7 +476,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/Einstein/20160111004244.jpg" rel="gallery_cj5uni1b3000i5gv9y8r8r5e0"
+                 href="/img/Einstein/20160111004244.jpg" rel="gallery_cj6zuicme000p40v9t3xx4idi"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/Einstein/20160111004244.jpg" itemprop="contentUrl"/>
               </a>
@@ -503,6 +503,319 @@
             </a>
           </div>
           <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/12/openssl-签名/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/12/openssl-签名/" itemprop="url">
+                  openssl dgst
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-12T00:13:06+08:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>数字签名的过程是计算出数字摘要，然后使用私钥对数字摘要进行签名，而摘要是使用md5、sha512等算法计算得出</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="Hash-算法"><a href="#Hash-算法" class="headerlink" title="Hash 算法"></a>Hash 算法</h3><p>Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。</p>
+<p>例如计算一段话“hello blockchain world, this is yeasy@github”的 MD5 hash 值为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo &quot;hello blockchain world, this is yeasy@github&quot;|md5sum</div><div class="line">89242549883a2ef85dc81b90fb606046</div></pre></td></tr></table></figure></p>
+<p>这意味着我们只要对某文件进行 MD5 Hash 计算，得到结果为 89242549883a2ef85dc81b90fb606046，这就说明文件内容极大概率上就是 “hello blockchain world, this is yeasy@github”。可见，Hash 的核心思想十分类似于基于内容的编址或命名。</p>
+<p>注：hash 值在应用中又被称为指纹（fingerprint）、摘要（digest）。<br>注：MD5 是一个经典的 hash 算法，其和 SHA-1 算法都已被 证明 安全性不足应用于商业场景。</p>
+<p>一个优秀的 hash 算法，将能实现：</p>
+<ul>
+<li>正向快速：给定明文和 hash 算法，在有限时间和有限资源内能计算出 hash 值。</li>
+<li>逆向困难：给定（若干） hash 值，在有限时间内很难（基本不可能）逆推出明文。</li>
+<li>输入敏感：原始输入信息修改一点信息，产生的 hash 值看起来应该都有很大不同。</li>
+<li>冲突避免：很难找到两段内容不同的明文，使得它们的 hash 值一致（发生冲突）。</li>
+<li>冲突避免有时候又被称为“抗碰撞性”。如果给定一个明文前提下，无法找到碰撞的另一个明文，称为“弱抗碰撞性”；如果无法找到任意两个明文，发生碰撞，则称算法具有“强抗碰撞性”。</li>
+</ul>
+<p>很多场景下，也要求对于任意长的输入内容，输出定长的 hash 结果。</p>
+<h3 id="流行的算法"><a href="#流行的算法" class="headerlink" title="流行的算法"></a>流行的算法</h3><p>目前流行的 Hash 算法包括 MD5、SHA-1 和 SHA-2。</p>
+<ul>
+<li>MD4（RFC 1320）是 MIT 的 Ronald L. Rivest 在 1990 年设计的，MD 是 Message Digest 的缩写。其输出为 128 位。MD4 已证明不够安全。</li>
+<li>MD5（RFC 1321）是 Rivest 于1991年对 MD4 的改进版本。它对输入仍以 512 位分组，其输出是 128 位。MD5 比 MD4 复杂，并且计算速度要慢一点，更安全一些。MD5 已被证明不具备“强抗碰撞性”。</li>
+<li>SHA （Secure Hash Algorithm）是一个 Hash 函数族，由 NIST（National Institute of Standards and Technology）于 1993 年发布第一个算法。目前知名的 SHA-1 在 1995 年面世，它的输出为长度 160 位的 hash 值，因此抗穷举性更好。SHA-1 设计时基于和 MD4 相同原理，并且模仿了该算法。SHA-1 已被证明不具备“强抗碰撞性”。</li>
+</ul>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>一般的，Hash 算法都是算力敏感型，意味着计算资源是瓶颈，主频越高的 CPU 进行 Hash 的速度也越快。也有一些 Hash 算法不是算力敏感的，例如 scrypt，需要大量的内存资源，节点不能通过简单的增加更多 CPU 来获得 hash 性能的提升。</p>
+<h3 id="数字摘要"><a href="#数字摘要" class="headerlink" title="数字摘要"></a>数字摘要</h3><p>顾名思义，数字摘要是对数字内容进行 Hash 运算，获取唯一的摘要值来指代原始数字内容。<br>数字摘要是解决确保内容没被篡改过的问题（利用 Hash 函数的抗碰撞性特点）。<br>数字摘要是 Hash 算法最重要的一个用途。在网络上下载软件或文件时，往往同时会提供一个数字摘要值，用户下载下来原始文件可以自行进行计算，并同提供的摘要值进行比对，以确保内容没有被修改过。</p>
+<h2 id="openssl-dgst-应用"><a href="#openssl-dgst-应用" class="headerlink" title="openssl dgst 应用"></a>openssl dgst 应用</h2><p>openssl dgst [-md5|-sha1|…] [-hex | -binary] [-out filename] [-sign filename] [-passin arg] [-verify filename] [-prverify filename] [-signature filename] [file…]</p>
+<p>选项说明：</p>
+<ul>
+<li><p>file…：指定待签名的文件。</p>
+</li>
+<li><p>-hex：以hex格式输出数字摘要。如果不以-hex显示，签名或验证签名时很可能乱码。</p>
+</li>
+<li><p>-binary：以二进制格式输出数字摘要，或以二进制格式进行数字签名。这是默认格式。</p>
+</li>
+<li><p>-out filename：指定输出文件，若不指定则输出到标准输出。</p>
+</li>
+<li><p>-sign filename：使用filename中的私钥对file数字签名。</p>
+</li>
+<li><p>-signature filename：指定待验证的签名文件。</p>
+</li>
+<li><p>-verify filename：使用filename中的公钥验证签名。</p>
+</li>
+<li><p>-prverify filename：使用filename中的私钥验证签名。</p>
+</li>
+<li><p>-passin arg：传递解密密码。若验证签名时实用的公钥或私钥文件是被加密过的，则需要传递密码来解密。</p>
+</li>
+</ul>
+<p>支持如下几种单向加密算法，即签名时使用的hash算法。</p>
+<p>-md4            to use the md4 message digest algorithm</p>
+<p>-md5            to use the md5 message digest algorithm</p>
+<p>-ripemd160      to use the ripemd160 message digest algorithm</p>
+<p>-sha            to use the sha message digest algorithm</p>
+<p>-sha1           to use the sha1 message digest algorithm</p>
+<p>-sha224         to use the sha224 message digest algorithm</p>
+<p>-sha256         to use the sha256 message digest algorithm</p>
+<p>-sha384         to use the sha384 message digest algorithm</p>
+<p>-sha512         to use the sha512 message digest algorithm</p>
+<p>-whirlpool      to use the whirlpool message digest algorithm</p>
+<h3 id="生产摘要信息"><a href="#生产摘要信息" class="headerlink" title="生产摘要信息"></a>生产摘要信息</h3><ol>
+<li><p>随机生成一段摘要信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~</div><div class="line"><span class="meta">$</span> echo 123456 | openssl md5</div><div class="line">(stdin)= f447b20a7fcbf53a5d5be013ea0b15af</div></pre></td></tr></table></figure>
+</li>
+<li><p>对文件生成MD5摘要信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/openssl</div><div class="line"><span class="meta">$</span> openssl dgst -md5 test.txt</div><div class="line">MD5(test.txt)= f447b20a7fcbf53a5d5be013ea0b15af</div></pre></td></tr></table></figure>
+</li>
+<li><p>对文件生成sha512</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/openssl</div><div class="line"><span class="meta">$</span> openssl dgst -sha512 test.txt</div><div class="line">SHA512(test.txt)= 1caced6fca2237153d65adfb0f3dbe33b9375e9eb6df17c379f80cd37deb6e6a70159c7e898576db568b871ca1c2ffd1a2cc3205f1b50be5396096335fc29c40</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h3><h4 id="生成私钥"><a href="#生成私钥" class="headerlink" title="生成私钥"></a>生成私钥</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line"><span class="meta">$</span> openssl genrsa -out prvtkey.pem 1024/2038</div><div class="line">Generating RSA private key, 1024 bit long modulus</div><div class="line">...............++++++</div><div class="line">.....++++++</div><div class="line">e is 65537 (0x10001)</div><div class="line"><span class="meta"></span></div><div class="line">$ cat prvtkey.pem</div><div class="line">-----BEGIN RSA PRIVATE KEY-----</div><div class="line">MIICWwIBAAKBgQCiC+OtqmFhIIj1hrSHzv+HxuPZPK5Vez8ERDRRludiSzza6IVo</div><div class="line">ySeUfSNxvUdjFBpGHxi9v0Zu0xuz48nnXsUY+3lhKaBY93ECQ9LW1EASwfio4RI+</div><div class="line">jGiLicyjbMAvPY2mp7tkqkHf6Cb40N9NHV4TbAwFH+CpMbDcxUq8lYugCwIDAQAB</div><div class="line">AoGAR+QEb2B+cUuw11SatQGlpgQbw53DLhNOgsMLfwL2xkngxrGPtkw/rgXSerxh</div><div class="line">dlhNy7wyCsRYKASqbqVpRqdpwxXYLCXBLhIjLbhPAoWC+bXMtNd6fnotrH0PsE98</div><div class="line">yLtyX3ULU0kLn7q2+lEQLIxqu9NHqaEDRMyCfRC0YHJmF5kCQQDOtRTSM3j3VCQu</div><div class="line">kdmJkQsqdvPK1LZlOVLHpzOzYy82G/sYpsFDAH9nzr/d8H3bZFwixOhTFXRfJ2Lq</div><div class="line">EOU1soc3AkEAyLBhvOOcBkPfxO4O8NgDnTDfnw4wUbFZ26b4NvsSLr0uXAzBTR1b</div><div class="line">wulem1aWKX7eefJOKaH1GpoV64UPO+/vzQJAZekjPctAzXe/avJfdRJ8ldAVvB+J</div><div class="line">WXiclnCZ7cxtv1imQG4ehGEfb1eggtSJyHu/bSj1fdjrCerKOqpfx0ygmwJAdYmQ</div><div class="line">BJ/NroGsGdtPFtF89GA+aBpYRFA5j4Kv1wue747PCwxRXge2yWYCibnhgnYSeJto</div><div class="line">GcwIEEd0VRb+AB2bdQJAEaemU2VPZDzA1GY3WKcz5fUpQXmfKJuQDGwuQ23Q4YSK</div><div class="line">V0ESooiPUJBBq1PuDeIz78iNciKqa/gknrMKQ8RQYw==</div><div class="line">-----END RSA PRIVATE KEY-----</div></pre></td></tr></table></figure>
+<h4 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl rsa -in prvtkey.pem -pubout -out rsa.pub.pem</div><div class="line">writing RSA key</div><div class="line">$ cat rsa.pub</div><div class="line">-----BEGIN PUBLIC KEY-----</div><div class="line">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCiC+OtqmFhIIj1hrSHzv+HxuPZ</div><div class="line">PK5Vez8ERDRRludiSzza6IVoySeUfSNxvUdjFBpGHxi9v0Zu0xuz48nnXsUY+3lh</div><div class="line">KaBY93ECQ9LW1EASwfio4RI+jGiLicyjbMAvPY2mp7tkqkHf6Cb40N9NHV4TbAwF</div><div class="line">H+CpMbDcxUq8lYugCwIDAQAB</div><div class="line">-----END PUBLIC KEY-----</div></pre></td></tr></table></figure>
+<h4 id="签名并HEX输出到控制台"><a href="#签名并HEX输出到控制台" class="headerlink" title="签名并HEX输出到控制台"></a>签名并HEX输出到控制台</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -hex -sign prvtkey.pem test.txt</div><div class="line">RSA-MD5(test.txt)= 7f6cb9deebfbee3770f58ca80dd6ae706ba26c703453ee88b907adb0e8b1f37e6de3a40b0107d0963d5e922d6c5d611598eba4410ad3ee8bcbe2016888b579956be8e31cb22154a5942a32c3d4d0d1447dd6fe19c541e53733d7a74cdad570b289001715c745313b7a33f998bbecfe9b6110be6910299c41fce216f8f7471d68</div></pre></td></tr></table></figure>
+<h4 id="签名保持到文件"><a href="#签名保持到文件" class="headerlink" title="签名保持到文件"></a>签名保持到文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -sign prvtkey.pem -out test.txt.sign test.txt</div><div class="line"></div><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ ls</div><div class="line">prvtkey.pem  test.txt  test.txt.sign</div><div class="line"></div><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ hexdump test.txt.sign</div><div class="line">0000000 6c7f deb9 fbeb 37ee f570 a88c d60d 70ae</div><div class="line">0000010 a26b 706c 5334 88ee 07b9 b0ad b1e8 7ef3</div><div class="line">0000020 e36d 0ba4 0701 96d0 5e3d 2d92 5d6c 1561</div><div class="line">0000030 eb98 41a4 d30a 8bee e2cb 6801 b588 9579</div><div class="line">0000040 e86b 1ce3 21b2 a554 2a94 c332 d0d4 44d1</div><div class="line">0000050 d67d 19fe 41c5 37e5 d733 4ca7 d5da b270</div><div class="line">0000060 0089 1517 45c7 3b31 337a 98f9 ecbb 9bfe</div><div class="line">0000070 1061 69be 2910 419c e2fc f816 47f7 681d</div><div class="line">0000080</div></pre></td></tr></table></figure>
+<h4 id="验签"><a href="#验签" class="headerlink" title="验签"></a>验签</h4><p>验证签名的过程实际上是对待验证文件新生成签名，然后与已有签名文件进行比对，如果比对结果相同，则验证通过。所以，在验证签名时不仅要给定待验证的签名文件，也要给定相同的算法，相同的私钥或公钥文件以及待签名文件以生成新签名信息。</p>
+<p>私钥验签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -prverify prvtkey.pem -signature test.txt.sign test.txt</div><div class="line">Verified OK</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -verify rsa.pub.pem -signature test.txt.sign test.txt</div><div class="line">Verified OK</div></pre></td></tr></table></figure>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/11/helloworld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/06/11/helloworld/" itemprop="url">
+                  HelloWorld
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-11T00:12:06+08:00">
+                2016-06-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Hello World<br><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdlib.h&gt;</span></span></div><div class="line"></div><div class="line"><span class="keyword">static</span>  __attribute__((constructor)) <span class="function"><span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="built_in">printf</span>(<span class="string">"Hello"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">static</span>  __attribute__((destructor)) <span class="function"><span class="keyword">void</span> <span class="title">after</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="built_in">printf</span>(<span class="string">" World!\n"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> args,<span class="keyword">char</span> ** argv)</span></span></div><div class="line">&#123;</div><div class="line"></div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="attribute"><a href="#attribute" class="headerlink" title="__attribute__"></a>__attribute__</h2><p><a href="https://gcc.gnu.org/onlinedocs/gcc-4.7.1/gcc/Function-Attributes.html" target="_blank" rel="external">https://gcc.gnu.org/onlinedocs/gcc-4.7.1/gcc/Function-Attributes.html</a></p>
+
+          
         
       
     </div>
@@ -621,7 +934,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/vioce/1467656815.jpg" rel="gallery_cj5uni1b7000m5gv9bap4z9yd"
+                 href="/img/vioce/1467656815.jpg" rel="gallery_cj6zuicmg000s40v9x47isuu4"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/vioce/1467656815.jpg" itemprop="contentUrl"/>
               </a>
@@ -808,8 +1121,7 @@
 
       
         
-          
-            <h1 id="视频水印"><a href="#视频水印" class="headerlink" title="视频水印"></a>视频水印</h1><p>早期的数字水印研究主要面向静态的数字图像对象。如今，作为互联网信息环境下的主要多媒体对象——视频数据越来越多地被考虑以数字水印技术手段来实现保护。</p>
+          <h1 id="视频水印"><a href="#视频水印" class="headerlink" title="视频水印"></a>视频水印</h1><p>早期的数字水印研究主要面向静态的数字图像对象。如今，作为互联网信息环境下的主要多媒体对象——视频数据越来越多地被考虑以数字水印技术手段来实现保护。</p>
 <p>视频水印可以理解为以视频为载体对象，加入可识别的数字信号或模式，且不影响视频数据的视觉质量，又能达到用于视频数据对象的版权和内容保护等目的技术手段。</p>
 <p>视频水印发展的两个主要源动力来自视频的版权保护问题和内容真实性和完整性保护问题。</p>
 <p>就目前所提出的应用情况来看，可包括以下范围：</p>
@@ -822,128 +1134,14 @@
 <li>标题和注释（indexing）</li>
 <li>安全的隐秘通信（covert communication）</li>
 </ol>
-<p>视频广播数字水印版权保护与追踪方案<br><img src="/img/video/1.png" alt="1"><br>视频指纹原理<br><img src="/img/video/2.png" alt="2"><br>视频点播系统中具有加指纹功能的机顶盒方案<br><img src="/img/video/3.png" alt="3"><br>数字视频录制设备的拷贝保护方案<br><img src="/img/video/4.png" alt="4"></p>
-<h2 id="数字视频特点"><a href="#数字视频特点" class="headerlink" title="数字视频特点"></a>数字视频特点</h2><ul>
-<li><p>视频水印是数字水印技术中的热点和难点。由于视频信息的复杂性，且在存储和传输过程中往往以压缩的形式出现，所以视频水印算法的设计也要考虑到视频信息的这些特点。</p>
-</li>
-<li><p>视频信息可分为原始视频数据和压缩视频数据两大类。一般可以这样认为，原始视频相当于时间轴上的连续图像序列；压缩后的视频数据则是以特定的压缩标准而存在的比特数据流。<br><img src="/img/video/5.png" alt="5"></p>
-</li>
-</ul>
-<p>为更好地研究视频水印算法，必须首先了解视频信息的特点。这里主要介绍视频信息的编码标准和视频时空掩蔽效应。</p>
-<h3 id="视频信息的编码标准"><a href="#视频信息的编码标准" class="headerlink" title="视频信息的编码标准"></a>视频信息的编码标准</h3><ul>
-<li><p>数字视频信号，是指由运动信息连接在一起的数字图像。由于原始数字视频信号数据量较大，在传输和存储遇到困难，所以视频压缩技术一直是多媒体技术工作者的研究对象。</p>
-</li>
-<li><p>压缩技术种类繁多，目前国际标准化组织的MPEG工作组和ITU-T分别对视频压缩技术进行了标准化，从而诞生了MPEG视频编码标准系列以及H.261和H.263等系列标准。由于基本原理一致，本文主要以MPEG编码标准为研究对象。</p>
-</li>
-<li><p>MPEG是活动图像专家组(Moving Picture Exports Group)的缩写，成立于1988年。目前MPEG已颁布了多个活动图像及其伴音编码的正式国际标准，MPEG-1和MPEG-2是其中的两个。</p>
-</li>
-<li>MPEG视频编码系统原理及关键技术概括地说，就是利用了图像中的两种特性：空间相关性和时间相关性。<br><img src="/img/video/6.png" alt="6"></li>
-<li>MPEG-1和2都采用了基于离散余弦变换/运动补偿(DCT/MC)的混合编码方案。这种编码方案使用到了三项基本技术。<ol>
-<li>第一项是运动补偿，这是因为视频中的动态图像的每一帧和它的前帧都很多相似之处，可以近似地从前一帧来构造。</li>
-<li>第二项技术是变换编码，它基于以下两个事实：一是人眼对高频可视信息不敏感；二是变换编码能够把图像的能量相对集中，从而可以用较少的数据位来表示图像。DCT的压缩技术可以减少空间域的冗余度，它不仅用于帧内压缩，也用于帧间残差数据的压缩；</li>
-<li>第三项技术是熵编码，在运动补偿和变换编码后，对得到的数据进行哈夫曼编码。</li>
-</ol>
-</li>
-<li><p>视频数据中，动态图像的每一帧有三种基本编码类型：</p>
-<ol>
-<li>I帧或称为帧内编码帧，这种图像不参考任何其他图像进行编码；<br><img src="/img/video/7.png" alt="7"></li>
-<li>P帧或称为前向预测编码帧，这种图像用到了前面的I或P帧的运动补偿；</li>
-<li>B帧或称为双向预测编码帧，这种图像编码时用到了来自前面和后面的工或P帧的运动补偿。</li>
-</ol>
-</li>
-<li><p>图像内的编码单元是宏块，在每个图像内，宏块按顺序编码，从左到右且从上到下。每个宏块由6个8x8大小的块组成：4个亮度块，一个Cr色度块和一个Cb色度块。编码的过程如下：</p>
-<ol>
-<li>第一步，为给定的宏块选择编码方式，这依赖于图像类型、局部区域中运动补偿的有效性和块中的信号特性。</li>
-<li>第二步，根据编码方式的不同，使用过去的参考图像或将来参考图像来估计运算运动补偿预测值，从当前宏块中的实际数据中减去这个预测值得到帧间预测误差信号。</li>
-<li>第三步，把误差信号分成8x8块，并对每个块完成离散余弦选变换(DCT)，对经过DCT变换后的DCT系数进行量化，对两维块按“之”形顺序进行扫描，以形成一维量化系数串。</li>
-<li>第四步，对每个宏块的附加信息和量化系数进行编码。最后对量化系数数据进行变长编码。最后得到的MPEG视频流分层语法表示如图<br><img src="/img/video/8.png" alt="8"></li>
-</ol>
-</li>
-<li>数字水印技术正是利用了人眼所感知的有限性，来达到隐藏信息的目的。视频水印的载体对象对于人眼是运动的画面，充分研究视频信息所具有的三维特性即在空间和时间上被人眼所感知的强弱和掩蔽效应，对于在提高水印鲁棒性和水印容量以及保证视觉质量等目标之间达到最佳结合至关重要。<ol>
-<li>在视频序列中，二维空间方向对于人眼的掩蔽效应可以借鉴静态图像的情况。这一类的研究工作相对要多一些，一般是纹理复杂或者是边缘区域的掩蔽效应要比平滑区域的要强，能量高的低频掩蔽系数要比能量低的高频系数掩蔽阈值要大。</li>
-<li>而在一维时间方向上的掩蔽效应（也称运动掩蔽效应），需要考虑人眼对于运动画面中不同性质的区域的敏感程度。一般来讲，运动剧烈的视频区域相比运动缓慢的视频区域有较好的掩蔽效果。此类研究工作仅局限于视频对象。</li>
-</ol>
-</li>
-<li>充分考虑视频的运动性质会大为改善加水印视频的视觉质量，在相关文献中还提出了利用视频运动信息构造水印的方法。随着对人类视觉系统的深入研究，视频信息对于人眼的掩蔽效应模型将会更为精确地建立，从而将会更好地视频水印的性能。</li>
-<li>视频水印具有广泛的价值，不同的使用目的其相应的要求也会有所不同，总体来说一般应具有：<ol>
-<li>鲁棒性（robustness）：指水印能经得起无意修改或恶意攻击。在保证数据对象的使用价值的前提下，无法擦去水印信号。用于认证的脆弱性水印例外，它要求对数据改动的敏感性。</li>
-<li>安全性(security)：即使水印算法已知，只要水印参数未知，未经授权不知密钥的情况下仍然无法解读水印或者甚至无法检测到水印的存在。使用密钥机制[ 44 ]是保证水印安全的途径。</li>
-<li>不可感知性（imperceptibility：）应包括视觉上不可感知和统计特性不可感知。可视水印例外。</li>
-<li>盲检测性（oblivious）：视频载体的容量之大，要保留所有的原始视频用作恢复水印不太符合实际应用视频系统。除了极少数的方案外，目前研究的主要是盲检测视频水印技术。</li>
-<li>可证明性（vindicability）：水印应具有能作为呈堂证供的有力工具的效应。</li>
-<li>低复杂度(low complexity)：作为实时动态的视频流，要求考虑到嵌入和检测算法的复杂度以及针对日用消费用户（如VOD接收用户群）的成本，要能保证视频水印方案的实用性。</li>
-</ol>
-</li>
-<li><p>从视频载体的特殊性角度出发，目前视频水印面临主要来自于以下三个方面的问题和挑战：</p>
-<ol>
-<li><p>经受各种非恶意的视频处理</p>
-<ul>
-<li><p>Photometric处理：这一类处理包含了所有导致视频帧像素发生了改变的正常操作，例如在视频数据传输过程中可能引入的噪声导致视频像素的细微改变。</p>
-<blockquote>
-<ul>
-<li>加噪, DA/AD 转换</li>
-<li>Gamma校正</li>
-<li>转码和视频格式转换</li>
-<li>帧内或帧间滤波</li>
-<li>色度采样 (4:4:4, 4:2:2, 4:2:0)</li>
-</ul>
-</blockquote>
-</li>
-<li><p>空间去同步（几何失真）：许多视频水印的嵌入和提取的对应关系是严格地基于视频信息空间结构上的同步的。</p>
-<blockquote>
-<ul>
-<li>显示比例调整 (4/3, 16/9, 2.11/1)</li>
-<li>空间分辨率改变 (NTSC, PAL, SECAM)</li>
-<li>位置抖动</li>
-<li>手持摄像机拍录</li>
-</ul>
-</blockquote>
-</li>
-<li><p>时间去同步：视频信息在时间方向上的去同步处理同样的会影响视频水印信号。</p>
-<blockquote>
-<ul>
-<li>帧率改变</li>
-</ul>
-</blockquote>
-</li>
-<li><p>视频编辑：随着视频制作和处理技术的发展，视频编缉已成为视频产品商业化档中必不可少的环节。</p>
-<blockquote>
-<ul>
-<li>剪切结合和剪切插入结合</li>
-<li>Fade-and-dissolve and wipe-and-matte</li>
-<li>图像覆盖（字幕、标识）</li>
-<li>Picture-in-Picture</li>
-</ul>
-<ol>
-<li>实时性<br>实时性要求是视频水印算法的特殊要求。对于静态图像水印方案中，水印的嵌入和检测滞后数秒钟是可以允许的。而在实际应用中，在视频中嵌入和检测水印信息一般不允许大量的耗时。视频信号以较高的帧速播放才能获取视觉上平滑的效果（约25帧每秒）。对于一个水印嵌入或者是检测来讲，也同样应该至少能够保持这种速度或者更快的帧率。</li>
-<li>共谋攻击</li>
-</ol>
-<ul>
-<li>共谋攻击是在静态图像水印算法中已经考虑到的一种特殊水印攻击。它是指一个恶意的使用者群通过共享他们的信息（如不同的加水印数据），来产生非法的内容（如不含水印的数据）。共谋攻击将在两种截然不同的情况下有成功的可能性。</li>
-</ul>
-<ul>
-<li>共谋攻击类型I：相同的水印嵌入到不同的数据的不同拷贝中。共谋者们能够通过统计平均每个单独加水印数据的方法从中估计出水印信息。这就意味着只须减去水印就可以得到不含水印的数据对象。</li>
-<li>共谋攻击类型II：不同的水印嵌入到相同数据的不同拷贝中。共谋者们只须叠加手中大量的拷贝，就能统计平均出不含水印的数据对象。这是因为统计独立的水印信息的平均值趋于0。</li>
-</ul>
-</blockquote>
-<ul>
-<li><p>共谋攻击问题在视频水印中显得更为重要，因为视频相比静态图像来讲几乎多了一倍的共谋风险。在视频水印算法研究中，需要考虑两种共谋攻击。它们分别是视频间共谋和视频内共谋。</p>
-<blockquote>
-<ul>
-<li>视频间共谋：是指一个拥有加水印视频产品的使用者群互相勾结以获得一个不加水印的视频对象。例如，在视频版权保护应用中，相同的版权水印被加入到该版权所有的不同的视频产品，因此遭受共谋攻击类型I的风险较大；而在数字指纹应用中，会在相同视频产品中加入的水印来区别不同的用户，因此遭受共谋攻击类型II的风险较大。视频间共谋要求拥有大量加入相同水印的不同视频产品拷贝，或者是加入不同水印的相同视频产品的拷贝。目的是获得不含水印的视频内容</li>
-<li>视频内共谋：这是视频水印对象中才会出现的情况。我们知道，视频序列可以看作一个连续的静态图像序列。如果相同的视频水印加入到每一视频帧，在同一视频内遭受共谋攻击类型I的风险也较大，这是因为视频内存在大量的内容不同的视频帧（可从场景运动剧烈的视频中获取）。另一方面，如果不同的水印加入连续的视频帧中，则遭受共谋攻击类型II的风险也会较大。这是因为连续的视频帧具有高度相似性，几乎可以看作是相同的（尤其是在静止场景中）。因此，视频内共谋是设计视频水印时要考虑到的特殊情况。<h3 id="视频水印的分类"><a href="#视频水印的分类" class="headerlink" title="视频水印的分类"></a>视频水印的分类</h3><img src="/img/video/9.png" alt="9"><br><img src="/img/video/11.png" alt="11"><br><img src="/img/video/10.png" alt="10"><br><img src="/img/video/12.png" alt="12"><br><img src="/img/video/13.png" alt="13"><br><img src="/img/video/14.png" alt="14"><br><img src="/img/video/16.png" alt="16"><br><img src="/img/video/15.png" alt="15"><br><img src="/img/video/17.png" alt="17"><br><img src="/img/video/18.png" alt="18"><br><img src="/img/video/19.png" alt="19"><br><img src="/img/video/20.png" alt="20"><br><img src="/img/video/22-1.png" alt="22-1"><br><img src="/img/video/21.png" alt="21"><br><img src="/img/video/22-2.png" alt="22-2"><br><img src="/img/video/23.png" alt="23"><br><img src="/img/video/24.png" alt="24"><br><img src="/img/video/25.png" alt="25"><br><img src="/img/video/26.png" alt="26"><br><img src="/img/video/27.png" alt="27"><br><img src="/img/video/DEW.png" alt="DEW"><br><img src="/img/video/MPEG-VLC.png" alt="MPEG-VLC"></li>
-</ul>
-</blockquote>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ol>
-</li>
-</ul>
-
-          
+<p>视频广播数字水印版权保护与追踪方案<br><img src="/img/video/1.png" alt="1"><br>视频指纹原理<br><img src="/img/video/2.png" alt="2"><br>视频点播系统中具有加指纹功能的机顶盒方案<br><img src="/img/video/3.png" alt="3"><br>数字视频录制设备的拷贝保护方案<br><img src="/img/video/4.png" alt="4"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2016/01/06/视频水印/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1060,23 +1258,15 @@
 
       
         
-          
-            <h2 id="阿拉斯加犬：5000-8000"><a href="#阿拉斯加犬：5000-8000" class="headerlink" title="阿拉斯加犬：5000-8000"></a>阿拉斯加犬：5000-8000</h2><p><img src="/img/dog/psu.jpg" alt="psu"></p>
-<h2 id="巴吉度-500-1500"><a href="#巴吉度-500-1500" class="headerlink" title="巴吉度:500-1500"></a>巴吉度:500-1500</h2><p><img src="/img/dog/3.jpg" alt="3"></p>
-<h2 id="斑点：500-1500"><a href="#斑点：500-1500" class="headerlink" title="斑点：500-1500"></a>斑点：500-1500</h2><p><img src="/img/dog/4.jpg" alt="4"></p>
-<h2 id="比格犬：600-1500"><a href="#比格犬：600-1500" class="headerlink" title="比格犬：600-1500"></a>比格犬：600-1500</h2><p><img src="/img/dog/5.jpg" alt="5"></p>
-<h2 id="边境牧羊犬：1500-5000"><a href="#边境牧羊犬：1500-5000" class="headerlink" title="边境牧羊犬：1500-5000"></a>边境牧羊犬：1500-5000</h2><p><img src="/img/dog/7.jpg" alt="7"></p>
-<h2 id="藏獒：从百到百万，几乎没有纯种的，猛的都能和狮子匹敌了"><a href="#藏獒：从百到百万，几乎没有纯种的，猛的都能和狮子匹敌了" class="headerlink" title="藏獒：从百到百万，几乎没有纯种的，猛的都能和狮子匹敌了"></a>藏獒：从百到百万，几乎没有纯种的，猛的都能和狮子匹敌了</h2><p><img src="/img/dog/9-1.jpg" alt="9-1"><br><img src="/img/dog/9-2.jpg" alt="9-2"></p>
-<h2 id="德牧羊犬：2000-5000，纯种上万"><a href="#德牧羊犬：2000-5000，纯种上万" class="headerlink" title="德牧羊犬：2000-5000，纯种上万"></a>德牧羊犬：2000-5000，纯种上万</h2><p><img src="/img/dog/10.jpg" alt="10"></p>
-<h2 id="杜宾：美系宠物：2千到3千；赛级血统：3千到5千；冠军后代：5千到1万5。"><a href="#杜宾：美系宠物：2千到3千；赛级血统：3千到5千；冠军后代：5千到1万5。" class="headerlink" title="杜宾：美系宠物：2千到3千；赛级血统：3千到5千；冠军后代：5千到1万5。"></a>杜宾：美系宠物：2千到3千；赛级血统：3千到5千；冠军后代：5千到1万5。</h2><p><img src="/img/dog/11.jpg" alt="11"></p>
-<h2 id="哈士奇：1500-3000"><a href="#哈士奇：1500-3000" class="headerlink" title="哈士奇：1500-3000"></a>哈士奇：1500-3000</h2><p><img src="/img/dog/12.jpg" alt="12"></p>
-<h2 id="金毛：1000-3000"><a href="#金毛：1000-3000" class="headerlink" title="金毛：1000-3000"></a>金毛：1000-3000</h2><p><img src="/img/dog/13.jpg" alt="13"></p>
-<h2 id="秋田犬：1000-10000"><a href="#秋田犬：1000-10000" class="headerlink" title="秋田犬：1000-10000"></a>秋田犬：1000-10000</h2><p><img src="/img/dog/14.jpg" alt="14"></p>
-<h2 id="日本银狐：1000-3000"><a href="#日本银狐：1000-3000" class="headerlink" title="日本银狐：1000-3000"></a>日本银狐：1000-3000</h2><p><img src="/img/dog/15.jpg" alt="15"></p>
-<h2 id="萨摩耶：2000-5000"><a href="#萨摩耶：2000-5000" class="headerlink" title="萨摩耶：2000-5000"></a>萨摩耶：2000-5000</h2><p><img src="/img/dog/16.jpg" alt="16"></p>
-<h2 id="苏牧：1800-3000"><a href="#苏牧：1800-3000" class="headerlink" title="苏牧：1800-3000"></a>苏牧：1800-3000</h2><p><img src="/img/dog/17.jpg" alt="17"></p>
-
-          
+          <h2 id="阿拉斯加犬：5000-8000"><a href="#阿拉斯加犬：5000-8000" class="headerlink" title="阿拉斯加犬：5000-8000"></a>阿拉斯加犬：5000-8000</h2><p><img src="/img/dog/psu.jpg" alt="psu"></p>
+<h2 id="巴吉度-500-1500"><a href="#巴吉度-500-1500" class="headerlink" title="巴吉度:500-1500"></a>巴吉度:500-1500</h2><p><img src="/img/dog/3.jpg" alt="3"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2013/08/04/各种狗及身价/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1158,7 +1348,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1171,7 +1361,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

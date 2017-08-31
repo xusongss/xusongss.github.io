@@ -253,7 +253,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/02/郭老师简历/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/广域网视频测试地址/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="徐松">
@@ -275,8 +275,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/08/02/郭老师简历/" itemprop="url">
-                  郭老师简历
+                <a class="post-title-link" href="/2017/05/21/广域网视频测试地址/" itemprop="url">
+                  广域网视频测试地址
                 </a>
               
             
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-02T14:07:03+08:00">
-                2017-08-02
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T20:47:11+08:00">
+                2017-05-21
               </time>
             
 
@@ -325,36 +325,13 @@
 
       
       
-        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
-          
-          
-            <div class="post-gallery-row">
-              <a class="post-gallery-img fancybox"
-                 href="/img/guoli/education.png" rel="gallery_cj5uni1b6000l5gv99nwiwl22"
-                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
-                <img src="/img/guoli/education.png" itemprop="contentUrl"/>
-              </a>
-            
-          
-
-          
-          </div>
-        </div>
-      
 
       
         
-          <h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><ul>
-<li>姓名 郭丽</li>
-<li>电话 18618205597</li>
-<li>邮箱 764404329@qq.com
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/02/郭老师简历/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <p> rtsp://rtsp-v3-spbtv.msk.spbtv.com/spbtv_v3_1/214_110.sdp</p>
+
+          
         
       
     </div>
@@ -471,14 +448,14 @@
 
       
         
-          
-            <h1 id="event"><a href="#event" class="headerlink" title="event"></a>event</h1><p>xevent.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">class XEvent</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	virtual void dump() = 0;</div><div class="line">	virtual void free() = 0;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h1 id="EventListener"><a href="#EventListener" class="headerlink" title="EventListener"></a>EventListener</h1><p>xeventlistener.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">class XEvent;</div><div class="line">class XEventListener &#123;</div><div class="line">public:</div><div class="line">	virtual int onEvent(XEvent *evt) = 0;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">template&lt;class Handler, class filter = XEvent&gt;</div><div class="line">class ClassEventListener : virtual public XEventListener</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	typedef int (Handler::*__XHandlerFunc)(XEvent *evt);</div><div class="line">	ClassEventListener(Handler *ptr, __XHandlerFunc func) :</div><div class="line">		handler(ptr),</div><div class="line">		func_(func)&#123;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	virtual int onEvent(XEvent *evt)</div><div class="line">	&#123;</div><div class="line">		if (dynamic_cast&lt;filter*&gt;(evt))&#123;</div><div class="line">			if (handler &amp;&amp; func_)</div><div class="line">				return (handler-&gt;*func_)(evt);</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		return 0;</div><div class="line">	&#125;</div><div class="line">	~ClassEventListener()&#123;&#125;;</div><div class="line">private:</div><div class="line">	Handler *handler;</div><div class="line">	__XHandlerFunc func_;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h1 id="EventDispatcher"><a href="#EventDispatcher" class="headerlink" title="EventDispatcher"></a>EventDispatcher</h1><p>xeventdispatcher.h<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">#include &lt;list&gt;</div><div class="line">class XEvent;</div><div class="line">class XEventListener;</div><div class="line">class XEventDispatcher</div><div class="line">&#123;</div><div class="line">public:</div><div class="line">	//添加监听器</div><div class="line">	virtual void addEventListener(XEventListener* listener, int fixedPriority = -1) = 0;</div><div class="line"></div><div class="line">	//删除指定监听器</div><div class="line">	virtual void removeEventListener(XEventListener* listener) = 0;</div><div class="line"></div><div class="line">	//启用事件分发器</div><div class="line">	virtual void setEnabled(bool isEnabled) = 0;</div><div class="line"></div><div class="line">	virtual bool isEnabled() const = 0;</div><div class="line">	//手动派发自定义事件</div><div class="line">	virtual void dispatchEvent(XEvent* event) = 0;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<h1 id="test"><a href="#test" class="headerlink" title="test"></a>test</h1><p>main.cpp</p>
-<pre><code>
-</code></pre>
-          
+          <h1 id="event"><a href="#event" class="headerlink" title="event"></a>event</h1><p>xevent.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XEvent</span></div><div class="line">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">dump</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/C-事件分发器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -847,7 +824,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/doc/lwip/Design_of_LwIP_Integration.png" rel="gallery_cj5uni1af00095gv95m70x9zn"
+                 href="/doc/lwip/Design_of_LwIP_Integration.png" rel="gallery_cj6zuiclz000b40v9mz12heoz"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/doc/lwip/Design_of_LwIP_Integration.png" itemprop="contentUrl"/>
               </a>
@@ -987,7 +964,7 @@
           
             <div class="post-gallery-row">
               <a class="post-gallery-img fancybox"
-                 href="/img/cygwin/Cygwin_logo1.png" rel="gallery_cj5uni1a500065gv9fdq9dk54"
+                 href="/img/cygwin/Cygwin_logo1.png" rel="gallery_cj6zuicll000740v9nza6m56f"
                  itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
                 <img src="/img/cygwin/Cygwin_logo1.png" itemprop="contentUrl"/>
               </a>
@@ -1595,7 +1572,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">25</span>
+                <span class="site-state-item-count">27</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1608,7 +1585,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>

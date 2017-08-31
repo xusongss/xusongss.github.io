@@ -1,0 +1,781 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="linux,openssl," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="数字签名的过程是计算出数字摘要，然后使用私钥对数字摘要进行签名，而摘要是使用md5、sha512等算法计算得出 基础知识Hash 算法Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。 例如计算一段话“hello blockchain world, this">
+<meta name="keywords" content="linux,openssl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openssl dgst">
+<meta property="og:url" content="http://yoursite.com/2016/06/12/openssl-签名/index.html">
+<meta property="og:site_name" content="绿色回忆">
+<meta property="og:description" content="数字签名的过程是计算出数字摘要，然后使用私钥对数字摘要进行签名，而摘要是使用md5、sha512等算法计算得出 基础知识Hash 算法Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。 例如计算一段话“hello blockchain world, this">
+<meta property="og:updated_time" content="2017-08-31T02:34:15.623Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="openssl dgst">
+<meta name="twitter:description" content="数字签名的过程是计算出数字摘要，然后使用私钥对数字摘要进行签名，而摘要是使用md5、sha512等算法计算得出 基础知识Hash 算法Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。 例如计算一段话“hello blockchain world, this">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/12/openssl-签名/"/>
+
+
+
+
+
+  <title>openssl dgst | 绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">绿色回忆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序猿 攻城狮</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/12/openssl-签名/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                openssl dgst
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-12T00:13:06+08:00">
+                2016-06-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>数字签名的过程是计算出数字摘要，然后使用私钥对数字摘要进行签名，而摘要是使用md5、sha512等算法计算得出</p>
+<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><h3 id="Hash-算法"><a href="#Hash-算法" class="headerlink" title="Hash 算法"></a>Hash 算法</h3><p>Hash （哈希或散列）算法是信息技术领域非常基础也非常重要的技术。它能任意长度的二进制值（明文）映射为较短的固定长度的二进制值（Hash 值），并且不同的明文很难映射为相同的 Hash 值。</p>
+<p>例如计算一段话“hello blockchain world, this is yeasy@github”的 MD5 hash 值为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ echo &quot;hello blockchain world, this is yeasy@github&quot;|md5sum</div><div class="line">89242549883a2ef85dc81b90fb606046</div></pre></td></tr></table></figure></p>
+<p>这意味着我们只要对某文件进行 MD5 Hash 计算，得到结果为 89242549883a2ef85dc81b90fb606046，这就说明文件内容极大概率上就是 “hello blockchain world, this is yeasy@github”。可见，Hash 的核心思想十分类似于基于内容的编址或命名。</p>
+<p>注：hash 值在应用中又被称为指纹（fingerprint）、摘要（digest）。<br>注：MD5 是一个经典的 hash 算法，其和 SHA-1 算法都已被 证明 安全性不足应用于商业场景。</p>
+<p>一个优秀的 hash 算法，将能实现：</p>
+<ul>
+<li>正向快速：给定明文和 hash 算法，在有限时间和有限资源内能计算出 hash 值。</li>
+<li>逆向困难：给定（若干） hash 值，在有限时间内很难（基本不可能）逆推出明文。</li>
+<li>输入敏感：原始输入信息修改一点信息，产生的 hash 值看起来应该都有很大不同。</li>
+<li>冲突避免：很难找到两段内容不同的明文，使得它们的 hash 值一致（发生冲突）。</li>
+<li>冲突避免有时候又被称为“抗碰撞性”。如果给定一个明文前提下，无法找到碰撞的另一个明文，称为“弱抗碰撞性”；如果无法找到任意两个明文，发生碰撞，则称算法具有“强抗碰撞性”。</li>
+</ul>
+<p>很多场景下，也要求对于任意长的输入内容，输出定长的 hash 结果。</p>
+<h3 id="流行的算法"><a href="#流行的算法" class="headerlink" title="流行的算法"></a>流行的算法</h3><p>目前流行的 Hash 算法包括 MD5、SHA-1 和 SHA-2。</p>
+<ul>
+<li>MD4（RFC 1320）是 MIT 的 Ronald L. Rivest 在 1990 年设计的，MD 是 Message Digest 的缩写。其输出为 128 位。MD4 已证明不够安全。</li>
+<li>MD5（RFC 1321）是 Rivest 于1991年对 MD4 的改进版本。它对输入仍以 512 位分组，其输出是 128 位。MD5 比 MD4 复杂，并且计算速度要慢一点，更安全一些。MD5 已被证明不具备“强抗碰撞性”。</li>
+<li>SHA （Secure Hash Algorithm）是一个 Hash 函数族，由 NIST（National Institute of Standards and Technology）于 1993 年发布第一个算法。目前知名的 SHA-1 在 1995 年面世，它的输出为长度 160 位的 hash 值，因此抗穷举性更好。SHA-1 设计时基于和 MD4 相同原理，并且模仿了该算法。SHA-1 已被证明不具备“强抗碰撞性”。</li>
+</ul>
+<h3 id="性能"><a href="#性能" class="headerlink" title="性能"></a>性能</h3><p>一般的，Hash 算法都是算力敏感型，意味着计算资源是瓶颈，主频越高的 CPU 进行 Hash 的速度也越快。也有一些 Hash 算法不是算力敏感的，例如 scrypt，需要大量的内存资源，节点不能通过简单的增加更多 CPU 来获得 hash 性能的提升。</p>
+<h3 id="数字摘要"><a href="#数字摘要" class="headerlink" title="数字摘要"></a>数字摘要</h3><p>顾名思义，数字摘要是对数字内容进行 Hash 运算，获取唯一的摘要值来指代原始数字内容。<br>数字摘要是解决确保内容没被篡改过的问题（利用 Hash 函数的抗碰撞性特点）。<br>数字摘要是 Hash 算法最重要的一个用途。在网络上下载软件或文件时，往往同时会提供一个数字摘要值，用户下载下来原始文件可以自行进行计算，并同提供的摘要值进行比对，以确保内容没有被修改过。</p>
+<h2 id="openssl-dgst-应用"><a href="#openssl-dgst-应用" class="headerlink" title="openssl dgst 应用"></a>openssl dgst 应用</h2><p>openssl dgst [-md5|-sha1|…] [-hex | -binary] [-out filename] [-sign filename] [-passin arg] [-verify filename] [-prverify filename] [-signature filename] [file…]</p>
+<p>选项说明：</p>
+<ul>
+<li><p>file…：指定待签名的文件。</p>
+</li>
+<li><p>-hex：以hex格式输出数字摘要。如果不以-hex显示，签名或验证签名时很可能乱码。</p>
+</li>
+<li><p>-binary：以二进制格式输出数字摘要，或以二进制格式进行数字签名。这是默认格式。</p>
+</li>
+<li><p>-out filename：指定输出文件，若不指定则输出到标准输出。</p>
+</li>
+<li><p>-sign filename：使用filename中的私钥对file数字签名。</p>
+</li>
+<li><p>-signature filename：指定待验证的签名文件。</p>
+</li>
+<li><p>-verify filename：使用filename中的公钥验证签名。</p>
+</li>
+<li><p>-prverify filename：使用filename中的私钥验证签名。</p>
+</li>
+<li><p>-passin arg：传递解密密码。若验证签名时实用的公钥或私钥文件是被加密过的，则需要传递密码来解密。</p>
+</li>
+</ul>
+<p>支持如下几种单向加密算法，即签名时使用的hash算法。</p>
+<p>-md4            to use the md4 message digest algorithm</p>
+<p>-md5            to use the md5 message digest algorithm</p>
+<p>-ripemd160      to use the ripemd160 message digest algorithm</p>
+<p>-sha            to use the sha message digest algorithm</p>
+<p>-sha1           to use the sha1 message digest algorithm</p>
+<p>-sha224         to use the sha224 message digest algorithm</p>
+<p>-sha256         to use the sha256 message digest algorithm</p>
+<p>-sha384         to use the sha384 message digest algorithm</p>
+<p>-sha512         to use the sha512 message digest algorithm</p>
+<p>-whirlpool      to use the whirlpool message digest algorithm</p>
+<h3 id="生产摘要信息"><a href="#生产摘要信息" class="headerlink" title="生产摘要信息"></a>生产摘要信息</h3><ol>
+<li><p>随机生成一段摘要信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~</div><div class="line"><span class="meta">$</span> echo 123456 | openssl md5</div><div class="line">(stdin)= f447b20a7fcbf53a5d5be013ea0b15af</div></pre></td></tr></table></figure>
+</li>
+<li><p>对文件生成MD5摘要信息</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/openssl</div><div class="line"><span class="meta">$</span> openssl dgst -md5 test.txt</div><div class="line">MD5(test.txt)= f447b20a7fcbf53a5d5be013ea0b15af</div></pre></td></tr></table></figure>
+</li>
+<li><p>对文件生成sha512</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/openssl</div><div class="line"><span class="meta">$</span> openssl dgst -sha512 test.txt</div><div class="line">SHA512(test.txt)= 1caced6fca2237153d65adfb0f3dbe33b9375e9eb6df17c379f80cd37deb6e6a70159c7e898576db568b871ca1c2ffd1a2cc3205f1b50be5396096335fc29c40</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="签名"><a href="#签名" class="headerlink" title="签名"></a>签名</h3><h4 id="生成私钥"><a href="#生成私钥" class="headerlink" title="生成私钥"></a>生成私钥</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line"><span class="meta">$</span> openssl genrsa -out prvtkey.pem 1024/2038</div><div class="line">Generating RSA private key, 1024 bit long modulus</div><div class="line">...............++++++</div><div class="line">.....++++++</div><div class="line">e is 65537 (0x10001)</div><div class="line"><span class="meta"></span></div><div class="line">$ cat prvtkey.pem</div><div class="line">-----BEGIN RSA PRIVATE KEY-----</div><div class="line">MIICWwIBAAKBgQCiC+OtqmFhIIj1hrSHzv+HxuPZPK5Vez8ERDRRludiSzza6IVo</div><div class="line">ySeUfSNxvUdjFBpGHxi9v0Zu0xuz48nnXsUY+3lhKaBY93ECQ9LW1EASwfio4RI+</div><div class="line">jGiLicyjbMAvPY2mp7tkqkHf6Cb40N9NHV4TbAwFH+CpMbDcxUq8lYugCwIDAQAB</div><div class="line">AoGAR+QEb2B+cUuw11SatQGlpgQbw53DLhNOgsMLfwL2xkngxrGPtkw/rgXSerxh</div><div class="line">dlhNy7wyCsRYKASqbqVpRqdpwxXYLCXBLhIjLbhPAoWC+bXMtNd6fnotrH0PsE98</div><div class="line">yLtyX3ULU0kLn7q2+lEQLIxqu9NHqaEDRMyCfRC0YHJmF5kCQQDOtRTSM3j3VCQu</div><div class="line">kdmJkQsqdvPK1LZlOVLHpzOzYy82G/sYpsFDAH9nzr/d8H3bZFwixOhTFXRfJ2Lq</div><div class="line">EOU1soc3AkEAyLBhvOOcBkPfxO4O8NgDnTDfnw4wUbFZ26b4NvsSLr0uXAzBTR1b</div><div class="line">wulem1aWKX7eefJOKaH1GpoV64UPO+/vzQJAZekjPctAzXe/avJfdRJ8ldAVvB+J</div><div class="line">WXiclnCZ7cxtv1imQG4ehGEfb1eggtSJyHu/bSj1fdjrCerKOqpfx0ygmwJAdYmQ</div><div class="line">BJ/NroGsGdtPFtF89GA+aBpYRFA5j4Kv1wue747PCwxRXge2yWYCibnhgnYSeJto</div><div class="line">GcwIEEd0VRb+AB2bdQJAEaemU2VPZDzA1GY3WKcz5fUpQXmfKJuQDGwuQ23Q4YSK</div><div class="line">V0ESooiPUJBBq1PuDeIz78iNciKqa/gknrMKQ8RQYw==</div><div class="line">-----END RSA PRIVATE KEY-----</div></pre></td></tr></table></figure>
+<h4 id="生成公钥"><a href="#生成公钥" class="headerlink" title="生成公钥"></a>生成公钥</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl rsa -in prvtkey.pem -pubout -out rsa.pub.pem</div><div class="line">writing RSA key</div><div class="line">$ cat rsa.pub</div><div class="line">-----BEGIN PUBLIC KEY-----</div><div class="line">MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCiC+OtqmFhIIj1hrSHzv+HxuPZ</div><div class="line">PK5Vez8ERDRRludiSzza6IVoySeUfSNxvUdjFBpGHxi9v0Zu0xuz48nnXsUY+3lh</div><div class="line">KaBY93ECQ9LW1EASwfio4RI+jGiLicyjbMAvPY2mp7tkqkHf6Cb40N9NHV4TbAwF</div><div class="line">H+CpMbDcxUq8lYugCwIDAQAB</div><div class="line">-----END PUBLIC KEY-----</div></pre></td></tr></table></figure>
+<h4 id="签名并HEX输出到控制台"><a href="#签名并HEX输出到控制台" class="headerlink" title="签名并HEX输出到控制台"></a>签名并HEX输出到控制台</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -hex -sign prvtkey.pem test.txt</div><div class="line">RSA-MD5(test.txt)= 7f6cb9deebfbee3770f58ca80dd6ae706ba26c703453ee88b907adb0e8b1f37e6de3a40b0107d0963d5e922d6c5d611598eba4410ad3ee8bcbe2016888b579956be8e31cb22154a5942a32c3d4d0d1447dd6fe19c541e53733d7a74cdad570b289001715c745313b7a33f998bbecfe9b6110be6910299c41fce216f8f7471d68</div></pre></td></tr></table></figure>
+<h4 id="签名保持到文件"><a href="#签名保持到文件" class="headerlink" title="签名保持到文件"></a>签名保持到文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -sign prvtkey.pem -out test.txt.sign test.txt</div><div class="line"></div><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ ls</div><div class="line">prvtkey.pem  test.txt  test.txt.sign</div><div class="line"></div><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ hexdump test.txt.sign</div><div class="line">0000000 6c7f deb9 fbeb 37ee f570 a88c d60d 70ae</div><div class="line">0000010 a26b 706c 5334 88ee 07b9 b0ad b1e8 7ef3</div><div class="line">0000020 e36d 0ba4 0701 96d0 5e3d 2d92 5d6c 1561</div><div class="line">0000030 eb98 41a4 d30a 8bee e2cb 6801 b588 9579</div><div class="line">0000040 e86b 1ce3 21b2 a554 2a94 c332 d0d4 44d1</div><div class="line">0000050 d67d 19fe 41c5 37e5 d733 4ca7 d5da b270</div><div class="line">0000060 0089 1517 45c7 3b31 337a 98f9 ecbb 9bfe</div><div class="line">0000070 1061 69be 2910 419c e2fc f816 47f7 681d</div><div class="line">0000080</div></pre></td></tr></table></figure>
+<h4 id="验签"><a href="#验签" class="headerlink" title="验签"></a>验签</h4><p>验证签名的过程实际上是对待验证文件新生成签名，然后与已有签名文件进行比对，如果比对结果相同，则验证通过。所以，在验证签名时不仅要给定待验证的签名文件，也要给定相同的算法，相同的私钥或公钥文件以及待签名文件以生成新签名信息。</p>
+<p>私钥验签<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -prverify prvtkey.pem -signature test.txt.sign test.txt</div><div class="line">Verified OK</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">xuss@DESKTOP-C8O1AF2 ~/</div><div class="line">$ openssl dgst -md5 -verify rsa.pub.pem -signature test.txt.sign test.txt</div><div class="line">Verified OK</div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/linux/" rel="tag"># linux</a>
+          
+            <a href="/tags/openssl/" rel="tag"># openssl</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/28/爱因斯坦与广义相对论/" rel="next" title="爱因斯坦与广义相对论">
+                <i class="fa fa-chevron-left"></i> 爱因斯坦与广义相对论
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/11/helloworld/" rel="prev" title="HelloWorld">
+                HelloWorld <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="徐松" />
+          <p class="site-author-name" itemprop="name">徐松</p>
+           
+              <p class="site-description motion-element" itemprop="description">天黑请闭眼</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础知识"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hash-算法"><span class="nav-number">1.1.</span> <span class="nav-text">Hash 算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流行的算法"><span class="nav-number">1.2.</span> <span class="nav-text">流行的算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#性能"><span class="nav-number">1.3.</span> <span class="nav-text">性能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数字摘要"><span class="nav-number">1.4.</span> <span class="nav-text">数字摘要</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#openssl-dgst-应用"><span class="nav-number">2.</span> <span class="nav-text">openssl dgst 应用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生产摘要信息"><span class="nav-number">2.1.</span> <span class="nav-text">生产摘要信息</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#签名"><span class="nav-number">2.2.</span> <span class="nav-text">签名</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成私钥"><span class="nav-number">2.2.1.</span> <span class="nav-text">生成私钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#生成公钥"><span class="nav-number">2.2.2.</span> <span class="nav-text">生成公钥</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#签名并HEX输出到控制台"><span class="nav-number">2.2.3.</span> <span class="nav-text">签名并HEX输出到控制台</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#签名保持到文件"><span class="nav-number">2.2.4.</span> <span class="nav-text">签名保持到文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#验签"><span class="nav-number">2.2.5.</span> <span class="nav-text">验签</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">徐松</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
