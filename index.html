@@ -1,94 +1,1903 @@
-<!DOCTYPE html>
-<html lang="zh">
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>信封动画示例</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
-            margin: 0;
-        }
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
-        .envelope {
-            width: 200px;
-            height: 100px;
-            background-color: #ffffff;
-            border: 2px solid #000;
-            position: relative;
-            cursor: pointer;
-            transition: all 1s;
-        }
 
-        .envelope:before, .envelope:after {
-            content: "";
-            position: absolute;
-            background-color: #ffffff;
-            border: 2px solid #000;
-            width: 141px;
-            height: 100px;
-            z-index: 2;
-            transition: all 1s;
-        }
 
-        .envelope:before {
-            border-bottom: none;
-            transform: rotate(45deg);
-            top: -20px;
-            left: 30px;
-        }
 
-        .envelope:after {
-            border-top: none;
-            transform: rotate(-45deg);
-            bottom: -20px;
-            right: 30px;
-        }
 
-        .envelope.open {
-            height: auto;
-            min-height: 300px;
-        }
 
-        .envelope.open:before {
-            top: -300px;
-        }
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
-        .envelope.open:after {
-            bottom: -300px;
-        }
 
-        .letter {
-            display: none;
-            padding: 1rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            position: relative;
-            z-index: 1;
-        }
 
-        .envelope.open .letter {
-            display: block;
-        }
-    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="天黑请闭眼">
+<meta property="og:type" content="website">
+<meta property="og:title" content="绿色回忆">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="绿色回忆">
+<meta property="og:description" content="天黑请闭眼">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="绿色回忆">
+<meta name="twitter:description" content="天黑请闭眼">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>绿色回忆</title><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
-<body>
-    <div class="envelope" onclick="toggleEnvelope()">
-        <div class="letter">
-            这是信封中的一封信。当您点击信封时，信封将展开并显示信件的内容。您可以在这里添加任何您喜欢的文本。
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">绿色回忆</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">程序猿 攻城狮</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/01/厘清真实世界的分布式系统/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/09/01/厘清真实世界的分布式系统/" itemprop="url">
+                  真实世界的分布式系统
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-01T14:00:00+08:00">
+                2017-09-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
         </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="真实世界的分布式系统"><a href="#真实世界的分布式系统" class="headerlink" title="真实世界的分布式系统"></a>真实世界的分布式系统</h1><p>本文从一个实践者的角度，首先介绍了分布式系统的一些理论结果，例如 FLP 不可能性和 CAP 定理等；然后介绍了构建实际分布式系统最重要的一个原则：端到端；最后讨论了实际系统经常用到的协调服务。</p>
+<blockquote>
+<p>求知之路漫长哟，不知何处是尽头。我们一路求索，终于有迹可循。这为我们带来了希望，驱散了恐惧。<br>译者注：「Down the Rabbit Hole」是一句俗语，源自小说《爱丽丝漫游仙境》（Alice’s Adventures in Wonderland），比喻对未知的探索。</p>
+</blockquote>
+<p>分布式系统领域的文献虽然多，我作为一名实践者，却发现如果你不是科班出身，就不知道怎样入门或者如何综合这么多的知识。这篇文章提供了一个不是那么学术的思路，帮助你理解分布式系统的各种设计思想。也就是说，本文没提出什么新的设计思想，而是构建了一个框架，人们可以按照这个框架去研究一些有影响的设计思想。文中列出的参考文献，是研究分布式系统的绝佳起点。特别是，我们将审视几个形式化结果，以及不那么形式化的一些设计原则，这是我们讨论分布式系统设计的基础。</p>
+<p>这是你最后的机会，一旦选定就没得回头了。要是分布式系统领域也有红药丸/蓝药丸就好了。分布式系统是如此复杂，我们彻底搞清楚它吧。</p>
+<blockquote>
+<p>译者注：这一段的开头引用《黑客帝国》（The Matrix）中 Neo 的话。选择红药丸，回到现实世界，有可能是痛苦的；选择蓝药丸，继续生活在幻想的幸福当中。这里的含义似乎是你是选择理解真实的分布式系统（过程可能很痛苦），还是继续保持无知的幸福呢？</p>
+</blockquote>
+<h2 id="指导原则"><a href="#指导原则" class="headerlink" title="指导原则"></a>指导原则</h2><p>为了厘清分布式系统的设计，很重要的一点是明确立论的指导原则或者说是定理，其中最基础的一个可能是「两将军问题」，首先由 Akkoyunlu 等人在论文<a href="http://dsg.tuwien.ac.at/linksites/teaching/courses/AdvancedDistributedSystems/download/1975_Akkoyunlu,%20Ekanadham,%20Huber_Some%20constraints%20and%20tradeoffs%20in%20the%20design%20of%20network%20communications.pdf" target="_blank" rel="external">「网络通信设计中的一些约束和权衡」</a>中提出，而在 1975 年版和 1978 年版的<a href="http://research.microsoft.com/en-us/um/people/gray/papers/DBOS.pdf" target="_blank" rel="external">《数据库操作系统注记》</a>中， Jim Gray 对两将军问题的讨论，使得这个问题开始被人们所熟知。两将军问题表明：通过不可靠网络通信的两个进程不可能达成一致的决定。两将军问题非常接近于必须保证下列条件成立的二元共识问题（“攻击”或者“不攻击”）：</p>
+<ul>
+<li>终止（Termination）:所有正确的进程都会决定某个取值（活性/liveness）；</li>
+<li>合法性（Validity）：所有正确的进程，如果它决定的取值是 v ，那么这个 v 必然是由某个正确的进程提议的(非平凡/non-triviality)；</li>
+<li>诚实性（Integrity）：所有正确的进程，最多只决定一个取值 v ，并且这个 v 是正确的取值（安全性/safety）；</li>
+<li>一致性（Agreement）：所有正确的进程决定的取值是相同的（安全性/safety）。</li>
+</ul>
+<p>很显然，任何有用的分布式算法都涉及活性和安全性属性。如果再考虑到网络是异步的、存在崩溃失效，问题就更复杂了：</p>
+<ul>
+<li>异步：消息有可能被无限延迟，但是最终会被投递；</li>
+<li>崩溃失效：进程有可能无限停机。</li>
+</ul>
+<p>对上述情境的思考，引导我们去了解据称是最重要的分布式系统理论结果之一： FLP 不可能性，由 Fischer, Lynch 和 Patterson 在 1985 年论文<a href="http://cs-www.cs.yale.edu/homes/arvind/cs425/doc/fischer.pdf" target="_blank" rel="external">「只要存在一个可能失效的进程就不可能达成共识」</a>中首次提出。这个结果表明两将军问题是不可能解决的。在崩溃-失效模型中，如果进程完成工作且给出响应的耗时没有上限，我们就不可能区分下面两种情况：进程已经崩溃或者只是响应的耗时比较长。 FLP 结果还表明，在异步环境中，只要至少有一个进程有可能失效，就不存在能够确定解决共识问题的算法。也就是说，存在崩溃-失效的异步环境中，不可能存在完美的失效检测器。</p>
+<blockquote>
+<p>译者注：把 failure 翻译为「失效」，意味着系统已经完全不能工作；把 fault 翻译为「故障」，意思是系统组件有问题，不能按照原先设计目的正常地工作。</p>
+</blockquote>
+<p>讨论故障容忍（fault-tolerant）系统时，很重要的一点是把拜占庭故障（实质上就是任意的故障）考虑在内。此类故障包括但不限于：试图破坏系统的攻击。例如，一次安全攻击可能会生成或者伪造消息。<a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/byz.pdf" target="_blank" rel="external">拜占庭将军问题</a>是两将军问题的泛化版，它描述的就是拜占庭故障。拜占庭故障容忍是指检测出或者屏蔽掉大量的拜占庭故障，保护系统免受威胁。</p>
+<p>我们为什么如此重视共识？因为它是解决分布式系统设计中很多重要问题的关键。领导人选举（leader election）要实现共识，这样才能动态选出一个协调者，避免单点失效。分布式数据库要实现共识，这样才能保证不同节点的数据是一致的。消息队列要实现共识，这样才能支持消息投递事务或保证消息投递的顺序。分布式初始化（init）系统要实现共识，这样才能协调不同的进程。共识根本就是分布式程序设计的一个重要问题。</p>
+<p>人们<a href="https://queue.acm.org/detail.cfm?id=2655736" target="_blank" rel="external">一次又一次的证明</a>，无论是局域网还是广域网，它们经常是不可靠的，总体上也是异步的。这给分布式系统的设计带来真切而巨大的挑战。</p>
+<blockquote>
+<p>这些不可能性结果不单单有学术意义，受此启发，大量分布式系统及设计开始涌现，这些系统在网络失效时提供了不同的保证。</p>
+</blockquote>
+<p>L. Peter Deutsch 写的<a href="https://en.wikipedia.org/wiki/Fallacies_of_distributed_computing" target="_blank" rel="external">「有关分布式计算的几个谬论」</a>是研究分布式系统理论的绝佳起点。文中列举了很多新手会误以为真的假设，其中第一条就是“网络是可靠的”。这些实际上不成立的假设包括：</p>
+<ol>
+<li>网络是可靠的。</li>
+<li>延迟为零。</li>
+<li>带宽是无限的。</li>
+<li>网络是安全的。</li>
+<li>拓扑不会改变。</li>
+<li>肯定有一个管理员。</li>
+<li>传输的代价为零。</li>
+<li>网络是同质的。</li>
+</ol>
+<p>最近， <a href="http://arxiv.org/pdf/1509.05393v2.pdf" target="_blank" rel="external">CAP 定理</a>被认真审视，人们争论这个定理的作用是否被夸大了。尽管如此， CAP 定理仍然是一个有用的工具，它能帮助我们建立分布式系统的基本权衡因素，认清厂商玩的花招。 Gilbert 和 Lynch 合写的<a href="https://groups.csail.mit.edu/tds/papers/Gilbert/Brewer2.pdf" target="_blank" rel="external">「对 CAP 定理的看法」</a> 明确了易出故障（fault-prone）系统固有的安全性（safety）与活性（liveness）之间的权衡，而 Fox 和 Brewer 合写的<a href="http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.24.3690&amp;rep=rep1&amp;type=pdf" target="_blank" rel="external">「完备度、完成概率和可扩展的容忍系统」</a>从更实用角度描述了 CAP 定理的特征。我将一直毫不含糊地说， CAP 定理在分布式系统领域的地位非常重要，对分布式系统设计者和实践者来说，它具有重大的意义。</p>
+<h2 id="重燃希望"><a href="#重燃希望" class="headerlink" title="重燃希望"></a>重燃希望</h2><p>根据前面这些理论结果，很多分布式算法，包括实现线性化操作、序列化事务和领导人选举的算法，都没什么用。果真如此吗？当然不是。只要精心设计，分布式系统不用靠撞大运就能保持正确性。</p>
+<p>首先需要指出， FLP 定理并没有说共识是无法达成的，而是说在有限时间内不一定能达成。其次， FLP 定理讨论的是不受控制的系统。在同步系统中，进程间消息投递的耗时有一个上限；在异步系统中则没有固定的限制。实际的系统一般表现为部分同步（partial synchrony）， Dwork 和 Lynch 在<a href="http://groups.csail.mit.edu/tds/papers/Lynch/jacm88.pdf" target="_blank" rel="external">「部分同步系统的共识」</a>一文中描述了部分同步的两个模型。在第一个模型中，上限是固定的但是预先不知道；在第二个模型中，上限是已知的，但只是从某个未知的时间点 T 开始才保证这个上限成立。Dwork 和 Lynch 针对这两种模型（搭配不同的故障模型），分别给出相应的能够容忍故障的共识协议。</p>
+<p>Chandra 和 Toueg 在<a href="http://www.cs.utexas.edu/~lorenzo/corsi/cs380d/papers/p225-chandra.pdf" target="_blank" rel="external">「可靠分布式系统中的不可靠失效检测器」</a>介绍了不可靠失效检测器的概念。每一个进程都有一个本地、外部的失效检测器，这个检测器有可能出错。失效检测器监控系统中的部分进程，维护一个它怀疑已经崩溃进程的列表。检测失效的方法很简单：检测器定期向某个进程发送打招呼消息，如果超过某个耗时上限（2×消息来回的最大可能耗时），仍然没有收到该进程的响应，就把它列入怀疑名单。检测器有可能犯错，把正确的进程列入怀疑名单中。不过，如果检测器在后续时段又收到进程的响应，会自动纠错，把这个进程从怀疑名单去掉。在一个条件稍微放松的系统模型中，只要有失效检测器，即使它是不可靠的，也能解决共识问题。</p>
+<p>共识保证了不同的进程就某个取值达成一致，而原子化广播（atomic broadcast）保证了每一个进程按照相同的顺序投递同一个消息。在上面那篇论文中，作者证明了共识和原子化广播彼此是等价的。因此， FLP 等不可能性结果同样适用于原子化广播。有些协调服务，如 Apache ZooKeeper ，就用到原子化广播。</p>
+<p>在《可靠且安全的分布式程序设计导论》一书中，Cachin, Guerraoui 和 Rodrigues 指出很多实践系统可以被认为是部分同步的：</p>
+<blockquote>
+<p>分布式系统通常表现为一个同步系统。更准确地说，我们所知的大部分系统，在大部分时间内，投递消息的耗时有一个上限。当然，在有的时段，系统又是异步的。例如，网络过载，或者某个进程因为内存不够而运行得缓慢。更典型的例子，进程收发消息的缓冲区有可能发生溢出，导致消息丢失，此时投递消息的耗时肯定超过通常的上限。消息重传有助于保证通信链接的可靠性，同时又引入不可预测的延迟。从这个意义上，实际的系统是部分同步的。</p>
+</blockquote>
+<p>我们注意到，部分同步只是说最终保证消息投递的耗时有一个固定的限制，但最终是指什么时候，没有明确指出。类似地，我们称这样的系统是最终同步的。这里的最终同步，并不是说过了一段时间后系统就永远是同步的，也不是说系统开始是异步的，一段时间之后变成同步的。相反，最终同步是指系统有时是异步的，此时消息投递的耗时有可能是无限长，但是也存在系统同步的时段，足够一个算法做有用的工作或者运行完。关键是要记住，异步系统不提供任何定时保证。</p>
+<p>最后，在<a href="http://groups.csail.mit.edu/tds/papers/Stockmeyer/DolevDS83-focs.pdf" target="_blank" rel="external">「分布式共识所需的最少同步」</a>一文中， Dolev, Dwork 和 Stockmeyer 描述了一种分布式共识协议叫做 t-复原（t-resilient），它能在最多 t 个进程失效时保证系统仍然正常地工作。本文给出几个关键的系统参数和同步条件，描述不同的参数和条件对算法的影响。可以证明，在某些模型中共识是可达的，在另外一些模型中则不行。</p>
+<p>依靠法定多数（quorum），能够实现容忍故障的共识。直觉上，如果大多数进程能就每一个决定达成一致，即使出现故障，也至少有一个进程了解完整的历史。</p>
+<p>在某些系统模型中，不可能达成确定性共识，许多有用的算法也因此无法实现。但是，大部分实际系统对应的模型能够规避这一点。不管怎样，这都显示出分布式系统固有的复杂性，以及解决特定问题所需的严格性。</p>
+<h2 id="从理论转向实践"><a href="#从理论转向实践" class="headerlink" title="从理论转向实践"></a>从理论转向实践</h2><p>上述理论有什么实践意义呢？对于初学者而言，这意味着分布式系统没有表面看起来那么简单。不认识到这一点，人们就会在<a href="https://aphyr.com/posts/322-call-me-maybe-mongodb-stale-reads" target="_blank" rel="external">文档中不确切地描述权衡因素</a>，还有很多因为认识不足而导致<a href="https://aphyr.com/posts/315-call-me-maybe-rabbitmq" target="_blank" rel="external">数据丢失和违反安全性的例子</a>。我们需要重新考虑分布式系统的设计方式，把焦点从系统属性及保证转向行业规则和应用的不变量。</p>
+<p>我最钟意的一篇论文是 Saltzer, Reed 和 Clark 写的<a href="http://web.mit.edu/Saltzer/www/publications/endtoend/endtoend.pdf" target="_blank" rel="external">「系统设计中的端到端原则」</a>。这篇论文很好读，它提出了一个非常有说服力的设计原则，帮助人们搞清楚究竟应该在分布式系统的哪一层实现所需的功能。端到端原则是说在系统的底层实现功能有可能是多余的，或者与付出的代价相比，这样做的用处不大。很多时候，外部保证比内部保证更有意义，也就是说应该在应用层提供保证，而不是依靠子系统、中间件或者系统的底层提供保证。</p>
+<p>我们以“设计周全的文件传输”为例说明端到端原则。某个文件保存在计算机 A 的硬盘的文件系统中， A 通过通信网络与计算机 B 相连。现在要求把这个文件从计算机 A 无损地传输到计算机 B ，在此过程中有可能出现各种失效。换言之，这是一个文件传输应用程序，依赖底层存储和网络的抽象。开发者考虑到下列问题有可能发生：</p>
+<ul>
+<li>文件刚写到计算机 A 的磁盘时，数据是正确的。如果现在读这个文件，有可能因为磁盘存储系统的硬件故障而读到错误的数据。</li>
+<li>无论是在计算机 A 还是 B 上，文件系统、文件传输程序或者数据通信系统在缓冲和复制文件数据时都可能出错。</li>
+<li>计算机 A 或 B 的处理器或者内存在缓冲和复制时有可能暂时出错。</li>
+<li>通信系统有可能丢掉或者改变网络包数据、丢包或者多次投递同一个网络包。</li>
+<li>任何一个主机都有可能在文件传输过程中（已经完成了未知比例的数据传输）崩溃。</li>
+</ul>
+<p>这些本质上都属于拜占庭问题。如果我们逐个考虑这些威胁，很显然，即使我们在底层实现了问题处理程序，高层的应用仍然必须检查问题是否存在。例如，通信系统依靠校验和、重试和网络包排序提供可靠的数据传输。这只是消除了上述第 4 个威胁。为了克服其余的威胁，文件传输应用程序仍然需要端到端校验和重试机制。</p>
+<p>在底层构建可靠性，代价太大。不光需要不少的投入，这么做也纯属多余。实际上，这虽然减少应用层重试的频率，却在底层了增加不必要的负担，最终降低系统的性能。应该只靠端到端校验和重试保证正确性，底层的实现对此没什么帮助。通信系统的可靠性和正确性并非那么很重要，在通信层保证复原性并不能减少应用层的负担。实际上，仅仅依靠底层不可能保证正确性，因为消除第 2 个威胁要求编写正确的程序，但是并非所有的程序都是由文件传输应用开发者自己编写的。</p>
+<p>根本上，在底层实现功能会引发两个问题。首先，底层不清楚应用的需求和语义，这就意味着在底层实现的功能往往是不充分的，在应用层仍然需要实现类似的功能，这就造成逻辑的重复，如前面例子所示。其次，其他依赖底层的应用，即使不需要这些功能，也得承担相应的代价。</p>
+<p>Saltzer, Reed 和 Clark 把端到端原则视为系统设计的“奥坎姆剃刀”原则，他们认为，端到端原则有助于指导设计系统的层次组织和确定功能在哪一层实现。</p>
+<blockquote>
+<p>因为经常是先确定通信子系统之后，才知道要运行的上层应用，所以设计者必须顶住诱惑，不要试图为用户提供超出需要的功能。了解端到端原则，有助于增强抵抗力。</p>
+</blockquote>
+<p>需要特别指出的是，端到端原则不是万能药。它是一个指导原则，帮助设计者从端到端角度思考解决方案，确认应用的需求，考虑失效的模式。最后，它提供了一种理念：把功能往系统上层移，靠近用到这项功能的应用程序。当然，凡事都有例外。有时为了性能优化，选择在底层实现功能。总之，端到端原则主张底层应当避免承担任何超出需要的责任。在 <a href="http://static.googleusercontent.com/media/research.google.com/en//archive/bigtable-osdi06.pdf" target="_blank" rel="external">Google Bigtable 论文</a>的“教训”部分有类似的论述：</p>
+<blockquote>
+<p>我们学习到的另外一个教训是，在搞清楚新特性将被如何使用之前，不要添加这个新特性。例如，刚开始时，我们计划提供支持通用事务的 API 。由于我们没有马上使用这些 API ，就没有实现它们。现在，我们有很多运行在 Bigtable 上的实际应用，我们能够检验这些应用的真实需求，结果发现大部分应用只需要单行事务。其他需要分布式事务的使用情景，最重要的一个是用分布式事务维护二级索引，我们计划添加特别的机制满足这一需求。这种新机制的通用性比不上分布式事务，但是更有效率（尤其是执行横跨几百行的更新操作时），也更适合我们采用的跨数据中心乐观复制的模式。</p>
+</blockquote>
+<p>接下来的讨论中，我们把端到端原则视为一个常识。</p>
+<h2 id="到底由谁来保证"><a href="#到底由谁来保证" class="headerlink" title="到底由谁来保证"></a>到底由谁来保证</h2><p>一般来说，我们要靠健壮的算法、事务管理器和协调服务来维护一致性和应用的正确性。这会引发两个问题：这些服务经常是不可靠的；还经常成为严重的系统性能瓶颈。</p>
+<p>分布式协调算法很难做到万无一失。即使是像两阶段提交这样有效的协议，也容易受崩溃和网络分区的影响而无法正常工作。更能容忍故障的协议，像 Paxos 和 Raft ，它们的扩展性不佳，只能运行在比较小的集群内，也不能跨越广域网。像 ZooKeeper 这样的共识系统<a href="http://bravenewgeek.com/what-you-want-is-what-you-dont-understanding-trade-offs-in-distributed-messaging/" target="_blank" rel="external">决定了整个系统的可用性</a>，一旦它宕机了，你的麻烦就大了。出于性能的考虑，法定多数通常设得较小，这种情况并不少见。</p>
+<p>于是乎，协调系统作为一种基础设施，变得既复杂又脆弱。这太讽刺了，因为本来是想利用协调系统降低整个系统的脆弱性。另外一方面，消息中间件很大程度上是依靠协调为开发者提供下列有关消息投递的保证：有且只有一次、顺序、事务等等。</p>
+<p>从传输协议到企业消息代理，对投递保证的依赖都属于分布式系统设计中的反模式。很难正确地处理投递的语义。尤其是对分布式消息投递而言，<a href="http://bravenewgeek.com/what-you-want-is-what-you-dont-understanding-trade-offs-in-distributed-messaging/" target="_blank" rel="external">你想要的往往不是你需要的</a>。重要的是审视其中涉及的权衡因素，了解这些因素如何影响系统的设计（<a href="http://bravenewgeek.com/distributed-systems-are-a-ux-problem/" target="_blank" rel="external">和用户体验！</a>），权衡这些因素以便做出更好的设计决定。</p>
+<p>由于各种失效模式的存在，提供强保证变得很难。实际上，根据前面我们讨论的两将军问题和 FLP 不可能性结果，有些保证，像<a href="http://bravenewgeek.com/you-cannot-have-exactly-once-delivery/" target="_blank" rel="external">有且只有一次的投递，甚至是不可能提供的</a>。如果你想提供有且只有一次投递、有序投递的保证，往往属于超出需要的过度设计和实现。系统变得难以部署和维护、脆弱和运行慢。提供保证的服务，如果能完美地运行，开发者的开发工作肯定变得更轻松。现实情况是这些服务很多时候不能完美地运行。你会在凌晨一点收到警报，不得不查找问题的源头： 从监控服务看，RabbitMQ 明明一切正常，为什么整个系统却接连出现问题？</p>
+<p>如果部署在生产环境的系统依赖此类保证，那你迟早会遇到一次（往往不止一次）上述的麻烦。最终，所谓的保证就不存在了，因此导致的后果可大可小。这种设计系统的方式不光危险，也不可取，尤其是当你运维一个大规模系统，特别看重系统的吞吐或者需要提供关键的服务等级约定时。</p>
+<p>分布式事务显然会影响性能。协调的代价是昂贵的，因为进程不能单独继续运行，这会限制系统的吞吐、可用性和扩展性。 Peter Bailis 有一个非常棒的演讲<a href="https://speakerdeck.com/pbailis/silence-is-golden-coordination-avoiding-systems-design" target="_blank" rel="external">「沉默是金：避免协调的系统设计」</a>，他详细讨论了协调的代价以及如何避免协调。他提到一个特别的例子，其中分布式事务会导致系统的吞吐下降 400 倍。</p>
+<p>如果不需要协调，系统可以无限横向扩展，从而极大提高系统的吞吐和可用性。但是有时协调是不可避免的。在<a href="http://www.vldb.org/pvldb/vol8/p185-bailis.pdf" target="_blank" rel="external">《数据库系统中的协调避免》</a>一书中， Bailis 等人回答了一个关键问题：为了保证正确性，在哪种情况下协调是不可避免的？他们提出一个属性叫不变量交汇点（invariant confluence, I-confluence），它是安全、无协调、可用及收敛的执行的充分必要条件。 I-confluence 的本质是在应用层定义和保持不变性，因为我们在这里可以用应用的语义而不是底层数据库操作来定义正确性。</p>
+<blockquote>
+<p>不知道应用程序的正确性定义（例如， I-confluence 用到的那些不变性），在读写模型中，能够保证的最佳正确性是序列化。</p>
+</blockquote>
+<p>给定事务集，以及统一分散状态的合并函数，就可以判定 I-confluence 是否成立。如果成立，就意味着存在一种保证不变性的无协调执行策略。如果不成立，意味着这样的策略不存在，协调就是必需的。由此可见， I-confluence 能够帮我们识别出何时需要协调，何时不需要。由于是在应用层定义和保持不变性，就不会存在超出需要的设计。</p>
+<p>回想一下，分布式计算的同步性（synchrony）只是对时间做的假设，所以同步（synchronization）从根本上是两个或两个以上进程随着时间推移进行的协调。我们知道，无需协调的系统能提供最优的性能和可用性，因为每个进程完全独立运行。然而，根据 I-confluence 理论，这样的分布式系统没什么用或者说是不可能的。 Christopher Meiklejohn 在 Strange Loop 大会做的演讲<a href="https://www.youtube.com/watch?v=lsKaNDj4TrE" target="_blank" rel="external">「分布式、最终一致的计算」</a>中，用汽车打比方来解释协调。驾驶汽车需要摩擦力，但是只能有非常少量的摩擦点。太多的摩擦点会出问题或者降低效率。如果把物理时间看做摩擦力，完全消除它是不可能的，因为这是问题的本质属性。但是我们可以尽量减少它在系统中的使用。通常，可以选用逻辑时间取代物理时间，例如，使用 Lamport 时钟或者其他冲突消除技术。有关这一思路的经典介绍，是 Lamport 写的书<a href="http://research.microsoft.com/en-us/um/people/lamport/pubs/time-clocks.pdf" target="_blank" rel="external">《分布式系统的时间、时钟和事件顺序》</a>。</p>
+<p>系统在执行延迟敏感操作时通常会完全放弃协调。这是非常自然的权衡选择，只不过要在文档中清楚地指出这一点。不幸的是，<a href="https://aphyr.com/posts/324-jepsen-aerospike" target="_blank" rel="external">现实往往并非如此</a>，这很不应该。 I-confluence 提供了一个有用的协调避免框架，我们还能从中学到更多：重新审视我们现在设计分布式系统的方式，看起来这些方式与端到端原则有些背道而驰。</p>
+<p>在底层实现功能，意味着一开始我们就要付出代价——序列化事务、线性化读写和协调。这好像违反了端到端原则。应用程序并不关心原子性、隔离级别或者线性化，它关心的是两个用户共享同一个 ID 或者两个订单预定了同一个房间或者银行账户有负结余，数据库是不知道这些的。有时，诸如此类的规则甚至不需要任何代价昂贵的协调。</p>
+<p>如果把应用规则和约束编码成基础设施层理解的语言，这会引发几个问题。首先，必须把应用语义无缝地转换成底层操作。以消息传送为例，应用程序并不关心投递送达的保证，它关心的是这个消息要干什么。其次，我们不能使用很多通用的解决方案，有时甚至要专门处理特别的情况。这种处理的实际扩展性如何是未知的。第三，降低了性能，这本来是可以避免的（I-confluence 已经揭示了这一点）。最后，一切都依赖基础设施，希望它能按照设计运行——<a href="http://www.bailis.org/blog/when-is-acid-acid-rarely/" target="_blank" rel="external">往往并非如此</a>。</p>
+<p>身为消息平台团队的一员，我经历过无数次像下面这样的对话：</p>
+<blockquote>
+<p>开发者：“我需要快速消息传递。”<br>我：“可以偶尔丢失消息吗？”<br>开发者：“什么？当然不行！我们要求可靠的消息传递。”<br>我：“好，那我们加上投递确认。不过，如果你的应用程序在处理消息之前崩溃了，会出现什么情况？”<br>开发者：“我们在消息处理后会确认。”<br>我：“那如果处理完了但是还没确认的时候程序崩溃了，怎么办？”<br>开发者：“重试呗。”<br>我：“也就是说允许重复发送？”<br>开发者：“这个，还是应该有且只有一次发送。”<br>我：“你不是想快速发送吗？”<br>开发者：“是啊。对了，还要保持消息的顺序。”<br>我：“你要求的就是 TCP 。”</p>
+</blockquote>
+<p>相反，如果重新评估系统间交互和系统 API 及语义，把其中一些特性从基础设施移到应用层，我们就能构建更健壮、更容错和更高性能的系统。就消息传递而言，真的需要基础设施层保证先入先出顺序吗？系统存在失效情况下要保证分布式消息的顺序，同时还要提供高可用性，这太难了，代价高。如果消息是可交换的，就没必要保证消息的顺序。同样，投递事务需要又慢又脆弱的协调，还无法提供应用层的保证。如果消息是幂等的，就不需要事务，重试就行了。如果需要应用层的保证，那就在应用层构建，基础设施可保证不了。</p>
+<p>我特别喜欢 Gregor Hohpe 写的 <a href="http://www.enterpriseintegrationpatterns.com/docs/IEEE_Software_Design_2PC.pdf" target="_blank" rel="external">咖啡店不用两阶段提交</a>。这篇文章揭示了，如果我们仿效真实世界解决分布式系统问题，解决方案会非常简单。我有信心设计更好的系统，有时我们只需换个角度思考问题。事物的运作方式蕴含着一定的道理，这可没用到计算机或者复杂的算法。</p>
+<p>不要试图用脆弱、笨重的抽象来掩盖复杂性，相反，在设计决策时识别问题，端到端思考，直面问题。追寻分布式系统之道的道路漫长而艰难，现在就开始吧。<br>原文链接：<a href="http://bravenewgeek.com/from-the-ground-up-reasoning-about-distributed-systems-in-the-real-world/" target="_blank" rel="external">From the Ground Up: Reasoning About Distributed Systems in the Real World</a></p>
+
+          
+        
+      
     </div>
 
-    <script>
-        function toggleEnvelope() {
-            const envelope = document.querySelector('.envelope');
-            envelope.classList.toggle('open');
-        }
-    </script>
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/21/广域网视频测试地址/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/21/广域网视频测试地址/" itemprop="url">
+                  广域网视频测试地址
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-21T20:47:11+08:00">
+                2017-05-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p> rtsp://rtsp-v3-spbtv.msk.spbtv.com/spbtv_v3_1/214_110.sdp</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/12/C-事件分发器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/12/C-事件分发器/" itemprop="url">
+                  C++事件分发器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-12T16:05:27+08:00">
+                2017-05-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="event"><a href="#event" class="headerlink" title="event"></a>event</h1><p>xevent.h<br><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">XEvent</span></div><div class="line">&#123;</span></div><div class="line"><span class="keyword">public</span>:</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">dump</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">	<span class="function"><span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">free</span><span class="params">()</span> </span>= <span class="number">0</span>;</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/12/C-事件分发器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/linux-io-stack/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/05/linux-io-stack/" itemprop="url">
+                  linux io stack
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T19:21:30+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><img src="/img/linux-io-stack-diagram_v1-0-724x1024.png" alt="linux-io-stack-diagram_v1-0-724x1024"><br><img src="/img/Linux-storage-stack-diagram_v4.0-1.png" alt="Linux-storage-stack-diagram_v4.0-1"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/Coding-Rules-for-Writing-Safety-Critical-Program/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/05/Coding-Rules-for-Writing-Safety-Critical-Program/" itemprop="url">
+                  Coding Rules for Writing Safety Critical Program
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T15:30:27+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="Coding-Rules-for-Writing-Safety-Critical-Program"><a href="#Coding-Rules-for-Writing-Safety-Critical-Program" class="headerlink" title="Coding Rules for Writing Safety Critical Program"></a>Coding Rules for Writing Safety Critical Program</h1><p>The large and complex software projects use some sort of coding standards and guidelines. These guidelines establish the ground rules that are to be followed while writing software.</p>
+<ol>
+<li>How the code should be structured?</li>
+<li>Which language feature should or should not be used?</li>
+</ol>
+<p>In order to be effective, the set of rules has to be small and must be specific enough that it can be easily understood and remembered.</p>
+<p><strong>The world’s top programmers working for NASA follow a set of guidelines for developing safety critical code. In fact, many organizations, including NASA’s Jet Propulsion Laboratory (JPL) focus on code written in C programming language.﻿<br>The reason is, there is extensive tool support for this language, including, logic model extractors, debuggers, stable compiler, strong source of code analyzers and metrics tools.</strong><br><img src="/img/NASA-10-Coding-Rules.jpg" alt="NASA-10-Coding-Rules"><br>Sometimes coding rules are essential to use, especially where your life may depend on its correctness – code that is used to control the airplane that you fly on, spacecraft that carries astronauts into orbit, or the nuclear power plant a few miles from where you live. Introducing the NASA’s 10 coding rules that focus on security parameters, laid by JPL lead scientist Gerard J. Holzmann. The guidelines could be applied to other programming languages as well.<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/05/05/Coding-Rules-for-Writing-Safety-Critical-Program/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/05/lwip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/05/lwip/" itemprop="url">
+                  LwIP
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-05T14:54:27+08:00">
+                2017-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="/doc/lwip/Design_of_LwIP_Integration.png" rel="gallery_cj71hih7w000clcv9ja661yao"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/doc/lwip/Design_of_LwIP_Integration.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          
+            <h1 id="LwIP-协议设计与实现"><a href="#LwIP-协议设计与实现" class="headerlink" title="LwIP 协议设计与实现"></a>LwIP 协议设计与实现</h1><p>LwIP是瑞典计算机科学院(SICS)的Adam Dunkels开发的一个小型开源的TCP/IP协议栈。</p>
+<p>LwIP是Light Weight (轻型)IP协议，有无作业系统的支持都可以运行。LwIP实现的重点是在保持TCP协议主要功能的基础上减少对RAM的占用，它只需十几KB的RAM和40K左右的ROM就可以运行，这使LwIP协议栈适合在低端的嵌入式系统中使用。[1]</p>
+<p>LwIP协议栈主要关注的是怎么样减少内存的使用和代码的大小，这样就可以让lwIP适用于资源有限的小型平台例如嵌入式系统。为了简化处理过程和内存要求，lwIP对API进行了裁减，可以不需要复制一些数据。</p>
+<p>LwIP由几个模块组成，除TCP/IP协议的实现模块外（ IP， ICMP， UDP， TCP），还有包括许多相关支持模块。这些支持模块包括：作业系统模拟层、缓冲与内存管理子系统、网络接口函数及一组Internet校验和计算函数。</p>
+<p><a href="/doc/lwip/Lwip-tw.pdf">LwIP 协议设计与实现 中文版</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/04/cygwin/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/04/cygwin/" itemprop="url">
+                  cygwin
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-04T12:59:10+08:00">
+                2017-05-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+        <div class="post-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+          
+          
+            <div class="post-gallery-row">
+              <a class="post-gallery-img fancybox"
+                 href="/img/cygwin/Cygwin_logo1.png" rel="gallery_cj71hih7g0007lcv9klrzuztc"
+                 itemscope itemtype="http://schema.org/ImageObject" itemprop="url">
+                <img src="/img/cygwin/Cygwin_logo1.png" itemprop="contentUrl"/>
+              </a>
+            
+          
+
+          
+          </div>
+        </div>
+      
+
+      
+        
+          
+            <h2 id="Cygwin国内比较快的镜像"><a href="#Cygwin国内比较快的镜像" class="headerlink" title="Cygwin国内比较快的镜像"></a>Cygwin国内比较快的镜像</h2><ol>
+<li>上海交大: <a href="ftp://ftp.sjtu.edu.cn/sites/cygwin.com/pub/cygwin" target="_blank" rel="external">ftp://ftp.sjtu.edu.cn/sites/cygwin.com/pub/cygwin/</a></li>
+<li>163: <a href="http://mirrors.163.com/cygwin" target="_blank" rel="external">http://mirrors.163.com/cygwin</a></li>
+<li>搜狐: <a href="http://mirrors.sohu.com/cygwin" target="_blank" rel="external">http://mirrors.sohu.com/cygwin</a></li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/neofetch/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/28/neofetch/" itemprop="url">
+                  neofetch
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T14:13:06+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="neofetch"><a href="#neofetch" class="headerlink" title="neofetch"></a>neofetch</h2><p>Awesome system info bash script that supports Linux, MacOS, and Unix-like systems</p>
+<p>The neofetch command written in a bash shell. The main purpose of neofetch is to be used in screenshots to display other users what operating system or Linux distro you are using including theme, icons and more. This command shows info about your system next to an image, your operating system logo and other info. Neofetch version 3.1.0 has been released. Let us see how to install the latest version and use it.<br><img src="/img/neofetch/neofetch.png" alt="neofetch"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/28/neofetch/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/struct-x264-t分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/28/struct-x264-t分析/" itemprop="url">
+                  struct x264_t分析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T01:54:20+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>x264_t是一个控制X264编码的全局性结构体，该结构体控制着视频一帧一帧的编码，包括中间参考帧管理、码率控制、全局参数等一些重要参数和结构体。接下来我们详细分析该结构体的元素
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/28/struct-x264-t分析/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/28/H-264和x264的联系和区别/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="徐松">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="绿色回忆">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/28/H-264和x264的联系和区别/" itemprop="url">
+                  H.264和x264的联系和区别
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-28T01:41:34+08:00">
+                2017-04-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h2 id="H-264"><a href="#H-264" class="headerlink" title="H.264"></a>H.264</h2><p>随着HDTV的兴起，H.264这个规范频频出现在我们眼前，HD-DVD和蓝光DVD均计划采用这一标准进行节目制作。而且自2005年下半年以来，无论是NVIDIA还是ATI都把支持H.264硬件解码加速作为自己最值得夸耀的视频技术。H.264到底是何方“神圣”呢？</p>
+<p>什么是H.264？H.264是一种高性能的视频编解码技术。目前国际上制定视频编解码技术的组织有两个，一个是“国际电联（ITU-T）”，它制定的标准有H.261、H.263、H.263+等，另一个是“国际标准化组织（ISO）”它制定的标准有MPEG-1、MPEG-2、MPEG-4等。而H.264则是由两个组织联合组建的联合视频组（JVT）共同制定的新数字视频编码标准，所以它既是ITU-T的H.264，又是ISO/IEC的MPEG-4高级视频编码（Advanced Video Coding，AVC），而且它将成为MPEG-4标准的第10部分。因此，不论是MPEG-4 AVC、MPEG-4 Part 10，还是ISO/IEC 14496-10，都是指H.264。</p>
+<p>H.264最大的优势是具有很高的数据压缩比率，在同等图像质量的条件下，H.264的压缩比是MPEG-2的2倍以上，是MPEG-4的1.5～2倍。举个例子，原始文件的大小如果为88GB，采用MPEG-2压缩标准压缩后变成3.5GB，压缩比为25∶1，而采用H.264压缩标准压缩后变为879MB，从88GB到879MB，H.264的压缩比达到惊人的102∶1！H.264为什么有那么高的压缩比？低码率（Low Bit Rate）起了重要的作用，和MPEG-2和MPEG-4 ASP等压缩技术相比，H.264压缩技术将大大节省用户的下载时间和数据流量收费。尤其值得一提的是，H.264在具有高压缩比的同时还拥有高质量流畅的图像。</p>
+<p>H.264算法的优势:<br>H.264是在MPEG-4技术的基础之上建立起来的，其编解码流程主要包括5个部分：帧间和帧内预测（Estimation）、变换（Transform）和反变换、量化（Quantization）和反量化、环路滤波（Loop Filter）、熵编码（Entropy Coding）。</p>
+<p>H.264标准三个框架:</p>
+<ul>
+<li>以运动矢量代表图象序列各帧的运动内容</li>
+<li>使用前面已解码帧对其进行运动估计和补偿或使用帧内预测技术</li>
+<li>所得的图象参差值要经过变换、量化、熵编码等部分的处理
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/28/H-264和x264的联系和区别/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/avatar.jpg"
+               alt="徐松" />
+          <p class="site-author-name" itemprop="name">徐松</p>
+           
+              <p class="site-description motion-element" itemprop="description">天黑请闭眼</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">28</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">徐松</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.1"></script>
+
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
