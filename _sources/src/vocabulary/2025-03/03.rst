@@ -1,0 +1,56 @@
+====================================================================
+2025/03/03
+====================================================================
+
+
+.. _discrepant:
+
+Discrepant
+--------------------------------------------------------------------------------
+* **Pronunciation**:: `/dɪˈskrepənt/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Showing inconsistency, difference, or disagreement between two or more things.
+
+**What it really means**: "Discrepant" describes items, statements, or figures that are inconsistent, differ from each other, or are in disagreement, especially when they should be similar or aligned. It indicates a noticeable lack of conformity.
+
+**When to use it**: Use it to highlight differences or inconsistencies between reports, data, statements, or other items that are expected to match or agree.
+    * **Common phrases**: "discrepant reports/accounts," "discrepant statements/testimonies," "discrepant data/results," "discrepant evidence," "discrepant descriptions."
+    * **Examples**:
+        * "The two reports contain **discrepant** figures, which need to be investigated."
+        * "His statements were **discrepant** from the facts presented in court."
+        * "The scientists found **discrepant** results in the experiment, requiring further testing."
+        * "A **discrepant** description of the event raised doubts about the witness’s reliability."
+        * "The accounts of the accident were **discrepant**, making it difficult to determine the truth."
+
+* **Synonyms**: Conflicting, Inconsistent, Contradictory, Mismatched, Divergent.
+* **Opposite words**: Consistent, Agreeing, Harmonious, Uniform.
+* **Where it comes from**: Latin *discrepare* (to sound differently, to be discordant).
+
+.. _discrepancy:
+
+Discrepancy
+--------------------------------------------------------------------------------
+* **Pronunciation**:: `/dɪˈskrepənsi/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable/uncountable)
+* **Simple Meaning**: A difference or inconsistency between two or more things that should be the same.
+
+**What it really means**: A "discrepancy" is a noticeable or unexplained difference or inconsistency between two or more facts, figures, statements, or other things that are expected to be in agreement. It suggests an error, omission, or deliberate alteration.
+
+**When to use it**: Use it to point out a difference or inconsistency, especially when auditing, comparing data, or verifying information, suggesting something is amiss.
+    * **Common phrases**: "discrepancy between" two things, "major/minor discrepancy," "explain a discrepancy," "notice a discrepancy," "accounting discrepancy."
+    * **Examples**:
+        * "There is a **discrepancy** between the reported sales and the actual revenue."
+        * "The audit revealed a **discrepancy** in the financial records."
+        * "He noticed a **discrepancy** between her words and actions."
+        * "The witness’s testimony showed significant **discrepancies** with the evidence."
+        * "A **discrepancy** in the test results led to further investigation."
+
+* **Synonyms**: Difference, Inconsistency, Mismatch, Variation, Contradiction.
+* **Opposite words**: Consistency, Agreement, Conformity, Similarity.
+* **Where it comes from**: Latin *discrepantia* (disagreement).
+
+
+
+
