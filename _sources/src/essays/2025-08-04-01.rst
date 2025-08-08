@@ -1,0 +1,81 @@
+==============================================================
+Companies Sponsoring Sports Events for Advertising Purposes
+==============================================================
+
+Band 7 Essay: Should Companies Sponsor Sports for Advertising?
+==============================================================
+
+Sponsorship of sports events by companies has become widespread, offering both advantages and disadvantages. While many view it as a mutually beneficial arrangement, others believe it raises ethical concerns and risks.
+
+On the positive side, sponsorship can greatly support athletes and teams. `Sports teams or players are given free equipment which they could not afford otherwise` This kind of financial help is particularly essential for athletes from underprivileged backgrounds or less popular sports. Furthermore, `Players can focus on their sport instead of being distracted by financial worries`, allowing them to improve their performance and career prospects.
+
+From the corporate perspective, advertising through sports can significantly enhance brand image. `Companies can link their name to successful players`, which boosts credibility and prestige in the eyes of the public. Additionally, `People think positively of companies that donate products and equipment`, making consumers more likely to support such brands. Even if `Sports fans are more interested in the event than in the sponsors' advertising messages`, constant brand exposure during events still increases familiarity and recognition. `Sports sponsorship provides increased media exposure for a company and its brands`, especially during televised events.
+
+Despite these benefits, there are valid concerns. A major issue is that `Some companies advertise products harmful to health`, which contradicts the very spirit of sport and wellness. In particular, `Tobacco companies, among others, should not be allowed to sponsor sports events` Such sponsorships may send confusing messages to young or impressionable viewers. Another risk is reputation management. `If the player is unsuccessful, it might affect product sales`, especially if the brand heavily depends on that athlete’s image. Moreover, `The company's reputation can be too tightly linked to a player's reputation`, which means scandals involving athletes can have damaging consequences. For example, `A player who does drugs or misbehave will have negative consequences for the company and vice versa`
+
+In conclusion, while sponsorship provides necessary financial aid to athletes and offers marketing benefits to companies, it can also lead to serious reputational and ethical problems. Therefore, it should be carried out with care and responsibility to ensure alignment with the core values of sports.
+
+
+Band 8 Essay: Evaluating the Role of Corporate Sponsorship in Sports
+====================================================================
+
+Corporate sponsorship of sports events has become a prevalent marketing strategy, offering opportunities for brand promotion while simultaneously supporting athletes. This partnership, though beneficial in many respects, raises important ethical and reputational concerns that merit thorough evaluation.
+
+One of the main advantages of sponsorship is the critical support it offers to athletes and teams. `Sports teams or players are given free equipment which they could not afford otherwise`, enabling equal participation and professional development regardless of financial background. Furthermore, `Players can focus on their sport instead of being distracted by financial worries`, enhancing their concentration and commitment to training, which can ultimately lead to improved performance.
+
+From a marketing standpoint, sponsorship allows brands to elevate their visibility. `Sports sponsorship provides increased media exposure for a company and its brands`, especially when events are broadcast to large audiences. Companies also gain prestige when `Companies can link their name to successful players`, thereby associating themselves with achievement and excellence. Additionally, `People think positively of companies that donate products and equipment`, fostering consumer trust and goodwill. While it may seem that `Sports fans are more interested in the event than in the sponsors' advertising messages`, consistent visual presence throughout the event ensures the brand remains memorable.
+
+However, this form of marketing is not without its drawbacks. The most serious concern is that `Some companies advertise products harmful to health`, such as sugary drinks, alcohol, or tobacco, which undermines the health-promoting nature of sport. Hence, `Tobacco companies, among others, should not be allowed to sponsor sports events`, as this creates a contradiction between the product and the values of the sponsored activity.
+
+Reputational risk is another significant issue. `The company's reputation can be too tightly linked to a player's reputation`, which means any controversy surrounding the athlete may damage the brand. For instance, `A player who does drugs or misbehave will have negative consequences for the company and vice versa`, a scenario that could result in costly public relations efforts. Similarly, `If the player is unsuccessful, it might affect product sales`, especially if the athlete is the face of a specific marketing campaign.
+
+In summary, corporate sponsorship can offer vital support to sports while simultaneously achieving promotional goals. Nevertheless, companies must carefully assess the alignment between their brand and the athletes or events they sponsor. Ethical considerations and risk management should be integral to these decisions to ensure that the partnership benefits both parties without compromising integrity.
+
+
+.. 
+    {
+        "prompt_metadata": {
+        "version": "2.0",
+        "last_updated": "2025-08-04",
+        "purpose": "Optimized prompt for generating IELTS Writing Task 2 essays with specific formatting and band score targets."
+        },
+        "task_definition": {
+        "name": "IELTS Writing Task 2 Essay Generation",
+        "description": "Generate two complete IELTS Writing Task 2 essays based on a provided topic and lists of 'for' and 'against' arguments. One essay must target Band 7 proficiency, and the other Band 8.",
+        "essay_integration_instruction": "Integrate the provided 'for' and 'against' sentences naturally into the essay's paragraphs to support the arguments, rather than merely listing them."
+        },
+        "output_specifications": {
+        "format": "Sphinx reStructuredText (RST) raw code",
+        "highlighting_method": {
+            "instruction": "Original sentences provided in the 'arguments' lists MUST be visually highlighted within the RST output.",
+            "rst_grammar_only": "Do not use `.. raw` derectives"
+        },
+        "essay_versions": [
+            "Band 7 Essay: Demonstrating characteristics consistent with an IELTS Band 7 writing score.",
+            "Band 8 Essay: Demonstrating characteristics consistent with an IELTS Band 8 writing score."
+        ]
+        },
+        "essay_content_details": {
+        "topic": "Companies Sponsoring Sports Events for Advertising Purposes",
+        "arguments_for_topic": [
+            "Sports teams or players are given free equipment which they could not afford otherwise",
+            "Players can focus on their sport instead of being distracted by financial worries",
+            "Companies can link their name to successful players",
+            "People think positively of companies that donate products and equipment",
+            "Sports fans are more interested in the event than in the sponsors' advertising messages",
+            "Sports sponsorship provides increased media exposure for a company and its brands"
+        ],
+        "arguments_against_topic": [
+            "Some companies advertise products harmful to health",
+            "Tobacco companies, among others, should not be allowed to sponsor sports events",
+            "Companies can showcase their products",
+            "If the player is unsuccessful, it might affect product sales",
+            "The company's reputation can be too tightly linked to a player's reputation",
+            "A player who does drugs or misbehave will have negative consequences for the company and vice versa"
+        ]
+        },
+        "ielts_scoring_guidance": {
+        "band_7_essay_profile": "Essay demonstrates good analytical skills, clear arguments, and effective use of a good range of vocabulary and grammar, with occasional minor errors. Cohesion and coherence are good, though some ideas may not be fully developed.",
+        "band_8_essay_profile": "Essay presents a well-developed argument, consistently strong analytical and critical thinking. Employs a wide range of sophisticated vocabulary used precisely, and highly accurate grammar. Cohesion and coherence are excellent, with ideas fully extended and supported."
+        }
+    }

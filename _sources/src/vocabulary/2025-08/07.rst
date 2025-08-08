@@ -1,0 +1,190 @@
+2025/08/07
+======================================================
+
+:ref:`Tackling_Anxiety`
+
+.. _manifest:
+
+================================================================================
+Manifest
+================================================================================
+
+* **Pronunciation**: :code:`/ˈmænɪfɛst/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb*, *Adjective*, *Noun*
+* **Simple Meaning**: (Verb) To show something clearly; (Adjective) Clear or obvious; (Noun) A list of cargo or passengers.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "manifest" is to **make something visible, apparent, or obvious** that was previously hidden or unclear.
+
+**What it really means**: As a **verb**, to "**manifest**" means to **show a quality or feeling through actions or appearance**, or for something to become apparent and easy to see. For example, a hidden problem might "**manifest** itself as a technical issue." As an **adjective**, "**manifest**" describes something that is **clear and unmistakable** to the mind or senses. As a **noun**, a "**manifest**" is a technical term for a document that lists the contents of a ship's cargo or an aircraft's passengers, making the information clear and verifiable.
+
+**When to use it**: Use it for showing something clearly, for describing something as obvious, or for a list of contents.
+    * **Common phrases**:
+        * **(Verb)** "to **manifest** itself," "**manifest** a symptom," "to **manifest** a new reality."
+        * **(Adjective)** "**manifest** injustice," "**manifest** failure."
+        * **(Noun)** "cargo **manifest**," "passenger **manifest**."
+    * **Examples**:
+        * **Daily Use**:
+            * (V) "Her unhappiness began to **manifest** itself in her quiet, withdrawn behavior."
+            * (Adj) "It was a **manifest** sign that we had to leave the party."
+            * (N) "The driver checked the **manifest** to see which packages were for which address."
+        * **Formal/IELTS Use**:
+            * (V) "The increasing public discontent began to **manifest** in a series of organized protests across the city."
+            * (Adj) "The **manifest** injustice of the policy was a key point in the opposition's argument, leading to widespread public condemnation."
+            * (N) "Customs officials carefully checked the cargo **manifest** to ensure all goods were legally declared and accounted for."
+            * "The company's long-term strategic vision did not **manifest** into tangible results due to a lack of resources and poor execution."
+
+**Synonyms**: (Verb) Show, demonstrate, display, reveal, appear, indicate; (Adjective) Obvious, clear, apparent, evident, patent.
+**Opposite words**: (Verb) Conceal, hide, mask, suppress; (Adjective) Hidden, obscure, subtle, unclear.
+**Where it comes from**: Latin *manifestus* (caught in the act, plain, evident).
+
+.. _tinker:
+
+================================================================================
+Tinker
+================================================================================
+
+* **Pronunciation**: :code:`/ˈtɪŋkər/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (intransitive), *Noun*
+* **Simple Meaning**: (Verb) To make small, casual adjustments or repairs; (Noun) A person who mends pots and pans.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "tinker" is to **make small, often non-professional, adjustments or repairs to something**, usually with a sense of amateurish or experimental exploration.
+
+**What it really means**: As a **verb**, to "**tinker**" means to **fiddle with or try to fix something without expert knowledge**. It suggests a casual, often tentative approach to a mechanical, technical, or even conceptual problem. This can sometimes carry a slightly negative connotation, implying that one might do more harm than good. It can also be used figuratively for making minor changes to a plan or system. The noun form, a "tinker," is an older term for a traveling craftsman, and its usage is less common today.
+
+**When to use it**: Use it for making minor, non-expert adjustments or repairs.
+    * **Common phrases**:
+        * **(Verb)** "to **tinker** with an engine," "to **tinker** with the settings," "to **tinker** with a plan."
+        * **(Noun)** "a traveling **tinker**."
+    * **Examples**:
+        * **Daily Use**:
+            * "My dad loves to **tinker** with old clocks and watches in his spare time."
+            * "Don't **tinker** with the TV remote control; you'll change all the settings."
+            * "He spent the whole weekend **tinkering** with his bike to get it ready for the race."
+        * **Formal/IELTS Use**:
+            * "The government's proposal to **tinker** with the existing healthcare system was criticized for not addressing the fundamental structural problems."
+            * "The study suggests that allowing engineers to **tinker** with prototypes in a low-risk environment can lead to unexpected and innovative design solutions."
+            * "Rather than implement a full-scale reform, the committee chose to merely **tinker** with the policy, resulting in only marginal improvements."
+            * "The long-standing software had become so complex that any attempt to **tinker** with its core code risked causing the entire system to fail."
+
+**Synonyms**: Fiddle, mess with, meddle, dabble, toy with, adjust.
+**Opposite words**: Overhaul, perfect, fix, repair, restore, standardize.
+**Where it comes from**: The word is of Middle English origin, from the noun *tinker*, which referred to a mender of pots and pans.
+
+
+.. _succinct:
+
+================================================================================
+Succinct
+================================================================================
+
+* **Pronunciation**: :code:`/səkˈsɪŋkt/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Briefly and clearly expressed.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "succinct" is **compressed into a brief and clear form**, leaving out unnecessary words. It implies that a message is both short *and* effective.
+
+**What it really means**: "**Succinct**" is an adjective used to describe written or spoken communication that is to the point. It is a complimentary term because it implies that a person has expressed a complex idea with a minimum of words, without sacrificing clarity. For example, a **succinct** answer gives all the necessary information without rambling.
+
+**When to use it**: Use it when you want to praise someone for being brief and clear in their communication.
+    * **Common phrases**:
+        * **(Adjective)** "a **succinct** summary," "a **succinct** explanation," "a **succinct** report."
+    * **Examples**:
+        * **Daily Use**:
+            * "I asked him for a **succinct** summary of the meeting, not a full report."
+            * "His answer was polite but very **succinct**, indicating he didn't want to talk further."
+            * "Try to be more **succinct** in your emails so people don't have to spend a long time reading them."
+        * **Formal/IELTS Use**:
+            * "The research abstract provided a **succinct** overview of the study's methodology and key findings, which is a requirement for publication."
+            * "A well-written essay should present a clear and **succinct** thesis statement in the introduction to guide the reader."
+            * "The official report on the incident was praised for its **succinct** and direct analysis, which avoided unnecessary jargon and speculation."
+            * "The presentation was highly effective because the speaker was able to **succinctly** convey complex data through visual aids and key points."
+
+**Synonyms**: Concise, brief, terse, condensed, crisp, pithy.
+**Opposite words**: Verbose, wordy, rambling, long-winded, garrulous.
+**Where it comes from**: From Latin *succinctus*, the past participle of *succingere* (to gird up). The original meaning was to tuck up one's clothes for a journey, which evolved to mean preparing oneself by "tucking up" one's words, or being brief.
+
+.. _deficient:
+
+================================================================================
+Deficient
+================================================================================
+
+**Systems are frequently redesigned not because they are functionally deficient—the replacements are often functionally identical—but because they are difficult to maintain, port, or scale; or they are too slow; or they have been compromised by hackers.**
+
+* **Pronunciation**: :code:`/dɪˈfɪʃənt/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Lacking or not having enough of something essential.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "deficient" is **lacking or insufficient in a necessary quality, amount, or component**, often to a degree that causes a problem or impairs function.
+
+**What it really means**: "**Deficient**" is an adjective that describes something that is **incomplete or lacking a necessary part or quality**. It's used to point out a lack of something crucial. This can be a physical substance (e.g., a diet **deficient** in iron), a quality (e.g., a system **deficient** in security), or a quantity (e.g., a report **deficient** in data). The word always implies that the absence of a certain element is significant and often problematic. The noun form is "**deficiency**."
+
+**When to use it**: Use it to describe a state of lack or inadequacy.
+    * **Common phrases**:
+        * **(Adjective)** "**deficient** in," "nutritionally **deficient**," "fundamentally **deficient**."
+    * **Examples**:
+        * **Daily Use**:
+            * "My doctor said my diet is **deficient** in iron, which is why I feel tired all the time."
+            * "The team's performance was **deficient** in passion and energy."
+            * "The report was **deficient** in clear examples to support its main argument."
+        * **Formal/IELTS Use**:
+            * "The study found that children with a diet **deficient** in key vitamins experienced slower cognitive and physical development."
+            * "The company's security system was found to be fundamentally **deficient**, leading to the recent data breach and a loss of public trust."
+            * "The government's plan to address the housing crisis was considered **deficient** by critics because it failed to address the root causes of the problem."
+            * "A country's economic growth can become **deficient** if its infrastructure is not maintained and updated to meet modern demands."
+
+**Synonyms**: Insufficient, inadequate, lacking, wanting, scarce, flawed, incomplete.
+**Opposite words**: Sufficient, adequate, complete, abundant, plentiful, robust.
+**Where it comes from**: From Latin *deficiens*, the present participle of *deficere* (to fail, to lack, to desert).
+
+
+.. _mean:
+
+================================================================================
+Mean
+================================================================================
+
+The word **mean** is a versatile term that can function as a verb, an adjective, and a noun. Understanding its various uses is crucial for academic writing.
+
+As a Verb
+
+
+In an academic context, "mean" is frequently used to define concepts or to explain consequences.
+
+* **To have a particular meaning (to define):** This usage is essential for clarity in essays.
+  * *Example:* "An 'ad-hoc' approach **means** that a solution is developed for a specific problem rather than as part of a general plan."
+  * *Example:* "For the purpose of this essay, 'globalization' **means** the increasing interconnectedness of countries through trade and culture."
+
+* **To result in or involve (to explain consequences):** This is useful for cause-and-effect analysis in Task 2 essays.
+  * *Example:* "An increase in urbanization will inevitably **mean** a greater strain on public services and infrastructure."
+  * *Example:* "Failing to address environmental concerns now could **mean** irreversible damage to the planet's ecosystems in the future."
+
+---
+
+As an Adjective
+
+
+While the informal uses of "mean" (e.g., "cruel" or "excellent") are not suitable for IELTS, its statistical meaning is highly relevant for describing data in Task 1 reports.
+
+* **The average (mathematical):** This is a key term for analyzing charts, graphs, and tables.
+  * *Example:* "The **mean** annual rainfall for the region remained stable over the period from 2000 to 2010."
+  * *Example:* "The bar chart illustrates that the **mean** income for young professionals saw a significant increase."
+
+---
+
+As a Noun
+
+
+The most common noun usage in academic writing is "means" (plural), referring to a method or resource.
+
+* **A method or way of achieving something:** This is perfect for discussing solutions or processes.
+  * *Example:* "The internet provides an effective **means** of communication for businesses operating in different time zones."
+  * *Example:* "Governments should seek alternative **means** to fund public education without raising taxes."
+
+* **Financial resources:** This can be used when discussing economic topics.
+  * *Example:* "Not all citizens have the financial **means** to afford private healthcare."
+

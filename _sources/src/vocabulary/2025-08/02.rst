@@ -1,0 +1,237 @@
+2025/08/02
+======================================================
+
+.. _subsidy:
+
+================================================================================
+Subsidy
+================================================================================
+
+* **Pronunciation**: :code:`/ˈsʌbsɪdi/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: A sum of money paid by the government or a public body to help an industry or business.
+
+**Underlying Meaning / Core Meaning**: The core meaning of a "subsidy" is a **direct or indirect financial contribution from a government to a private entity** with the purpose of promoting a specific economic or social policy.
+
+**What it really means**: A "**subsidy**" is a form of financial aid or support extended to an economic sector, an industry, or a business. The goal is typically to keep the prices of goods or services low for consumers, to promote a specific activity (like renewable energy), or to protect a domestic industry from foreign competition. It is a key tool of government economic policy.
+
+**When to use it**: Use it for a payment of money from the government to a company or industry.
+    * **Common phrases**:
+        * **(Noun)** "government **subsidy**," "agricultural **subsidy**," "to receive a **subsidy**."
+    * **Examples**:
+        * **Daily Use**:
+            * "The government offered a **subsidy** to help people buy new, energy-efficient light bulbs."
+            * "Many farmers rely on a government **subsidy** to help them stay in business."
+            * "The company received a **subsidy** to open its factory in our town."
+        * **Formal/IELTS Use**:
+            * "In many countries, agricultural **subsidies** are provided to farmers to ensure food security and stabilize prices for consumers."
+            * "The debate over electric vehicles often includes discussions about the role of government **subsidies** in accelerating their adoption and making them more affordable."
+            * "The report argues that the removal of fossil fuel **subsidies** is a crucial step for nations aiming to meet their climate change commitments."
+            * "Some economists believe that while **subsidies** can protect jobs, they may also lead to market distortions and a lack of innovation."
+
+**Synonyms**: Grant, aid, financial assistance, support, subvention.
+**Opposite words**: Tax, tariff, levy, penalty.
+**Where it comes from**: Latin *subsidium* (reinforcement, help, support).
+
+.. _incentive:
+
+================================================================================
+Incentive
+================================================================================
+
+* **Pronunciation**: :code:`/ɪnˈsɛntɪv/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: A thing that encourages or motivates someone to do something.
+
+**Underlying Meaning / Core Meaning**: The core meaning of an "incentive" is a **motivating factor or a reward offered to encourage a particular course of action** or a certain behavior.
+
+**What it really means**: An "**incentive**" is something that serves as a stimulus to action. It is a reward, a benefit, or a promise that motivates an individual, a group, or an organization to work harder, make a specific decision, or achieve a particular goal. Incentives can be financial, such as bonuses or tax breaks, or non-financial, such as recognition or promotions.
+
+**When to use it**: Use it for something that motivates or encourages.
+    * **Common phrases**:
+        * **(Noun)** "financial **incentive**," "an **incentive** to work," "a strong **incentive**."
+    * **Examples**:
+        * **Daily Use**:
+            * "The company is offering a bonus as an **incentive** for employees to meet their targets this quarter."
+            * "I was given a small prize as an **incentive** for finishing my homework on time."
+            * "Having a tidy room is a great **incentive** to invite friends over."
+        * **Formal/IELTS Use**:
+            * "Governments can use tax **incentives** to encourage businesses to invest in renewable energy sources and sustainable technologies."
+            * "Research shows that offering financial **incentives** can be an effective way to encourage more people to participate in recycling programs."
+            * "The report suggests that creating a clear career path acts as a powerful **incentive** for young professionals to remain with the company long-term."
+            * "The lack of economic **incentives** for citizens to save energy poses a significant challenge to achieving national conservation goals."
+
+**Synonyms**: Motivation, encouragement, stimulus, inducement, spur, reward.
+**Opposite words**: Disincentive, deterrent, obstacle, hindrance.
+**Where it comes from**: Latin *incentivus* (inciting, stimulating).
+
+
+
+.. _cumulative:
+
+================================================================================
+Cumulative
+================================================================================
+
+* **Pronunciation**: :code:`/ˈkjuːmjələtɪv/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Increasing in amount by successive additions.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "cumulative" is **resulting from a series of successive additions or accumulations**, leading to an increasing total effect or amount over time.
+
+**What it really means**: "**Cumulative**" is an adjective used to describe something that is formed or increased by a series of additions. It is not about a single event but about the **total effect of many small actions or events over time**. For example, the **cumulative** effect of daily littering is a large amount of pollution, or **cumulative** knowledge is built up over many years of study.
+
+**When to use it**: Use it for something that grows or increases over time due to additions.
+    * **Common phrases**:
+        * **(Adjective)** "**cumulative** effect," "**cumulative** score," "**cumulative** total."
+    * **Examples**:
+        * **Daily Use**:
+            * "The **cumulative** total of my grocery bill was much higher than I expected."
+            * "The **cumulative** effect of all the little mistakes meant we lost the game."
+            * "My headache is the **cumulative** result of a week of very little sleep."
+        * **Formal/IELTS Use**:
+            * "The study demonstrates that the **cumulative** effect of small, daily exercises is more beneficial for long-term health than sporadic, intense workouts."
+            * "Environmental scientists are concerned about the **cumulative** impact of microplastic pollution on marine ecosystems, which builds up over decades."
+            * "The report highlights that the **cumulative** debt of households, if not managed properly, can pose a significant risk to the overall stability of the national economy."
+            * "The university's admissions criteria take into account a student's **cumulative** GPA, considering all academic achievements over their years of study."
+
+**Synonyms**: Accumulative, increasing, growing, aggregate, collective.
+**Opposite words**: Single, isolated, one-off, decreasing, diminishing.
+**Where it comes from**: Latin *cumulativus*, from *cumulare* (to heap up).
+
+.. _patent:
+
+================================================================================
+Patent
+================================================================================
+
+* **Pronunciation**: :code:`/ˈpætənt/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun*, *Verb*
+* **Simple Meaning**: (Noun) A government license that gives a person the sole right to an invention; (Verb) To obtain such a license for an invention.
+
+**Underlying Meaning / Core Meaning**: The core meaning of a "patent" is a **legal right granted by a government to an inventor**, giving them the exclusive right to make, use, and sell their invention for a limited period.
+
+**What it really means**: As a **noun**, a "**patent**" is a legal document that protects an invention from being copied, used, or sold by others without the inventor's permission. It is a key tool in intellectual property law. As a **verb**, to "**patent**" an invention means to officially obtain this legal document, thereby securing exclusive rights to it.
+
+**When to use it**: Use it for the legal right to an invention.
+    * **Common phrases**:
+        * **(Noun)** "to file a **patent**," "a **patent** application," "to hold a **patent**."
+        * **(Verb)** "to **patent** an invention."
+    * **Examples**:
+        * **Daily Use**:
+            * "I got a great idea for a new product, but I need to figure out how to **patent** it."
+            * "My uncle holds a **patent** for a type of automatic screwdriver."
+            * "The company is suing their rival for violating their **patent** on a new type of motor."
+        * **Formal/IELTS Use**:
+            * "The report highlights the critical role of the **patent** system in fostering innovation by providing inventors with a period of exclusive commercial rights to their creations."
+            * "To **patent** a new drug, a pharmaceutical company must provide extensive evidence that the compound is both novel and has practical applications."
+            * "The debate over intellectual property rights often centers on whether **patents** stifle competition or are necessary to encourage investment in research and development."
+            * "The university's technology transfer office is responsible for helping researchers **patent** their discoveries and license them to commercial partners."
+
+**Synonyms**: (Noun) Copyright, license, legal protection; (Verb) Register, license, secure.
+**Opposite words**: (Noun) N/A; (Verb) N/A.
+**Where it comes from**: Latin *patens*, from *patere* (to lie open).
+
+.. _rebate:
+
+================================================================================
+Rebate
+================================================================================
+
+* **Pronunciation**: :code:`/ˈriːbeɪt/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun*, *Verb*
+* **Simple Meaning**: (Noun) A partial refund of a payment; (Verb) To give back a partial amount of money that was paid.
+
+**Underlying Meaning / Core Meaning**: The core meaning of a "rebate" is a **partial refund or reduction of a payment**, typically given as a return of part of the original sum paid.
+
+**What it really means**: As a **noun**, a "**rebate**" is a partial refund, usually offered as a promotional tool to encourage sales or as a form of compensation. For example, a customer might get a **rebate** after purchasing a product. As a **verb**, to "**rebate**" means to give this partial refund. It is distinct from a discount, which is applied at the time of purchase, as a **rebate** is often received later.
+
+**When to use it**: Use it for a partial refund or reduction in a price.
+    * **Common phrases**:
+        * **(Noun)** "a cash **rebate**," "a tax **rebate**," "to claim a **rebate**."
+        * **(Verb)** "to **rebate** the cost."
+    * **Examples**:
+        * **Daily Use**:
+            * "I filled out the paperwork to get a **rebate** for the new fridge I bought."
+            * "The company is offering a $50 **rebate** on all new laptops."
+            * "You should check if you can get a tax **rebate** for your student loan interest."
+        * **Formal/IELTS Use**:
+            * "The government's plan to stimulate the economy includes offering a significant tax **rebate** to low-income households in the upcoming fiscal year."
+            * "Many utility companies provide a **rebate** to customers who install energy-efficient appliances, thereby promoting sustainability."
+            * "The study explores the effectiveness of consumer **rebates** as a marketing strategy, concluding that they often boost sales but have a lower claim rate than discounts."
+            * "The policy proposal suggests that the government could **rebate** a portion of the tax paid on fuel to drivers who meet specific efficiency standards."
+
+**Synonyms**: (Noun) Refund, refund, discount, deduction, repayment; (Verb) Refund, pay back, give back.
+**Opposite words**: (Noun) Surcharge, penalty; (Verb) Charge, penalize.
+**Where it comes from**: From Old French *rabattre* (to beat down, take off).
+
+.. _volatile:
+
+================================================================================
+Volatile
+================================================================================
+
+* **Pronunciation**: :code:`/ˈvɒlətaɪl/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Liable to change rapidly and unpredictably, often for the worse; easily evaporated.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "volatile" is **unpredictable and subject to rapid change**, either physically (evaporating quickly) or figuratively (changing rapidly and unstably).
+
+**What it really means**: "**Volatile**" is an adjective that describes something that is **unstable, unpredictable, and prone to sudden change**. In a scientific context, a **volatile** liquid is one that evaporates easily. In a social or financial context, a **volatile** situation or market is one that can change direction quickly and without warning, often resulting in negative consequences.
+
+**When to use it**: Use it for something that is unstable, unpredictable, or changes quickly.
+    * **Common phrases**:
+        * **(Adjective)** "**volatile** market," "**volatile** situation," "**volatile** compound."
+    * **Examples**:
+        * **Daily Use**:
+            * "The weather has been **volatile** all week, with sun one minute and rain the next."
+            * "The political situation in that country is quite **volatile** right now, so it's not a good time to visit."
+            * "Be careful with that liquid; it's very **volatile** and could explode."
+        * **Formal/IELTS Use**:
+            * "The report warns that the global economy remains in a **volatile** state, with fluctuating stock markets and unpredictable currency values."
+            * "While oil prices are notoriously **volatile** due to geopolitical factors, the price of renewable energy sources is becoming increasingly stable."
+            * "In psychology, the term "**volatile**" is often used to describe a person's temperament that is prone to sudden, unpredictable mood swings."
+            * "The discovery of a new **volatile** organic compound in the city's water supply has raised public health concerns among local residents."
+
+**Synonyms**: Unstable, unpredictable, explosive, erratic, turbulent, temperamental.
+**Opposite words**: Stable, calm, predictable, constant, steady, placid.
+**Where it comes from**: Latin *volatilis* (flying, fleeting, winged).
+
+.. _transpose:
+
+================================================================================
+Transpose
+================================================================================
+
+* **Pronunciation**: :code:`/trænsˈpəʊz/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (transitive)
+* **Simple Meaning**: To cause two or more things to change places with each other.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "transpose" is to **change the position, order, or context of two or more things**, causing them to switch places.
+
+**What it really means**: To "**transpose**" means to **reverse the order of things or to move something from one place to another**. In music, it means to rewrite a piece in a different key. In math, it means to move a term from one side of an equation to the other. In a general sense, it can mean to change the position or order of words, people, or items.
+
+**When to use it**: Use it for changing the order or position of things.
+    * **Common phrases**:
+        * **(Verb)** "**transpose** the numbers," "**transpose** a piece of music," "to **transpose** into a different context."
+    * **Examples**:
+        * **Daily Use**:
+            * "The recipe accidentally had the sugar and salt amounts **transposed**, so the cookies tasted terrible."
+            * "I need to **transpose** the notes from my notebook into a clean document."
+            * "Could you help me **transpose** these two boxes to different shelves?"
+        * **Formal/IELTS Use**:
+            * "The research team had to **transpose** the columns and rows of the dataset to facilitate a more accurate statistical analysis."
+            * "In an essay, it is often useful to **transpose** an abstract theoretical concept into a concrete, real-world example to improve clarity for the reader."
+            * "The **transposition** of a musical piece into a lower key is often necessary to make it suitable for a different vocal range or instrument."
+            * "Historians must carefully **transpose** historical events from one cultural context to another without losing their original meaning and significance."
+
+**Synonyms**: Reverse, swap, switch, interchange, relocate, transfer.
+**Opposite words**: Maintain, keep, fix, stabilize.
+**Where it comes from**: Latin *transponere* (to change position, to transfer), from *trans-* (across) + *ponere* (to place).
