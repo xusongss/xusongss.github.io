@@ -1,0 +1,728 @@
+2025/06/26
+======================================
+
+The Vocabulary words are from `The Wonman in White`
+
+.. _expedition:
+
+================================================================================
+Expedition
+================================================================================
+
+* **Pronunciation**: :code:`[ˌekspəˈdɪʃ(ə)n]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: A journey with a specific purpose, often for exploration or research; the group undertaking such a journey; speed or promptness.
+
+**What it really means**: An "**expedition**" is a carefully planned journey, usually undertaken by a group, for a particular goal such as exploring an unknown area, conducting scientific research, or sometimes for military purposes. It can also refer to the team or group that makes this journey. Less commonly, it can mean quickness in action.
+
+**When to use it**: Use it when describing a purposeful journey or the team involved in it.
+    * **Common phrases**: "scientific **expedition**," "mountaineering **expedition**," "arctic **expedition**."
+    * **Examples**:
+        * "They organized an **expedition** to the Amazon rainforest to study rare plants."
+        * "The climbing **expedition** faced harsh weather conditions on the mountain."
+        * "The police acted with great **expedition** to catch the suspect."
+
+**Synonyms**: Journey, voyage, quest, mission, exploration, trip, undertaking, tour.
+**Opposite words**: Retreat, return, idleness.
+**Where it comes from**: Latin *expeditio* (an undertaking, military expedition).
+
+
+.. _conspiracy:
+
+================================================================================
+Conspiracy
+================================================================================
+
+* **Pronunciation**: :code:`[kənˈspɪrəsi]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: A secret plan by a group to do something unlawful or harmful; the act of making such a plan; a group involved in a secret plan.
+
+**What it really means**: A "**conspiracy**" is a secret plan made by two or more people to commit an illegal or harmful act. It also refers to the act of forming such a plot, or the group of people involved in it. It implies deception and often malevolent intent.
+
+**When to use it**: Use it when talking about secret, often illegal, plans or the groups involved.
+    * **Common phrases**: "**conspiracy** theory," "political **conspiracy**," "enter into a **conspiracy**."
+    * **Examples**:
+        * "The police uncovered a **conspiracy** to overthrow the government."
+        * "He believed there was a vast **conspiracy** against him."
+        * "The book details the intricate **conspiracy** behind the assassination."
+
+**Synonyms**: Plot, scheme, intrigue, collusion, machination, cabal.
+**Opposite words**: Openness, honesty, transparency.
+**Where it comes from**: Latin *conspirare* (to agree, conspire), from *con-* (together) + *spirare* (to breathe).
+
+
+.. _heir:
+
+================================================================================
+Heir
+================================================================================
+
+* **Pronunciation**: :code:`[eə(r)]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: A person who inherits property or a title; a successor; to inherit.
+
+**What it really means**: An "**heir**" is someone who is legally entitled to inherit property, money, or a title from another person upon their death. Figuratively, it can mean a successor to a position or tradition. As a verb, to "heir" means to inherit.
+
+**When to use it**: Use it for legal inheritance or succession to a position.
+    * **Common phrases**: "legal **heir**," "sole **heir**," "**heir** to the throne," "**heir** apparent."
+    * **Examples**:
+        * "She was the sole **heir** to a vast fortune."
+        * "Prince Charles is the **heir** to the British throne."
+        * "He was named the **heir** to the company's leadership."
+
+**Synonyms**: (Noun) Successor, inheritor, beneficiary, descendant. (Verb) Inherit.
+**Opposite words**: (Noun) Predecessor, ancestor.
+**Where it comes from**: Old French *heir*, from Latin *heres* (heir).
+
+
+.. _inquest:
+
+================================================================================
+Inquest
+================================================================================
+
+* **Pronunciation**: :code:`[ˈɪŋkwest]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: A judicial inquiry, especially one held by a coroner into the cause of a death.
+
+**What it really means**: An "**inquest**" is a formal legal investigation, particularly one conducted by a coroner to determine the cause of a death, especially if it's sudden, suspicious, or unexplained. It's about gathering facts and evidence to establish circumstances.
+
+**When to use it**: Use it for formal investigations into deaths or other incidents.
+    * **Common phrases**: "hold an **inquest**," "coroner's **inquest**."
+    * **Examples**:
+        * "The police ordered an **inquest** into the mysterious death."
+        * "The jury at the **inquest** returned a verdict of accidental death."
+        * "An **inquest** was held to determine the exact sequence of events leading to the fire."
+
+**Synonyms**: Inquiry, investigation, hearing, examination, probe, scrutiny.
+**Opposite words**: (No direct opposites).
+**Where it comes from**: Old French *enqueste*, from Latin *inquisita* (inquiry).
+
+
+.. _forgery:
+
+================================================================================
+Forgery
+================================================================================
+
+* **Pronunciation**: :code:`[ˈfɔːdʒəri]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: The crime of falsely making or altering a document or signature; a forged item.
+
+**What it really means**: "**Forgery**" refers to the act of illegally creating a false document, signature, artwork, or other item with the intent to deceive. It also refers to the fake item itself. It's a crime involving deception and imitation.
+
+**When to use it**: Use it when discussing the crime of falsification or the fake items produced.
+    * **Common phrases**: "commit **forgery**," "art **forgery**," "document **forgery**."
+    * **Examples**:
+        * "He was arrested for **forgery** after trying to use a fake passport."
+        * "The painting was later discovered to be a clever **forgery**."
+        * "The bank detected a case of check **forgery**."
+
+**Synonyms**: Counterfeiting, falsification, fraud, fake, sham, replica, imitation.
+**Opposite words**: Authenticity, original, genuine.
+**Where it comes from**: From "forge" (to falsify) + "-ery."
+
+
+.. _clerk:
+
+================================================================================
+Clerk
+================================================================================
+
+* **Pronunciation**: :code:`[klɑːk]`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: An office worker; a shop assistant; a person who keeps records for a court or council; to work as a clerk.
+
+**What it really means**: A "**clerk**" is a person who performs administrative duties in an office, bank, or court, such as keeping records or handling correspondence. In some contexts, it can refer to a shop assistant. As a verb, it means to perform these duties.
+
+**When to use it**: Use it for administrative staff, shop assistants, or judicial record-keepers.
+    * **Common phrases**: "office **clerk**," "court **clerk**," "hotel **clerk**," "sales **clerk**."
+    * **Examples**:
+        * "The **clerk** at the reception desk helped me check in."
+        * "He worked as a legal **clerk** for a law firm."
+        * "She spent her day **clerking** at the local grocery store."
+
+**Synonyms**: (Noun) Administrator, assistant, secretary, receptionist, shop assistant, sales associate.
+**Opposite words**: (No direct opposites).
+**Where it comes from**: Old French *clerc*, from Latin *clericus* (cleric, scholar).
+
+
+.. _aristocratic:
+
+================================================================================
+Aristocratic
+================================================================================
+
+* **Pronunciation**: :code:`[ˌærɪstəˈkrætɪk]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Adjective* (describing word)
+* **Simple Meaning**: Belonging to or characteristic of the aristocracy (nobility); having noble qualities.
+
+**What it really means**: "**Aristocratic**" describes something or someone associated with the aristocracy, which is a class of people holding hereditary titles or high social rank. It implies qualities like elegance, refinement, and often a sense of superiority.
+
+**When to use it**: Use it to describe things or people related to nobility or exhibiting noble characteristics.
+    * **Common phrases**: "**aristocratic** family," "**aristocratic** bearing," "**aristocratic** lifestyle."
+    * **Examples**:
+        * "He had an **aristocratic** air about him, even though he wasn't from a noble family."
+        * "The old mansion was filled with **aristocratic** furniture and art."
+        * "She was born into an **aristocratic** family with a long history."
+
+**Synonyms**: Noble, high-born, patrician, blue-blooded, refined, elegant, privileged.
+**Opposite words**: Common, plebeian, humble, working-class, vulgar.
+**Where it comes from**: From Greek *aristokratia* (rule of the best).
+
+
+.. _aggressive:
+
+================================================================================
+Aggressive
+================================================================================
+
+* **Pronunciation**: :code:`[əˈɡresɪv]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Adjective* (describing word)
+* **Simple Meaning**: Ready or likely to attack; forceful and determined; (of a disease) spreading quickly.
+
+**What it really means**: "**Aggressive**" describes behavior that is hostile, ready to attack, or forcefully assertive. It can also mean very determined and energetic in pursuing goals, or (in a medical context) spreading rapidly and severely.
+
+**When to use it**: Use it for hostile behavior, determined action, or rapid progression (e.g., disease).
+    * **Common phrases**: "**aggressive** behavior," "**aggressive** marketing," "**aggressive** cancer."
+    * **Examples**:
+        * "The dog became **aggressive** when a stranger approached its owner."
+        * "The company adopted an **aggressive** strategy to gain market share."
+        * "Doctors are using **aggressive** treatments to combat the disease."
+
+**Synonyms**: Hostile, belligerent, assertive, forceful, pushy, competitive, violent, virulent.
+**Opposite words**: Peaceful, passive, timid, gentle, mild, submissive.
+**Where it comes from**: Latin *aggressus* (attacked), past participle of *aggredi* (to attack).
+
+
+.. _veil:
+
+================================================================================
+Veil
+================================================================================
+
+* **Pronunciation**: :code:`[veɪl]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: A piece of material used to cover the face or head; something that conceals; to cover or conceal.
+
+**What it really means**: A "**veil**" is a piece of thin material worn by women to cover the face or head, often for religious or ceremonial reasons. Figuratively, it can refer to anything that conceals, obscures, or disguises something. As a verb, to "**veil**" means to cover or hide.
+
+**When to use it**: Use it for physical coverings, or for hiding/obscuring something.
+    * **Common phrases**: "wedding **veil**," "behind the **veil**," "**veil** of secrecy," "**veil** one's emotions."
+    * **Examples**:
+        * "The bride wore a long white **veil**."
+        * "A **veil** of mist covered the mountains."
+        * "She tried to **veil** her disappointment with a smile."
+
+**Synonyms**: (Noun) Cover, screen, mask, shroud, disguise, curtain. (Verb) Cover, hide, conceal, obscure, mask, shroud.
+**Opposite words**: (Noun) Exposure, revelation. (Verb) Reveal, expose, uncover, disclose.
+**Where it comes from**: Old French *veile*, from Latin *velum* (sail, curtain).
+
+
+.. _inscription:
+
+================================================================================
+Inscription
+================================================================================
+
+* **Pronunciation**: :code:`[ɪnˈskrɪpʃ(ə)n]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: Words or symbols written or carved on a surface, often on a monument or in a book.
+
+**What it really means**: An "**inscription**" is text, words, or symbols that are written, carved, or engraved on a surface, such as a monument, coin, or book. It's often meant to be permanent or commemorative.
+
+**When to use it**: Use it for carved or written text on objects.
+    * **Common phrases**: "memorial **inscription**," "dedicatory **inscription**."
+    * **Examples**:
+        * "The ancient tomb bore a mysterious **inscription**."
+        * "He found a personal **inscription** inside the old book."
+        * "The statue had an **inscription** dedicating it to the city's founder."
+
+**Synonyms**: Engraving, epitaph, dedication, legend, writing, carving, etching.
+**Opposite words**: Erasure, blank.
+**Where it comes from**: Latin *inscriptio* (a writing in or on), from *inscribere* (to write on).
+
+
+.. _certify:
+
+================================================================================
+Certify
+================================================================================
+
+* **Pronunciation**: :code:`[ˈsɜːtɪfaɪ]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Verb* (action word)
+* **Simple Meaning**: To formally attest or confirm that something is true, accurate, or meets certain standards; to officially declare.
+
+**What it really means**: To "**certify**" means to officially state or confirm that something is true, correct, or meets specific standards, often by providing a document or certificate. It implies a formal and authoritative declaration.
+
+**When to use it**: Use it for official confirmation or validation.
+    * **Common phrases**: "**certify** a document," "**certify** as," "**certify** a copy."
+    * **Examples**:
+        * "The doctor will **certify** that you are fit to travel."
+        * "The product is **certified** organic by a national organization."
+        * "He needs to pass the exam to be **certified** as a teacher."
+
+**Synonyms**: Verify, confirm, validate, attest, guarantee, endorse, license, accredit.
+**Opposite words**: Disprove, invalidate, deny, decertify.
+**Where it comes from**: Old French *certifier*, from Latin *certificare* (to make certain).
+
+
+.. _intellect:
+
+================================================================================
+Intellect
+================================================================================
+
+* **Pronunciation**: :code:`[ˈɪntəlekt]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (uncountable, countable)
+* **Simple Meaning**: The faculty of reasoning and understanding; a person of great intelligence.
+
+**What it really means**: "**Intellect**" refers to a person's ability to think, reason, and understand, especially complex or abstract ideas. It emphasizes mental capacity and intelligence. It can also refer to a person who possesses great mental ability.
+
+**When to use it**: Use it for mental capacity, reasoning ability, or highly intelligent people.
+    * **Common phrases**: "sharp **intellect**," "keen **intellect**," "man of **intellect**."
+    * **Examples**:
+        * "Her keen **intellect** allowed her to grasp complex theories quickly."
+        * "He was known as a leading **intellect** in his field."
+        * "The debate challenged their **intellect** and critical thinking skills."
+
+**Synonyms**: Intelligence, mind, brain, reason, understanding, acumen, genius, sagacity.
+**Opposite words**: Ignorance, stupidity, irrationality.
+**Where it comes from**: Latin *intellectus* (understanding), from *intelligere* (to understand).
+
+
+.. _disgust:
+
+================================================================================
+Disgust
+================================================================================
+
+* **Pronunciation**: :code:`[dɪsˈɡʌst]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (uncountable), *Verb* (action word)
+* **Simple Meaning**: A feeling of strong revulsion or disapproval; to cause such a feeling.
+
+**What it really means**: "**Disgust**" is a very strong feeling of revulsion, repulsion, or strong disapproval, often caused by something unpleasant, offensive, or morally wrong. As a verb, it means to cause this feeling in someone.
+
+**When to use it**: Use it for strong feelings of revulsion or causing such feelings.
+    * **Common phrases**: "feel **disgust**," "fill with **disgust**," "to one's **disgust**."
+    * **Examples**:
+        * "The sight of the rotten food filled her with **disgust**."
+        * "His cruel behavior utterly **disgusted** me."
+        * "She turned away in **disgust**."
+
+**Synonyms**: (Noun) Revulsion, repulsion, aversion, abhorrence, loathing, distaste, contempt. (Verb) Repel, sicken, revolt, offend, appall.
+**Opposite words**: (Noun) Liking, admiration, pleasure, delight. (Verb) Please, attract, delight.
+**Where it comes from**: Old French *desgouster* (to displease), from *des-* (dis-) + *gouster* (to taste).
+
+
+.. _bruise:
+
+================================================================================
+Bruise
+================================================================================
+
+* **Pronunciation**: :code:`[bruːz]`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: A mark on the skin caused by a blow; a similar mark on fruit; to cause such a mark.
+
+**What it really means**: A "**bruise**" is a dark mark on the skin caused by a blow that breaks small blood vessels underneath, without breaking the skin. It can also refer to a similar mark on fruit. As a verb, to "**bruise**" means to cause such a mark, or to hurt someone's feelings.
+
+**When to use it**: Use it for skin discoloration from injury, marks on fruit, or emotional hurt.
+    * **Common phrases**: "black and blue **bruise**," "emotional **bruise**," "**bruise** easily."
+    * **Examples**:
+        * "He had a large **bruise** on his arm after falling."
+        * "Be careful not to **bruise** the apples when you pick them."
+        * "Her harsh words **bruised** his ego."
+
+**Synonyms**: (Noun) Contusion, mark, discoloration. (Verb) Injure, discolor, hurt, damage, upset.
+**Opposite words**: (No direct opposites).
+**Where it comes from**: Old French *bruisier* (to break).
+
+
+.. _agitate:
+
+================================================================================
+Agitate
+================================================================================
+
+* **Pronunciation**: :code:`[ˈædʒɪteɪt]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (action word)
+* **Simple Meaning**: To make someone troubled or nervous; to stir up public opinion; to stir or shake a liquid.
+
+**What it really means**: To "**agitate**" means to make someone feel anxious or disturbed. It can also mean to campaign or stir up public opinion about an issue, or to physically stir or shake a liquid. It implies causing movement, disturbance, or strong emotion.
+
+**When to use it**: Use it for causing anxiety, campaigning, or stirring liquids.
+    * **Common phrases**: "**agitate** for change," "**agitate** the public," "feel **agitated**."
+    * **Examples**:
+        * "The news of the layoffs began to **agitate** the employees."
+        * "Activists are **agitating** for stronger environmental laws."
+        * "You need to **agitate** the solution before pouring it."
+
+**Synonyms**: Disturb, upset, trouble, perturb, rouse, stir, provoke, campaign, protest.
+**Opposite words**: Calm, soothe, pacify, tranquilize.
+**Where it comes from**: Latin *agitare* (to move, drive, stir).
+
+
+.. _gave_away:
+
+================================================================================
+Gave away (Phrasal Verb)
+================================================================================
+
+* **Pronunciation**: :code:`[ɡɪv əˈweɪ]`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Phrasal verb*
+* **Simple Meaning**: To reveal a secret; to give something as a gift; to sell something cheaply.
+
+**What it really means**: To "**give away**" means to reveal a secret or information, often unintentionally. It can also mean to donate something for free, or to sell something at a very low price. In a wedding, it refers to the father presenting the bride to the groom.
+
+**When to use it**: Use it for revealing secrets, donating, or selling cheaply.
+    * **Examples**:
+        * "His nervous laugh **gave away** his true feelings."
+        * "They decided to **give away** all their old clothes to charity."
+        * "The store is **giving away** free samples today."
+        * "The company is **giving away** products at a discount."
+
+**Synonyms**: Reveal, disclose, betray, expose, donate, hand out, sell cheaply.
+**Opposite words**: Conceal, hide, keep, retain, buy.
+**Where it comes from**: From "give" + "away."
+
+
+.. _obligation:
+
+================================================================================
+Obligation
+================================================================================
+
+* **Pronunciation**: :code:`[ˌɒblɪˈɡeɪʃ(ə)n]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: A duty or commitment; something one is bound to do.
+
+**What it really means**: An "**obligation**" is something that a person is legally or morally bound to do; a duty or commitment. It can also refer to a debt of gratitude or a formal agreement. It implies a responsibility or requirement.
+
+**When to use it**: Use it for duties, responsibilities, or moral/legal commitments.
+    * **Common phrases**: "legal **obligation**," "moral **obligation**," "sense of **obligation**," "meet an **obligation**."
+    * **Examples**:
+        * "Parents have an **obligation** to care for their children."
+        * "He felt a strong **obligation** to help his community."
+        * "The contract outlines the company's financial **obligations**."
+
+**Synonyms**: Duty, responsibility, commitment, requirement, burden, liability, debt.
+**Opposite words**: Right, freedom, choice, exemption.
+**Where it comes from**: Latin *obligatio* (a binding, engagement), from *obligare* (to bind).
+
+
+.. _sacrifice:
+
+================================================================================
+Sacrifice
+================================================================================
+
+* **Pronunciation**: :code:`[ˈsækrɪfaɪs]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable, uncountable), *Verb* (action word)
+* **Simple Meaning**: The act of giving up something valued for something more important; an offering to a deity; to give up something.
+
+**What it really means**: "**Sacrifice**" is the act of giving up something valuable or important for the sake of something else that is considered more important or worthy. It can also refer to an offering made to a god. As a verb, to "**sacrifice**" means to make such a giving-up or offering.
+
+**When to use it**: Use it for giving up something for a greater cause or for religious offerings.
+    * **Common phrases**: "make a **sacrifice**," "personal **sacrifice**," "financial **sacrifice**," "**sacrifice** for."
+    * **Examples**:
+        * "Parents often make great **sacrifices** for their children's future."
+        * "The ancient civilization would **sacrifice** animals to their gods."
+        * "He had to **sacrifice** his free time to finish the project on schedule."
+
+**Synonyms**: (Noun) Offering, immolation, surrender, relinquishment, renunciation, loss. (Verb) Give up, forgo, surrender, relinquish, offer.
+**Opposite words**: (Noun) Gain, acquisition, preservation. (Verb) Keep, retain, acquire.
+**Where it comes from**: Latin *sacrificium* (a sacrifice), from *sacer* (sacred) + *facere* (to make).
+
+
+.. _formality:
+
+================================================================================
+Formality
+================================================================================
+
+* **Pronunciation**: :code:`[fɔːˈmæləti]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: The strict observance of rules or etiquette; a thing done for custom rather than serious meaning; the quality of being formal.
+
+**What it really means**: "**Formality**" refers to the strict adherence to rules, customs, or etiquette, often in a rigid or ceremonial way. It can also mean something done simply to meet a requirement or custom, without much real significance.
+
+**When to use it**: Use it for strict adherence to rules, ceremonial actions, or the quality of being formal.
+    * **Common phrases**: "mere **formality**," "legal **formality**," "stand on **formality**."
+    * **Examples**:
+        * "The signing of the document was a mere **formality** after the agreement was reached."
+        * "She insisted on all the proper **formalities** for the official visit."
+        * "His speech was marked by a certain **formality** that made it seem stiff."
+
+**Synonyms**: Ceremony, protocol, ritual, convention, punctiliousness, stiffness.
+**Opposite words**: Informality, casualness, spontaneity, freedom.
+**Where it comes from**: Latin *formalitas* (form, shape).
+
+
+.. _accent:
+
+================================================================================
+Accent
+================================================================================
+
+* **Pronunciation**: :code:`[ˈæksent]`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: A distinctive way of pronouncing a language; emphasis; to emphasize.
+
+**What it really means**: An "**accent**" is a particular way of pronouncing a language that shows where someone is from or what social group they belong to. It can also mean special emphasis given to a syllable or word, or a distinctive feature. As a verb, to "**accent**" means to emphasize something.
+
+**When to use it**: Use it for pronunciation, emphasis, or distinctive features.
+    * **Common phrases**: "foreign **accent**," "strong **accent**," "put an **accent** on."
+    * **Examples**:
+        * "She spoke with a strong French **accent**."
+        * "The speaker placed an **accent** on the importance of teamwork."
+        * "The bright cushions **accent** the neutral decor of the room."
+
+**Synonyms**: (Noun) Dialect, intonation, emphasis, stress, inflection, highlight. (Verb) Emphasize, highlight, stress, underscore.
+**Opposite words**: (Noun) Monotone, uniformity. (Verb) De-emphasize, downplay.
+**Where it comes from**: Latin *accentus* (stress, tone), from *ad-* (to) + *cantus* (singing).
+
+
+.. _tame:
+
+================================================================================
+Tame
+================================================================================
+
+* **Pronunciation**: :code:`[teɪm]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Adjective* (describing word), *Verb* (action word)
+* **Simple Meaning**: (Of an animal) domesticated; (of something) dull or unexciting; to domesticate or control.
+
+**What it really means**: "**Tame**" describes an animal that has been domesticated and is not wild or dangerous. It can also describe something that is dull, unexciting, or easily controlled. As a verb, to "**tame**" means to domesticate an animal or to bring something wild or difficult under control.
+
+**When to use it**: Use it for domesticated animals, unexciting things, or bringing under control.
+    * **Common phrases**: "**tame** animal," "**tame** lion," "**tame** a beast," "**tame** humor."
+    * **Examples**:
+        * "The circus had several **tame** elephants."
+        * "The movie was surprisingly **tame** compared to the book."
+        * "It took a long time to **tame** the wild horse."
+
+**Synonyms**: (Adjective) Domesticated, docile, gentle, subdued, dull, bland. (Verb) Domesticate, break, control, subdue, curb, moderate.
+**Opposite words**: (Adjective) Wild, fierce, unruly, exciting, untamed. (Verb) Unleash, wilden.
+**Where it comes from**: Old English *tam* (tame).
+
+
+.. _irritate:
+
+================================================================================
+Irritate
+================================================================================
+
+* **Pronunciation**: :code:`[ˈɪrɪteɪt]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Verb* (action word)
+* **Simple Meaning**: To annoy or provoke someone; to cause discomfort or inflammation in a body part.
+
+**What it really means**: To "**irritate**" means to make someone feel annoyed, impatient, or angry. It can also mean to cause a physical reaction like itching, discomfort, or inflammation in a part of the body.
+
+**When to use it**: Use it for causing annoyance or physical discomfort.
+    * **Common phrases**: "**irritate** someone," "**irritate** the skin," "highly **irritating**."
+    * **Examples**:
+        * "His constant complaining began to **irritate** her."
+        * "The dust in the air can **irritate** your eyes."
+        * "It's really **irritating** when people leave their trash behind."
+
+**Synonyms**: Annoy, vex, exasperate, provoke, bother, nettle, inflame, sting.
+**Opposite words**: Soothe, calm, please, relieve, comfort.
+**Where it comes from**: Latin *irritare* (to excite, stimulate, provoke).
+
+
+.. _margin:
+
+================================================================================
+Margin
+================================================================================
+
+* **Pronunciation**: :code:`[ˈmɑːdʒɪn]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable), *Verb* (action word)
+* **Simple Meaning**: The blank space around text; a difference between two amounts; a profit; an edge or limit; to provide with a margin.
+
+**What it really means**: A "**margin**" is the empty space around the edges of a page of text. It can also refer to the difference between two amounts (like profit and cost), or an amount of extra space, time, or money. It can also mean an edge or boundary.
+
+**When to use it**: Use it for page borders, differences in amounts, extra space, or edges.
+    * **Common phrases**: "profit **margin**," "safety **margin**," "narrow **margin**," "in the **margins**."
+    * **Examples**:
+        * "Please leave a wide **margin** on the left side of the page."
+        * "The company's profit **margin** improved this quarter."
+        * "They won the election by a very narrow **margin**."
+
+**Synonyms**: (Noun) Border, edge, boundary, space, difference, profit, leeway, allowance.
+**Opposite words**: (No direct opposites).
+**Where it comes from**: Latin *margo* (edge, border).
+
+
+.. _debt:
+
+================================================================================
+Debt
+================================================================================
+
+* **Pronunciation**: :code:`[det]`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: A sum of money owed; the state of owing money; a feeling of gratitude.
+
+**What it really means**: A "**debt**" is an amount of money that you owe to someone or something (like a bank). It can also refer to the state of owing money, or a feeling of gratitude for a favor or service received ("a debt of gratitude").
+
+**When to use it**: Use it for money owed, the state of owing, or gratitude.
+    * **Common phrases**: "in **debt**," "pay off **debt**," "national **debt**," "personal **debt**."
+    * **Examples**:
+        * "He got into a lot of **debt** after losing his job."
+        * "The company is trying to reduce its national **debt**."
+        * "I owe you a **debt** of gratitude for your help."
+
+**Synonyms**: Obligation, liability, arrears, indebtedness, loan.
+**Opposite words**: Credit, asset, surplus, repayment.
+**Where it comes from**: Old French *dete*, from Latin *debitum* (something owed).
+
+
+.. _aristocrat:
+
+================================================================================
+Aristocrat
+================================================================================
+
+* **Pronunciation**: :code:`[ˈærɪstəkræt]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable)
+* **Simple Meaning**: A member of the aristocracy (nobility).
+
+**What it really means**: An "**aristocrat**" is a person belonging to the aristocracy, which is a class of people holding hereditary titles or high social rank. They are typically from wealthy, long-established families and often possess refined manners and a privileged lifestyle.
+
+**When to use it**: Use it to refer to a member of the nobility or someone with noble characteristics.
+    * **Common phrases**: "born an **aristocrat**," "old **aristocrat**."
+    * **Examples**:
+        * "He was an **aristocrat** by birth, but preferred a simple life."
+        * "The grand ball was attended by many **aristocrats** and dignitaries."
+        * "She carried herself with the grace of an **aristocrat**."
+
+**Synonyms**: Noble, patrician, peer, lord, lady, blue blood.
+**Opposite words**: Commoner, peasant, plebeian.
+**Where it comes from**: From Greek *aristokratia* (rule of the best).
+
+
+.. _asylum:
+
+================================================================================
+Asylum
+================================================================================
+
+* **Pronunciation**: :code:`[əˈsaɪləm]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (uncountable, countable)
+* **Simple Meaning**: Protection granted by a state to a political refugee; (formerly) an institution for the mentally ill.
+
+**What it really means**: "**Asylum**" refers to the protection granted by a country to someone who has fled their own country due to political persecution or danger. Historically, it also referred to an institution for the care of the mentally ill.
+
+**When to use it**: Use it for political protection or (historically) mental institutions.
+    * **Common phrases**: "seek **asylum**," "grant **asylum**," "political **asylum**."
+    * **Examples**:
+        * "Many refugees sought **asylum** in neighboring countries."
+        * "He was granted political **asylum** after proving his life was in danger."
+        * "The old building used to be an **asylum** for the mentally infirm."
+
+**Synonyms**: Sanctuary, refuge, shelter, haven, protection, safe haven.
+**Opposite words**: Persecution, danger, threat.
+**Where it comes from**: Latin *asylum* (sanctuary), from Greek *asylon* (safe from seizure).
+
+
+.. _fugitive:
+
+================================================================================
+Fugitive
+================================================================================
+
+* **Pronunciation**: :code:`[ˈfjuːdʒətɪv]`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable), *Adjective* (describing word)
+* **Simple Meaning**: A person who has escaped or is in hiding; quickly fading or disappearing; lasting for a short time.
+
+**What it really means**: A "**fugitive**" is a person who has escaped from custody or is in hiding, usually to avoid arrest or persecution. As an adjective, it describes something that is fleeting, quickly disappearing, or lasting only for a short time.
+
+**When to use it**: Use it for escaped persons or for things that are transient.
+    * **Common phrases**: "on the run as a **fugitive**," "**fugitive** thoughts," "**fugitive** colors."
+    * **Examples**:
+        * "The police launched a manhunt for the escaped **fugitive**."
+        * "He lived as a **fugitive** for years, constantly moving from place to place."
+        * "Her **fugitive** thoughts drifted from one topic to another."
+
+**Synonyms**: (Noun) Escapee, runaway, outlaw. (Adjective) Transient, ephemeral, fleeting, elusive, temporary.
+**Opposite words**: (Noun) Captive, prisoner. (Adjective) Permanent, lasting, enduring, stable.
+**Where it comes from**: Latin *fugitivus* (fleeing), from *fugere* (to flee).
+
+
+.. _passionate:
+
+================================================================================
+Passionate
+================================================================================
+
+* **Pronunciation**: :code:`[ˈpæʃənət]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Adjective* (describing word)
+* **Simple Meaning**: Having or showing strong feelings or beliefs; intensely emotional.
+
+**What it really means**: "**Passionate**" describes someone who has very strong feelings or beliefs about something, often showing great enthusiasm, love, or anger. It implies intense emotion and conviction.
+
+**When to use it**: Use it for strong emotions, enthusiasm, or intense beliefs.
+    * **Common phrases**: "**passionate** love," "**passionate** debate," "**passionate** speaker," "**passionate** about."
+    * **Examples**:
+        * "She is very **passionate** about environmental protection."
+        * "Their **passionate** kiss left them breathless."
+        * "He delivered a **passionate** speech that moved the audience."
+
+**Synonyms**: Ardent, fervent, intense, emotional, zealous, enthusiastic, fiery, romantic, hot-blooded.
+**Opposite words**: Apathetic, indifferent, dispassionate, cold, calm, unenthusiastic.
+**Where it comes from**: Latin *passio* (suffering, emotion).
+
+
+.. _hatred:
+
+================================================================================
+Hatred
+================================================================================
+
+* **Pronunciation**: :code:`[ˈheɪtrɪd]`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (uncountable)
+* **Simple Meaning**: Intense dislike or ill will; animosity.
+
+**What it really means**: "**Hatred**" is an extremely strong feeling of dislike, animosity, or ill will towards someone or something. It's a powerful and often destructive emotion.
+
+**When to use it**: Use it for very strong feelings of dislike or animosity.
+    * **Common phrases**: "deep **hatred**," "racial **hatred**," "filled with **hatred**."
+    * **Examples**:
+        * "The war was fueled by years of mutual **hatred** between the two groups."
+        * "He felt a burning **hatred** for injustice."
+        * "Her eyes were filled with **hatred** as she looked at her enemy."
+
+**Synonyms**: Animosity, enmity, antagonism, aversion, loathing, abhorrence, detestation, resentment.
+**Opposite words**: Love, affection, fondness, admiration, liking, goodwill.
+**Where it comes from**: Old English *hete* (hatred) + "-red" (state, condition).

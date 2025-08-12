@@ -1,0 +1,1287 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>The Chronos Scroll &#8212; Note Book</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css?v=eafc0fe6" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'src/The_Chronos_Scroll';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo2_pixian_ai.png" class="logo__image only-light" alt="Note Book - Home"/>
+    <script>document.write(`<img src="../_static/logo2_pixian_ai.png" class="logo__image only-dark" alt="Note Book - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="daily_conversation/index.html">1. Daily conversation scenarios</a></li>
+<li class="toctree-l1"><a class="reference internal" href="essays/2025-08-04-01.html">2. Companies Sponsoring Sports Events for Advertising Purposes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TheQuickandEasyWaytoEFFECTIVESPEAKING/portal.html">3. The Quick and Easy Way to EFFECTIVE SPEAKING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="TacklingAnxiety.html">4. Tackling Anxiety</a></li>
+<li class="toctree-l1"><a class="reference internal" href="is_Europe_still_in_the_driver_s_eat.html">5. Electric vehicles:is Europe still in the driver’s seat?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary/index.html">6. Vocabulary</a></li>
+<li class="toctree-l1"><a class="reference internal" href="vocabulary/word_comparison.html">7. Word Comparison</a></li>
+<li class="toctree-l1"><a class="reference internal" href="150ImportantAdvancedSynonyms.html">8. 150 Important Advanced Synonyms with IELTS Examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="writingskills.html">9. Study Notes: Corrected Sentences</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ccckey/NFC.html">10. NFC A/B/F Technologies</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/src/The_Chronos_Scroll.rst" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.rst</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>The Chronos Scroll</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-the-scholar-s-conviction">Chapter 1: The Scholar’s Conviction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-the-cryptic-arrival">Chapter 2: The Cryptic Arrival</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-the-weathered-observatory">Chapter 3: The Weathered Observatory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-the-heart-of-the-scroll">Chapter 4: The Heart of the Scroll</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-glimpses-of-eternity">Chapter 5: Glimpses of Eternity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-a-new-vocation">Chapter 6: A New Vocation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-the-unfolding-tapestry">Chapter 7: The Unfolding Tapestry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-guiding-the-new-generation">Chapter 8: Guiding the New Generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-9-a-familiar-fragment">Chapter 9: A Familiar Fragment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-10-protecting-the-essence">Chapter 10: Protecting the Essence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-11-the-enduring-trust">Chapter 11: The Enduring Trust</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="the-chronos-scroll">
+<h1>The Chronos Scroll<a class="headerlink" href="#the-chronos-scroll" title="Link to this heading">#</a></h1>
+<section id="chapter-1-the-scholar-s-conviction">
+<h2>Chapter 1: The Scholar’s Conviction<a class="headerlink" href="#chapter-1-the-scholar-s-conviction" title="Link to this heading">#</a></h2>
+<p>The old academy <a class="footnote-reference brackets" href="#id201" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> where Professor Aris taught was a bastion of historical research, though often overshadowed <a class="footnote-reference brackets" href="#id202" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a> by flashier scientific endeavors. His latest obsession <a class="footnote-reference brackets" href="#id203" id="id3" role="doc-noteref"><span class="fn-bracket">[</span>3<span class="fn-bracket">]</span></a> was a series of fragmented <a class="footnote-reference brackets" href="#id204" id="id4" role="doc-noteref"><span class="fn-bracket">[</span>4<span class="fn-bracket">]</span></a> texts, an alleged <a class="footnote-reference brackets" href="#id205" id="id5" role="doc-noteref"><span class="fn-bracket">[</span>5<span class="fn-bracket">]</span></a> guide to a lost artifact: the Chronos Scroll. Rumors of its power to manipulate <a class="footnote-reference brackets" href="#id206" id="id6" role="doc-noteref"><span class="fn-bracket">[</span>6<span class="fn-bracket">]</span></a> time had long been dismissed <a class="footnote-reference brackets" href="#id207" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>7<span class="fn-bracket">]</span></a> as absurd <a class="footnote-reference brackets" href="#id208" id="id8" role="doc-noteref"><span class="fn-bracket">[</span>8<span class="fn-bracket">]</span></a> by his peers <a class="footnote-reference brackets" href="#id209" id="id9" role="doc-noteref"><span class="fn-bracket">[</span>9<span class="fn-bracket">]</span></a>, but Aris held a deep, almost irrational <a class="footnote-reference brackets" href="#id210" id="id10" role="doc-noteref"><span class="fn-bracket">[</span>10<span class="fn-bracket">]</span></a>, conviction.</p>
+</section>
+<section id="chapter-2-the-cryptic-arrival">
+<h2>Chapter 2: The Cryptic Arrival<a class="headerlink" href="#chapter-2-the-cryptic-arrival" title="Link to this heading">#</a></h2>
+<p>One crisp <a class="footnote-reference brackets" href="#id211" id="id11" role="doc-noteref"><span class="fn-bracket">[</span>11<span class="fn-bracket">]</span></a> autumn morning, a dusty, anonymous <a class="footnote-reference brackets" href="#id212" id="id12" role="doc-noteref"><span class="fn-bracket">[</span>12<span class="fn-bracket">]</span></a> package arrived. Inside lay a single, tattered <a class="footnote-reference brackets" href="#id213" id="id13" role="doc-noteref"><span class="fn-bracket">[</span>13<span class="fn-bracket">]</span></a> page, its script an unfamiliar <a class="footnote-reference brackets" href="#id214" id="id14" role="doc-noteref"><span class="fn-bracket">[</span>14<span class="fn-bracket">]</span></a> blend of ancient symbols and modern <a class="footnote-reference brackets" href="#id215" id="id15" role="doc-noteref"><span class="fn-bracket">[</span>15<span class="fn-bracket">]</span></a> notation <a class="footnote-reference brackets" href="#id216" id="id16" role="doc-noteref"><span class="fn-bracket">[</span>16<span class="fn-bracket">]</span></a>. Aris felt a surge of adrenaline <a class="footnote-reference brackets" href="#id217" id="id17" role="doc-noteref"><span class="fn-bracket">[</span>17<span class="fn-bracket">]</span></a>. This was no hoax <a class="footnote-reference brackets" href="#id218" id="id18" role="doc-noteref"><span class="fn-bracket">[</span>18<span class="fn-bracket">]</span></a>. The page contained a complex formula <a class="footnote-reference brackets" href="#id219" id="id19" role="doc-noteref"><span class="fn-bracket">[</span>19<span class="fn-bracket">]</span></a> and a cryptic reference <a class="footnote-reference brackets" href="#id220" id="id20" role="doc-noteref"><span class="fn-bracket">[</span>20<span class="fn-bracket">]</span></a> to an isolated <a class="footnote-reference brackets" href="#id221" id="id21" role="doc-noteref"><span class="fn-bracket">[</span>21<span class="fn-bracket">]</span></a> observatory, long abandoned <a class="footnote-reference brackets" href="#id222" id="id22" role="doc-noteref"><span class="fn-bracket">[</span>22<span class="fn-bracket">]</span></a> and now merely an insignificant <a class="footnote-reference brackets" href="#id223" id="id23" role="doc-noteref"><span class="fn-bracket">[</span>23<span class="fn-bracket">]</span></a> landmark <a class="footnote-reference brackets" href="#id224" id="id24" role="doc-noteref"><span class="fn-bracket">[</span>24<span class="fn-bracket">]</span></a>. He packed a modest <a class="footnote-reference brackets" href="#id225" id="id25" role="doc-noteref"><span class="fn-bracket">[</span>25<span class="fn-bracket">]</span></a> bag, his heart pounding with anticipation <a class="footnote-reference brackets" href="#id226" id="id26" role="doc-noteref"><span class="fn-bracket">[</span>26<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="chapter-3-the-weathered-observatory">
+<h2>Chapter 3: The Weathered Observatory<a class="headerlink" href="#chapter-3-the-weathered-observatory" title="Link to this heading">#</a></h2>
+<p>The journey was arduous <a class="footnote-reference brackets" href="#id227" id="id27" role="doc-noteref"><span class="fn-bracket">[</span>27<span class="fn-bracket">]</span></a>. The observatory sat atop a rugged <a class="footnote-reference brackets" href="#id228" id="id28" role="doc-noteref"><span class="fn-bracket">[</span>28<span class="fn-bracket">]</span></a> plateau <a class="footnote-reference brackets" href="#id229" id="id29" role="doc-noteref"><span class="fn-bracket">[</span>29<span class="fn-bracket">]</span></a>, its stone walls weathered <a class="footnote-reference brackets" href="#id230" id="id30" role="doc-noteref"><span class="fn-bracket">[</span>30<span class="fn-bracket">]</span></a> by centuries of wind and rain. As he approached <a class="footnote-reference brackets" href="#id231" id="id31" role="doc-noteref"><span class="fn-bracket">[</span>31<span class="fn-bracket">]</span></a>, the air grew heavy <a class="footnote-reference brackets" href="#id232" id="id32" role="doc-noteref"><span class="fn-bracket">[</span>32<span class="fn-bracket">]</span></a>, charged with an almost palpable <a class="footnote-reference brackets" href="#id233" id="id33" role="doc-noteref"><span class="fn-bracket">[</span>33<span class="fn-bracket">]</span></a> energy. The large, metallic <a class="footnote-reference brackets" href="#id234" id="id34" role="doc-noteref"><span class="fn-bracket">[</span>34<span class="fn-bracket">]</span></a> dome <a class="footnote-reference brackets" href="#id235" id="id35" role="doc-noteref"><span class="fn-bracket">[</span>35<span class="fn-bracket">]</span></a> of the telescope was rusted <a class="footnote-reference brackets" href="#id236" id="id36" role="doc-noteref"><span class="fn-bracket">[</span>36<span class="fn-bracket">]</span></a> shut, but a small, barely <a class="footnote-reference brackets" href="#id237" id="id37" role="doc-noteref"><span class="fn-bracket">[</span>37<span class="fn-bracket">]</span></a> visible <a class="footnote-reference brackets" href="#id238" id="id38" role="doc-noteref"><span class="fn-bracket">[</span>38<span class="fn-bracket">]</span></a> crevice <a class="footnote-reference brackets" href="#id239" id="id39" role="doc-noteref"><span class="fn-bracket">[</span>39<span class="fn-bracket">]</span></a> in the masonry <a class="footnote-reference brackets" href="#id240" id="id40" role="doc-noteref"><span class="fn-bracket">[</span>40<span class="fn-bracket">]</span></a> offered a way in.</p>
+</section>
+<section id="chapter-4-the-heart-of-the-scroll">
+<h2>Chapter 4: The Heart of the Scroll<a class="headerlink" href="#chapter-4-the-heart-of-the-scroll" title="Link to this heading">#</a></h2>
+<p>Inside, dust motes danced in the sparse light filtering through cracks. The central observation room was circular, dominated by a huge pedestal <a class="footnote-reference brackets" href="#id241" id="id41" role="doc-noteref"><span class="fn-bracket">[</span>41<span class="fn-bracket">]</span></a>. On its surface, an elaborate <a class="footnote-reference brackets" href="#id242" id="id42" role="doc-noteref"><span class="fn-bracket">[</span>42<span class="fn-bracket">]</span></a> clockwork mechanism lay partially exposed <a class="footnote-reference brackets" href="#id243" id="id43" role="doc-noteref"><span class="fn-bracket">[</span>43<span class="fn-bracket">]</span></a>. This was it, the Chronos Scroll’s heart. He recognized the precise <a class="footnote-reference brackets" href="#id244" id="id44" role="doc-noteref"><span class="fn-bracket">[</span>44<span class="fn-bracket">]</span></a> alignment <a class="footnote-reference brackets" href="#id245" id="id45" role="doc-noteref"><span class="fn-bracket">[</span>45<span class="fn-bracket">]</span></a> depicted in the newly found page. He placed his hand on the cold surface <a class="footnote-reference brackets" href="#id246" id="id46" role="doc-noteref"><span class="fn-bracket">[</span>46<span class="fn-bracket">]</span></a> of the pedestal, a faint vibration <a class="footnote-reference brackets" href="#id247" id="id47" role="doc-noteref"><span class="fn-bracket">[</span>47<span class="fn-bracket">]</span></a> coursing through his arm.</p>
+<p>Suddenly, the air filled with a soft humming <a class="footnote-reference brackets" href="#id248" id="id48" role="doc-noteref"><span class="fn-bracket">[</span>48<span class="fn-bracket">]</span></a> sound. The clockwork began to move, gears interlocking <a class="footnote-reference brackets" href="#id249" id="id49" role="doc-noteref"><span class="fn-bracket">[</span>49<span class="fn-bracket">]</span></a> with a faint click. A beam of lunar <a class="footnote-reference brackets" href="#id250" id="id50" role="doc-noteref"><span class="fn-bracket">[</span>50<span class="fn-bracket">]</span></a> light, somehow concentrated <a class="footnote-reference brackets" href="#id251" id="id51" role="doc-noteref"><span class="fn-bracket">[</span>51<span class="fn-bracket">]</span></a> by an unseen <a class="footnote-reference brackets" href="#id252" id="id52" role="doc-noteref"><span class="fn-bracket">[</span>52<span class="fn-bracket">]</span></a> lens, struck a crystal on the pedestal. The room was bathed <a class="footnote-reference brackets" href="#id253" id="id53" role="doc-noteref"><span class="fn-bracket">[</span>53<span class="fn-bracket">]</span></a> in an ethereal <a class="footnote-reference brackets" href="#id254" id="id54" role="doc-noteref"><span class="fn-bracket">[</span>54<span class="fn-bracket">]</span></a> glow. Aris felt his consciousness begin to dissolve <a class="footnote-reference brackets" href="#id255" id="id55" role="doc-noteref"><span class="fn-bracket">[</span>55<span class="fn-bracket">]</span></a>, his own timeline becoming fluid <a class="footnote-reference brackets" href="#id256" id="id56" role="doc-noteref"><span class="fn-bracket">[</span>56<span class="fn-bracket">]</span></a>. He was no longer bound by the rigid sequence <a class="footnote-reference brackets" href="#id257" id="id57" role="doc-noteref"><span class="fn-bracket">[</span>57<span class="fn-bracket">]</span></a> of moments.</p>
+</section>
+<section id="chapter-5-glimpses-of-eternity">
+<h2>Chapter 5: Glimpses of Eternity<a class="headerlink" href="#chapter-5-glimpses-of-eternity" title="Link to this heading">#</a></h2>
+<p>He saw glimpses of the past and future – civilizations rising and falling, stars igniting <a class="footnote-reference brackets" href="#id258" id="id58" role="doc-noteref"><span class="fn-bracket">[</span>58<span class="fn-bracket">]</span></a> and fading. It was an overwhelming <a class="footnote-reference brackets" href="#id259" id="id59" role="doc-noteref"><span class="fn-bracket">[</span>59<span class="fn-bracket">]</span></a> deluge <a class="footnote-reference brackets" href="#id260" id="id60" role="doc-noteref"><span class="fn-bracket">[</span>60<span class="fn-bracket">]</span></a> of information, a glimpse <a class="footnote-reference brackets" href="#id261" id="id61" role="doc-noteref"><span class="fn-bracket">[</span>61<span class="fn-bracket">]</span></a> into the eternal <a class="footnote-reference brackets" href="#id262" id="id62" role="doc-noteref"><span class="fn-bracket">[</span>62<span class="fn-bracket">]</span></a> fabric <a class="footnote-reference brackets" href="#id263" id="id63" role="doc-noteref"><span class="fn-bracket">[</span>63<span class="fn-bracket">]</span></a> of existence. He witnessed the Scroll’s true purpose <a class="footnote-reference brackets" href="#id264" id="id64" role="doc-noteref"><span class="fn-bracket">[</span>64<span class="fn-bracket">]</span></a>: not to alter <a class="footnote-reference brackets" href="#id265" id="id65" role="doc-noteref"><span class="fn-bracket">[</span>65<span class="fn-bracket">]</span></a> history, but to reveal <a class="footnote-reference brackets" href="#id266" id="id66" role="doc-noteref"><span class="fn-bracket">[</span>66<span class="fn-bracket">]</span></a> the inherent <a class="footnote-reference brackets" href="#id267" id="id67" role="doc-noteref"><span class="fn-bracket">[</span>67<span class="fn-bracket">]</span></a> interconnectedness <a class="footnote-reference brackets" href="#id268" id="id68" role="doc-noteref"><span class="fn-bracket">[</span>68<span class="fn-bracket">]</span></a> of all events. It was a tool for comprehension <a class="footnote-reference brackets" href="#id269" id="id69" role="doc-noteref"><span class="fn-bracket">[</span>69<span class="fn-bracket">]</span></a>, not control <a class="footnote-reference brackets" href="#id270" id="id70" role="doc-noteref"><span class="fn-bracket">[</span>70<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="chapter-6-a-new-vocation">
+<h2>Chapter 6: A New Vocation<a class="headerlink" href="#chapter-6-a-new-vocation" title="Link to this heading">#</a></h2>
+<p>As the vision receded, Aris felt a sense of calm <a class="footnote-reference brackets" href="#id271" id="id71" role="doc-noteref"><span class="fn-bracket">[</span>71<span class="fn-bracket">]</span></a> descend <a class="footnote-reference brackets" href="#id272" id="id72" role="doc-noteref"><span class="fn-bracket">[</span>72<span class="fn-bracket">]</span></a>. The Scroll was not a weapon, nor a mere curiosity. It was a catalyst <a class="footnote-reference brackets" href="#id273" id="id73" role="doc-noteref"><span class="fn-bracket">[</span>73<span class="fn-bracket">]</span></a> for profound realization <a class="footnote-reference brackets" href="#id274" id="id74" role="doc-noteref"><span class="fn-bracket">[</span>74<span class="fn-bracket">]</span></a>. He understood now the obligation <a class="footnote-reference brackets" href="#id275" id="id75" role="doc-noteref"><span class="fn-bracket">[</span>75<span class="fn-bracket">]</span></a> of its discovery. This knowledge could not be exploited <a class="footnote-reference brackets" href="#id276" id="id76" role="doc-noteref"><span class="fn-bracket">[</span>76<span class="fn-bracket">]</span></a>; it had to be safeguarded <a class="footnote-reference brackets" href="#id277" id="id77" role="doc-noteref"><span class="fn-bracket">[</span>77<span class="fn-bracket">]</span></a>. His initial reckless <a class="footnote-reference brackets" href="#id278" id="id78" role="doc-noteref"><span class="fn-bracket">[</span>78<span class="fn-bracket">]</span></a> ambition was replaced by a deep reverence <a class="footnote-reference brackets" href="#id279" id="id79" role="doc-noteref"><span class="fn-bracket">[</span>79<span class="fn-bracket">]</span></a>.</p>
+<p>He carefully closed the mechanisms, ensuring the Scroll returned to its dormant <a class="footnote-reference brackets" href="#id280" id="id80" role="doc-noteref"><span class="fn-bracket">[</span>80<span class="fn-bracket">]</span></a> state. The air in the room slowly normalized. Aris emerged from the observatory, no longer burdened by the pursuit of personal glory, but by a powerful conviction <a class="footnote-reference brackets" href="#id281" id="id81" role="doc-noteref"><span class="fn-bracket">[</span>81<span class="fn-bracket">]</span></a> to protect the Scroll’s essence <a class="footnote-reference brackets" href="#id282" id="id82" role="doc-noteref"><span class="fn-bracket">[</span>82<span class="fn-bracket">]</span></a>. He knew his life’s vocation <a class="footnote-reference brackets" href="#id283" id="id83" role="doc-noteref"><span class="fn-bracket">[</span>83<span class="fn-bracket">]</span></a> had fundamentally shifted <a class="footnote-reference brackets" href="#id284" id="id84" role="doc-noteref"><span class="fn-bracket">[</span>84<span class="fn-bracket">]</span></a>. The world still turned, but his perception <a class="footnote-reference brackets" href="#id285" id="id85" role="doc-noteref"><span class="fn-bracket">[</span>85<span class="fn-bracket">]</span></a> of it had been radically <a class="footnote-reference brackets" href="#id286" id="id86" role="doc-noteref"><span class="fn-bracket">[</span>86<span class="fn-bracket">]</span></a> transformed <a class="footnote-reference brackets" href="#id287" id="id87" role="doc-noteref"><span class="fn-bracket">[</span>87<span class="fn-bracket">]</span></a>. The Chronos Scroll remained hidden, its secrets guarded by the most unlikely <a class="footnote-reference brackets" href="#id288" id="id88" role="doc-noteref"><span class="fn-bracket">[</span>88<span class="fn-bracket">]</span></a> of protectors <a class="footnote-reference brackets" href="#id289" id="id89" role="doc-noteref"><span class="fn-bracket">[</span>89<span class="fn-bracket">]</span></a>: a humble historian with a newly acquired <a class="footnote-reference brackets" href="#id290" id="id90" role="doc-noteref"><span class="fn-bracket">[</span>90<span class="fn-bracket">]</span></a> understanding <a class="footnote-reference brackets" href="#id291" id="id91" role="doc-noteref"><span class="fn-bracket">[</span>91<span class="fn-bracket">]</span></a> of time’s true nature <a class="footnote-reference brackets" href="#id292" id="id92" role="doc-noteref"><span class="fn-bracket">[</span>92<span class="fn-bracket">]</span></a>. He would now lead a life of quiet devotion <a class="footnote-reference brackets" href="#id293" id="id93" role="doc-noteref"><span class="fn-bracket">[</span>93<span class="fn-bracket">]</span></a>, ensuring that this incredible revelation <a class="footnote-reference brackets" href="#id294" id="id94" role="doc-noteref"><span class="fn-bracket">[</span>94<span class="fn-bracket">]</span></a> remained untainted <a class="footnote-reference brackets" href="#id295" id="id95" role="doc-noteref"><span class="fn-bracket">[</span>95<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="chapter-7-the-unfolding-tapestry">
+<h2>Chapter 7: The Unfolding Tapestry<a class="headerlink" href="#chapter-7-the-unfolding-tapestry" title="Link to this heading">#</a></h2>
+<p>The weight of his newfound insight <a class="footnote-reference brackets" href="#id296" id="id96" role="doc-noteref"><span class="fn-bracket">[</span>96<span class="fn-bracket">]</span></a> was immense <a class="footnote-reference brackets" href="#id297" id="id97" role="doc-noteref"><span class="fn-bracket">[</span>97<span class="fn-bracket">]</span></a>. He had been granted <a class="footnote-reference brackets" href="#id298" id="id98" role="doc-noteref"><span class="fn-bracket">[</span>98<span class="fn-bracket">]</span></a> a privilege <a class="footnote-reference brackets" href="#id299" id="id99" role="doc-noteref"><span class="fn-bracket">[</span>99<span class="fn-bracket">]</span></a> beyond measure <a class="footnote-reference brackets" href="#id300" id="id100" role="doc-noteref"><span class="fn-bracket">[</span>100<span class="fn-bracket">]</span></a>. The Scroll demanded not just secrecy but a profound respect <a class="footnote-reference brackets" href="#id301" id="id101" role="doc-noteref"><span class="fn-bracket">[</span>101<span class="fn-bracket">]</span></a> for the intricate balance <a class="footnote-reference brackets" href="#id302" id="id102" role="doc-noteref"><span class="fn-bracket">[</span>102<span class="fn-bracket">]</span></a> of the cosmos <a class="footnote-reference brackets" href="#id303" id="id103" role="doc-noteref"><span class="fn-bracket">[</span>103<span class="fn-bracket">]</span></a>. He became a custodian <a class="footnote-reference brackets" href="#id304" id="id104" role="doc-noteref"><span class="fn-bracket">[</span>104<span class="fn-bracket">]</span></a>, not a master. His former ambition <a class="footnote-reference brackets" href="#id305" id="id105" role="doc-noteref"><span class="fn-bracket">[</span>105<span class="fn-bracket">]</span></a> felt trivial <a class="footnote-reference brackets" href="#id306" id="id106" role="doc-noteref"><span class="fn-bracket">[</span>106<span class="fn-bracket">]</span></a> compared to the magnitude <a class="footnote-reference brackets" href="#id307" id="id107" role="doc-noteref"><span class="fn-bracket">[</span>107<span class="fn-bracket">]</span></a> of his new responsibility <a class="footnote-reference brackets" href="#id308" id="id108" role="doc-noteref"><span class="fn-bracket">[</span>108<span class="fn-bracket">]</span></a>. The truth of time wasn’t about changing what was, but about truly appreciating <a class="footnote-reference brackets" href="#id309" id="id109" role="doc-noteref"><span class="fn-bracket">[</span>109<span class="fn-bracket">]</span></a> what is.</p>
+<p>He left the observatory, the setting <a class="footnote-reference brackets" href="#id310" id="id110" role="doc-noteref"><span class="fn-bracket">[</span>110<span class="fn-bracket">]</span></a> sun casting long shadows. The distinct <a class="footnote-reference brackets" href="#id311" id="id111" role="doc-noteref"><span class="fn-bracket">[</span>111<span class="fn-bracket">]</span></a> chill in the air seemed to echo the chill of the vast, empty <a class="footnote-reference brackets" href="#id312" id="id112" role="doc-noteref"><span class="fn-bracket">[</span>112<span class="fn-bracket">]</span></a> expanse <a class="footnote-reference brackets" href="#id313" id="id113" role="doc-noteref"><span class="fn-bracket">[</span>113<span class="fn-bracket">]</span></a> of time he had just glimpsed. His previous <a class="footnote-reference brackets" href="#id314" id="id114" role="doc-noteref"><span class="fn-bracket">[</span>114<span class="fn-bracket">]</span></a> view of history as a linear sequence <a class="footnote-reference brackets" href="#id315" id="id115" role="doc-noteref"><span class="fn-bracket">[</span>115<span class="fn-bracket">]</span></a> of events was shattered <a class="footnote-reference brackets" href="#id316" id="id116" role="doc-noteref"><span class="fn-bracket">[</span>116<span class="fn-bracket">]</span></a>. He now saw it as a dynamic <a class="footnote-reference brackets" href="#id317" id="id117" role="doc-noteref"><span class="fn-bracket">[</span>117<span class="fn-bracket">]</span></a> tapestry <a class="footnote-reference brackets" href="#id318" id="id118" role="doc-noteref"><span class="fn-bracket">[</span>118<span class="fn-bracket">]</span></a>, each thread interwoven <a class="footnote-reference brackets" href="#id319" id="id119" role="doc-noteref"><span class="fn-bracket">[</span>119<span class="fn-bracket">]</span></a> with every other, creating an infinite <a class="footnote-reference brackets" href="#id320" id="id120" role="doc-noteref"><span class="fn-bracket">[</span>120<span class="fn-bracket">]</span></a> pattern. This was the Scroll’s ultimate lesson <a class="footnote-reference brackets" href="#id321" id="id121" role="doc-noteref"><span class="fn-bracket">[</span>121<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="chapter-8-guiding-the-new-generation">
+<h2>Chapter 8: Guiding the New Generation<a class="headerlink" href="#chapter-8-guiding-the-new-generation" title="Link to this heading">#</a></h2>
+<p>Days turned into weeks, and weeks into months. Aris returned to his academic life, but with a renewed sense of purpose <a class="footnote-reference brackets" href="#id322" id="id122" role="doc-noteref"><span class="fn-bracket">[</span>122<span class="fn-bracket">]</span></a>. He subtly influenced <a class="footnote-reference brackets" href="#id323" id="id123" role="doc-noteref"><span class="fn-bracket">[</span>123<span class="fn-bracket">]</span></a> his students <a class="footnote-reference brackets" href="#id324" id="id124" role="doc-noteref"><span class="fn-bracket">[</span>124<span class="fn-bracket">]</span></a> to consider broader perspectives, to look beyond the obvious <a class="footnote-reference brackets" href="#id325" id="id125" role="doc-noteref"><span class="fn-bracket">[</span>125<span class="fn-bracket">]</span></a>. His lectures, once dry and academic <a class="footnote-reference brackets" href="#id326" id="id126" role="doc-noteref"><span class="fn-bracket">[</span>126<span class="fn-bracket">]</span></a>, now carried a profound resonance <a class="footnote-reference brackets" href="#id327" id="id127" role="doc-noteref"><span class="fn-bracket">[</span>127<span class="fn-bracket">]</span></a>. He spoke of the importance of context <a class="footnote-reference brackets" href="#id328" id="id128" role="doc-noteref"><span class="fn-bracket">[</span>128<span class="fn-bracket">]</span></a> in understanding historical phenomena <a class="footnote-reference brackets" href="#id329" id="id129" role="doc-noteref"><span class="fn-bracket">[</span>129<span class="fn-bracket">]</span></a>, of the hidden currents <a class="footnote-reference brackets" href="#id330" id="id130" role="doc-noteref"><span class="fn-bracket">[</span>130<span class="fn-bracket">]</span></a> that shape human endeavor <a class="footnote-reference brackets" href="#id331" id="id131" role="doc-noteref"><span class="fn-bracket">[</span>131<span class="fn-bracket">]</span></a>.</p>
+<p>He developed a new framework <a class="footnote-reference brackets" href="#id332" id="id132" role="doc-noteref"><span class="fn-bracket">[</span>132<span class="fn-bracket">]</span></a> for historical analysis, one that embraced the complexity <a class="footnote-reference brackets" href="#id333" id="id133" role="doc-noteref"><span class="fn-bracket">[</span>133<span class="fn-bracket">]</span></a> and fluidity <a class="footnote-reference brackets" href="#id334" id="id134" role="doc-noteref"><span class="fn-bracket">[</span>134<span class="fn-bracket">]</span></a> of time. His work gained an unprecedented <a class="footnote-reference brackets" href="#id335" id="id135" role="doc-noteref"><span class="fn-bracket">[</span>135<span class="fn-bracket">]</span></a> level of recognition <a class="footnote-reference brackets" href="#id336" id="id136" role="doc-noteref"><span class="fn-bracket">[</span>136<span class="fn-bracket">]</span></a>, not because he revealed the Scroll, but because his newfound insight <a class="footnote-reference brackets" href="#id337" id="id137" role="doc-noteref"><span class="fn-bracket">[</span>137<span class="fn-bracket">]</span></a> allowed him to articulate <a class="footnote-reference brackets" href="#id338" id="id138" role="doc-noteref"><span class="fn-bracket">[</span>138<span class="fn-bracket">]</span></a> truths that others had only sensed <a class="footnote-reference brackets" href="#id339" id="id139" role="doc-noteref"><span class="fn-bracket">[</span>139<span class="fn-bracket">]</span></a>. He became an advocate <a class="footnote-reference brackets" href="#id340" id="id140" role="doc-noteref"><span class="fn-bracket">[</span>140<span class="fn-bracket">]</span></a> for interdisciplinary studies, believing that true understanding <a class="footnote-reference brackets" href="#id341" id="id141" role="doc-noteref"><span class="fn-bracket">[</span>141<span class="fn-bracket">]</span></a> lay at the intersection <a class="footnote-reference brackets" href="#id342" id="id142" role="doc-noteref"><span class="fn-bracket">[</span>142<span class="fn-bracket">]</span></a> of diverse fields.</p>
+</section>
+<section id="chapter-9-a-familiar-fragment">
+<h2>Chapter 9: A Familiar Fragment<a class="headerlink" href="#chapter-9-a-familiar-fragment" title="Link to this heading">#</a></h2>
+<p>Years passed. Aris, now a venerable <a class="footnote-reference brackets" href="#id343" id="id143" role="doc-noteref"><span class="fn-bracket">[</span>143<span class="fn-bracket">]</span></a> figure, continued his quiet guardianship. He published papers that subtly hinted <a class="footnote-reference brackets" href="#id344" id="id144" role="doc-noteref"><span class="fn-bracket">[</span>144<span class="fn-bracket">]</span></a> at the Scroll’s lessons, never explicitly <a class="footnote-reference brackets" href="#id345" id="id145" role="doc-noteref"><span class="fn-bracket">[</span>145<span class="fn-bracket">]</span></a> revealing its existence, but guiding others towards similar epiphanies <a class="footnote-reference brackets" href="#id346" id="id146" role="doc-noteref"><span class="fn-bracket">[</span>146<span class="fn-bracket">]</span></a>. His influence was widespread <a class="footnote-reference brackets" href="#id347" id="id147" role="doc-noteref"><span class="fn-bracket">[</span>147<span class="fn-bracket">]</span></a>, shaping a new generation <a class="footnote-reference brackets" href="#id348" id="id148" role="doc-noteref"><span class="fn-bracket">[</span>148<span class="fn-bracket">]</span></a> of historians and thinkers. He created a network <a class="footnote-reference brackets" href="#id349" id="id149" role="doc-noteref"><span class="fn-bracket">[</span>149<span class="fn-bracket">]</span></a> of like-minded individuals, a clandestine alliance <a class="footnote-reference brackets" href="#id350" id="id150" role="doc-noteref"><span class="fn-bracket">[</span>150<span class="fn-bracket">]</span></a> committed to the preservation of cosmic balance <a class="footnote-reference brackets" href="#id351" id="id151" role="doc-noteref"><span class="fn-bracket">[</span>151<span class="fn-bracket">]</span></a>.</p>
+<p>One day, an old colleague <a class="footnote-reference brackets" href="#id352" id="id152" role="doc-noteref"><span class="fn-bracket">[</span>152<span class="fn-bracket">]</span></a>, Professor Anya Sharma, an expert in ancient languages, came to him with a new discovery <a class="footnote-reference brackets" href="#id353" id="id153" role="doc-noteref"><span class="fn-bracket">[</span>153<span class="fn-bracket">]</span></a>. It was a small fragment <a class="footnote-reference brackets" href="#id354" id="id154" role="doc-noteref"><span class="fn-bracket">[</span>154<span class="fn-bracket">]</span></a> of text, similar in script to the page Aris had found years ago. Anya’s excitement was palpable <a class="footnote-reference brackets" href="#id355" id="id155" role="doc-noteref"><span class="fn-bracket">[</span>155<span class="fn-bracket">]</span></a>. She had allegedly <a class="footnote-reference brackets" href="#id356" id="id156" role="doc-noteref"><span class="fn-bracket">[</span>156<span class="fn-bracket">]</span></a> found it in an obscure archive. Aris, with a calm exterior <a class="footnote-reference brackets" href="#id357" id="id157" role="doc-noteref"><span class="fn-bracket">[</span>157<span class="fn-bracket">]</span></a>, felt a familiar surge of concern <a class="footnote-reference brackets" href="#id358" id="id158" role="doc-noteref"><span class="fn-bracket">[</span>158<span class="fn-bracket">]</span></a>.</p>
+</section>
+<section id="chapter-10-protecting-the-essence">
+<h2>Chapter 10: Protecting the Essence<a class="headerlink" href="#chapter-10-protecting-the-essence" title="Link to this heading">#</a></h2>
+<p>He carefully examined the fragment. It contained a warning, a prophecy <a class="footnote-reference brackets" href="#id359" id="id159" role="doc-noteref"><span class="fn-bracket">[</span>159<span class="fn-bracket">]</span></a> about those who would seek to exploit <a class="footnote-reference brackets" href="#id360" id="id160" role="doc-noteref"><span class="fn-bracket">[</span>160<span class="fn-bracket">]</span></a> the Scroll for selfish gain. It was a clear testament <a class="footnote-reference brackets" href="#id361" id="id161" role="doc-noteref"><span class="fn-bracket">[</span>161<span class="fn-bracket">]</span></a> to the dangers of uncontrolled <a class="footnote-reference brackets" href="#id362" id="id162" role="doc-noteref"><span class="fn-bracket">[</span>162<span class="fn-bracket">]</span></a> knowledge. He knew then that his mission <a class="footnote-reference brackets" href="#id363" id="id163" role="doc-noteref"><span class="fn-bracket">[</span>163<span class="fn-bracket">]</span></a> was far from over. He had to guide Anya, to steer her away from the perilous path of direct intervention <a class="footnote-reference brackets" href="#id364" id="id164" role="doc-noteref"><span class="fn-bracket">[</span>164<span class="fn-bracket">]</span></a> with the Scroll, and towards a path of quiet stewardship <a class="footnote-reference brackets" href="#id365" id="id165" role="doc-noteref"><span class="fn-bracket">[</span>165<span class="fn-bracket">]</span></a>.</p>
+<p>He shared some of his broader philosophies <a class="footnote-reference brackets" href="#id366" id="id166" role="doc-noteref"><span class="fn-bracket">[</span>166<span class="fn-bracket">]</span></a>, speaking of the dangers of seeking absolute <a class="footnote-reference brackets" href="#id367" id="id167" role="doc-noteref"><span class="fn-bracket">[</span>167<span class="fn-bracket">]</span></a> control <a class="footnote-reference brackets" href="#id368" id="id168" role="doc-noteref"><span class="fn-bracket">[</span>168<span class="fn-bracket">]</span></a> over the fabric <a class="footnote-reference brackets" href="#id369" id="id169" role="doc-noteref"><span class="fn-bracket">[</span>169<span class="fn-bracket">]</span></a> of time. Anya, initially skeptical <a class="footnote-reference brackets" href="#id370" id="id170" role="doc-noteref"><span class="fn-bracket">[</span>170<span class="fn-bracket">]</span></a>, slowly began to comprehend <a class="footnote-reference brackets" href="#id371" id="id171" role="doc-noteref"><span class="fn-bracket">[</span>171<span class="fn-bracket">]</span></a> the depth of his words. His wisdom was not based on speculation <a class="footnote-reference brackets" href="#id372" id="id172" role="doc-noteref"><span class="fn-bracket">[</span>172<span class="fn-bracket">]</span></a>, but on a profound, almost visceral <a class="footnote-reference brackets" href="#id373" id="id173" role="doc-noteref"><span class="fn-bracket">[</span>173<span class="fn-bracket">]</span></a> understanding <a class="footnote-reference brackets" href="#id374" id="id174" role="doc-noteref"><span class="fn-bracket">[</span>174<span class="fn-bracket">]</span></a>. He explained that true power lay not in manipulation <a class="footnote-reference brackets" href="#id375" id="id175" role="doc-noteref"><span class="fn-bracket">[</span>175<span class="fn-bracket">]</span></a>, but in acceptance.</p>
+</section>
+<section id="chapter-11-the-enduring-trust">
+<h2>Chapter 11: The Enduring Trust<a class="headerlink" href="#chapter-11-the-enduring-trust" title="Link to this heading">#</a></h2>
+<p>Together, they established a new foundation <a class="footnote-reference brackets" href="#id376" id="id176" role="doc-noteref"><span class="fn-bracket">[</span>176<span class="fn-bracket">]</span></a>, ostensibly for historical preservation, but truly for the subtle guidance <a class="footnote-reference brackets" href="#id377" id="id177" role="doc-noteref"><span class="fn-bracket">[</span>177<span class="fn-bracket">]</span></a> of humanity’s relationship with time. They fostered a culture of prudence <a class="footnote-reference brackets" href="#id378" id="id178" role="doc-noteref"><span class="fn-bracket">[</span>178<span class="fn-bracket">]</span></a> and restraint <a class="footnote-reference brackets" href="#id379" id="id179" role="doc-noteref"><span class="fn-bracket">[</span>179<span class="fn-bracket">]</span></a> when dealing with such profound forces. The Chronos Scroll remained untouched, its secrets guarded by a select few, their vocation <a class="footnote-reference brackets" href="#id380" id="id180" role="doc-noteref"><span class="fn-bracket">[</span>180<span class="fn-bracket">]</span></a> a silent vow to protect the future by respecting the past. Aris knew that his life’s <a class="footnote-reference brackets" href="#id381" id="id181" role="doc-noteref"><span class="fn-bracket">[</span>181<span class="fn-bracket">]</span></a> work was now to ensure the longevity of this sacred <a class="footnote-reference brackets" href="#id382" id="id182" role="doc-noteref"><span class="fn-bracket">[</span>182<span class="fn-bracket">]</span></a> trust. The narrative of time, he mused, was far more compelling <a class="footnote-reference brackets" href="#id383" id="id183" role="doc-noteref"><span class="fn-bracket">[</span>183<span class="fn-bracket">]</span></a> when it was allowed to unfold <a class="footnote-reference brackets" href="#id384" id="id184" role="doc-noteref"><span class="fn-bracket">[</span>184<span class="fn-bracket">]</span></a> naturally, without the deliberate <a class="footnote-reference brackets" href="#id385" id="id185" role="doc-noteref"><span class="fn-bracket">[</span>185<span class="fn-bracket">]</span></a> interference <a class="footnote-reference brackets" href="#id386" id="id186" role="doc-noteref"><span class="fn-bracket">[</span>186<span class="fn-bracket">]</span></a> of human hands. The real treasure <a class="footnote-reference brackets" href="#id387" id="id187" role="doc-noteref"><span class="fn-bracket">[</span>187<span class="fn-bracket">]</span></a> was the ongoing <a class="footnote-reference brackets" href="#id388" id="id188" role="doc-noteref"><span class="fn-bracket">[</span>188<span class="fn-bracket">]</span></a> journey <a class="footnote-reference brackets" href="#id389" id="id189" role="doc-noteref"><span class="fn-bracket">[</span>189<span class="fn-bracket">]</span></a>, the persistent <a class="footnote-reference brackets" href="#id390" id="id190" role="doc-noteref"><span class="fn-bracket">[</span>190<span class="fn-bracket">]</span></a> quest <a class="footnote-reference brackets" href="#id391" id="id191" role="doc-noteref"><span class="fn-bracket">[</span>191<span class="fn-bracket">]</span></a> for understanding <a class="footnote-reference brackets" href="#id392" id="id192" role="doc-noteref"><span class="fn-bracket">[</span>192<span class="fn-bracket">]</span></a>, and the humility <a class="footnote-reference brackets" href="#id393" id="id193" role="doc-noteref"><span class="fn-bracket">[</span>193<span class="fn-bracket">]</span></a> to simply observe <a class="footnote-reference brackets" href="#id394" id="id194" role="doc-noteref"><span class="fn-bracket">[</span>194<span class="fn-bracket">]</span></a> the universe’s grand design <a class="footnote-reference brackets" href="#id395" id="id195" role="doc-noteref"><span class="fn-bracket">[</span>195<span class="fn-bracket">]</span></a>. The Scroll was a key, but not a weapon. Its purpose <a class="footnote-reference brackets" href="#id396" id="id196" role="doc-noteref"><span class="fn-bracket">[</span>196<span class="fn-bracket">]</span></a> was to open minds, not to dominate <a class="footnote-reference brackets" href="#id397" id="id197" role="doc-noteref"><span class="fn-bracket">[</span>197<span class="fn-bracket">]</span></a> destinies. Aris lived a long life, his contributions <a class="footnote-reference brackets" href="#id398" id="id198" role="doc-noteref"><span class="fn-bracket">[</span>198<span class="fn-bracket">]</span></a> to history and philosophy becoming legendary <a class="footnote-reference brackets" href="#id399" id="id199" role="doc-noteref"><span class="fn-bracket">[</span>199<span class="fn-bracket">]</span></a>, but the true genesis <a class="footnote-reference brackets" href="#id400" id="id200" role="doc-noteref"><span class="fn-bracket">[</span>200<span class="fn-bracket">]</span></a> of his genius remained his silent, enduring secret.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id201" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+<p><strong>academy</strong> (n., C1) - a school for special training.</p>
+</aside>
+<aside class="footnote brackets" id="id202" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p><strong>overshadowed</strong> (v., C1) - to make someone or something seem less important or successful.</p>
+</aside>
+<aside class="footnote brackets" id="id203" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id3">3</a><span class="fn-bracket">]</span></span>
+<p><strong>obsession</strong> (n., C1) - the state of being completely filled with thoughts of a particular person or thing, in a way that is not normal.</p>
+</aside>
+<aside class="footnote brackets" id="id204" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id4">4</a><span class="fn-bracket">]</span></span>
+<p><strong>fragmented</strong> (adj., C1) - broken into small parts or pieces.</p>
+</aside>
+<aside class="footnote brackets" id="id205" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id5">5</a><span class="fn-bracket">]</span></span>
+<p><strong>alleged</strong> (adj., C1) - said or thought by some people to be true, but not proven.</p>
+</aside>
+<aside class="footnote brackets" id="id206" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id6">6</a><span class="fn-bracket">]</span></span>
+<p><strong>manipulate</strong> (v., B2) - to control something or someone to your advantage, often unfairly or dishonestly.</p>
+</aside>
+<aside class="footnote brackets" id="id207" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id7">7</a><span class="fn-bracket">]</span></span>
+<p><strong>dismissed</strong> (v., B2) - to decide that something or someone is not important and not worth considering.</p>
+</aside>
+<aside class="footnote brackets" id="id208" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id8">8</a><span class="fn-bracket">]</span></span>
+<p><strong>absurd</strong> (adj., C1) - extremely silly, unreasonable, or ridiculous.</p>
+</aside>
+<aside class="footnote brackets" id="id209" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id9">9</a><span class="fn-bracket">]</span></span>
+<p><strong>peers</strong> (n., B2) - people who are the same age or have the same social status or job as you.</p>
+</aside>
+<aside class="footnote brackets" id="id210" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id10">10</a><span class="fn-bracket">]</span></span>
+<p><strong>irrational</strong> (adj., C1) - not based on clear thought or reason.</p>
+</aside>
+<aside class="footnote brackets" id="id211" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id11">11</a><span class="fn-bracket">]</span></span>
+<p><strong>crisp</strong> (adj., B2) - (of weather) cold and dry.</p>
+</aside>
+<aside class="footnote brackets" id="id212" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id12">12</a><span class="fn-bracket">]</span></span>
+<p><strong>anonymous</strong> (adj., B2) - made or given by someone whose name is not known.</p>
+</aside>
+<aside class="footnote brackets" id="id213" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id13">13</a><span class="fn-bracket">]</span></span>
+<p><strong>tattered</strong> (adj., C1) - old and torn.</p>
+</aside>
+<aside class="footnote brackets" id="id214" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id14">14</a><span class="fn-bracket">]</span></span>
+<p><strong>unfamiliar</strong> (adj., B2) - not known or recognized.</p>
+</aside>
+<aside class="footnote brackets" id="id215" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id15">15</a><span class="fn-bracket">]</span></span>
+<p><strong>modern</strong> (adj., B2) - relating to the present time or recent times, or (in art, architecture, fashion, etc.) using new methods, designs, or materials.</p>
+</aside>
+<aside class="footnote brackets" id="id216" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id16">16</a><span class="fn-bracket">]</span></span>
+<p><strong>notation</strong> (n., C1) - a system of written symbols used to represent numbers, amounts, or ideas.</p>
+</aside>
+<aside class="footnote brackets" id="id217" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id17">17</a><span class="fn-bracket">]</span></span>
+<p><strong>adrenaline</strong> (n., C1) - a hormone released into the body when you are excited, afraid, or angry, that makes the heart beat faster and prepares the body for action.</p>
+</aside>
+<aside class="footnote brackets" id="id218" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id18">18</a><span class="fn-bracket">]</span></span>
+<p><strong>hoax</strong> (n., C1) - a trick or deception, especially one intended to make people believe something false.</p>
+</aside>
+<aside class="footnote brackets" id="id219" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id19">19</a><span class="fn-bracket">]</span></span>
+<p><strong>formula</strong> (n., B2) - a standard or usual way of doing or saying something.</p>
+</aside>
+<aside class="footnote brackets" id="id220" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id20">20</a><span class="fn-bracket">]</span></span>
+<p><strong>reference</strong> (n., B2) - a mention of something or someone.</p>
+</aside>
+<aside class="footnote brackets" id="id221" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id21">21</a><span class="fn-bracket">]</span></span>
+<p><strong>isolated</strong> (adj., B2) - not near to other places, people, or things.</p>
+</aside>
+<aside class="footnote brackets" id="id222" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id22">22</a><span class="fn-bracket">]</span></span>
+<p><strong>abandoned</strong> (adj., B2) - left, deserted.</p>
+</aside>
+<aside class="footnote brackets" id="id223" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id23">23</a><span class="fn-bracket">]</span></span>
+<p><strong>insignificant</strong> (adj., C1) - not important or large enough to be noticed.</p>
+</aside>
+<aside class="footnote brackets" id="id224" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id24">24</a><span class="fn-bracket">]</span></span>
+<p><strong>landmark</strong> (n., B2) - a building or place that is easily recognized, especially one that you can use to judge where you are.</p>
+</aside>
+<aside class="footnote brackets" id="id225" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id25">25</a><span class="fn-bracket">]</span></span>
+<p><strong>modest</strong> (adj., B2) - not large in size or amount, or not expensive.</p>
+</aside>
+<aside class="footnote brackets" id="id226" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id26">26</a><span class="fn-bracket">]</span></span>
+<p><strong>anticipation</strong> (n., B2) - a feeling of excitement about something that is going to happen.</p>
+</aside>
+<aside class="footnote brackets" id="id227" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id27">27</a><span class="fn-bracket">]</span></span>
+<p><strong>arduous</strong> (adj., C1) - difficult and tiring.</p>
+</aside>
+<aside class="footnote brackets" id="id228" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id28">28</a><span class="fn-bracket">]</span></span>
+<p><strong>rugged</strong> (adj., C1) - (of land) uneven and covered with rocks and small plants.</p>
+</aside>
+<aside class="footnote brackets" id="id229" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id29">29</a><span class="fn-bracket">]</span></span>
+<p><strong>plateau</strong> (n., C1) - a large area of flat land that is high above sea level.</p>
+</aside>
+<aside class="footnote brackets" id="id230" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id30">30</a><span class="fn-bracket">]</span></span>
+<p><strong>weathered</strong> (adj., C1) - changed in color or shape over a period of time because of the effects of the sun, wind, or other weather conditions.</p>
+</aside>
+<aside class="footnote brackets" id="id231" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id31">31</a><span class="fn-bracket">]</span></span>
+<p><strong>approached</strong> (v., B2) - to come near or nearer to something or someone in space, time, or quality.</p>
+</aside>
+<aside class="footnote brackets" id="id232" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id32">32</a><span class="fn-bracket">]</span></span>
+<p><strong>heavy</strong> (adj., B2) - (of a feeling or atmosphere) strong and difficult to bear.</p>
+</aside>
+<aside class="footnote brackets" id="id233" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id33">33</a><span class="fn-bracket">]</span></span>
+<p><strong>palpable</strong> (adj., C1) - (of a feeling or atmosphere) so strong that it seems as if it can be touched or physically felt.</p>
+</aside>
+<aside class="footnote brackets" id="id234" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id34">34</a><span class="fn-bracket">]</span></span>
+<p><strong>metallic</strong> (adj., B2) - made of metal, or similar to metal.</p>
+</aside>
+<aside class="footnote brackets" id="id235" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id35">35</a><span class="fn-bracket">]</span></span>
+<p><strong>dome</strong> (n., B2) - a rounded roof on a building or structure.</p>
+</aside>
+<aside class="footnote brackets" id="id236" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id36">36</a><span class="fn-bracket">]</span></span>
+<p><strong>rusted</strong> (adj., C1) - covered with rust, a reddish-brown substance that forms on some metals.</p>
+</aside>
+<aside class="footnote brackets" id="id237" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id37">37</a><span class="fn-bracket">]</span></span>
+<p><strong>barely</strong> (adv., B2) - by the smallest amount; almost not.</p>
+</aside>
+<aside class="footnote brackets" id="id238" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id38">38</a><span class="fn-bracket">]</span></span>
+<p><strong>visible</strong> (adj., B2) - able to be seen.</p>
+</aside>
+<aside class="footnote brackets" id="id239" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id39">39</a><span class="fn-bracket">]</span></span>
+<p><strong>crevice</strong> (n., C1) - a narrow crack in the surface of something, especially in rock.</p>
+</aside>
+<aside class="footnote brackets" id="id240" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id40">40</a><span class="fn-bracket">]</span></span>
+<p><strong>masonry</strong> (n., C1) - the parts of a building that are made of stone.</p>
+</aside>
+<aside class="footnote brackets" id="id241" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id41">41</a><span class="fn-bracket">]</span></span>
+<p><strong>pedestal</strong> (n., C1) - a base that a column or statue stands on.</p>
+</aside>
+<aside class="footnote brackets" id="id242" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id42">42</a><span class="fn-bracket">]</span></span>
+<p><strong>elaborate</strong> (adj., B2) - containing a lot of careful detail or many complicated parts.</p>
+</aside>
+<aside class="footnote brackets" id="id243" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id43">43</a><span class="fn-bracket">]</span></span>
+<p><strong>exposed</strong> (adj., B2) - not covered or protected.</p>
+</aside>
+<aside class="footnote brackets" id="id244" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id44">44</a><span class="fn-bracket">]</span></span>
+<p><strong>precise</strong> (adj., B2) - exact and accurate.</p>
+</aside>
+<aside class="footnote brackets" id="id245" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id45">45</a><span class="fn-bracket">]</span></span>
+<p><strong>alignment</strong> (n., C1) - an arrangement in which two or more things are positioned in a straight line or parallel to each other.</p>
+</aside>
+<aside class="footnote brackets" id="id246" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id46">46</a><span class="fn-bracket">]</span></span>
+<p><strong>surface</strong> (n., B2) - the outside or top layer of something.</p>
+</aside>
+<aside class="footnote brackets" id="id247" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id47">47</a><span class="fn-bracket">]</span></span>
+<p><strong>vibration</strong> (n., B2) - a continuous shaking movement.</p>
+</aside>
+<aside class="footnote brackets" id="id248" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id48">48</a><span class="fn-bracket">]</span></span>
+<p><strong>humming</strong> (n., C1) - a continuous low sound.</p>
+</aside>
+<aside class="footnote brackets" id="id249" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id49">49</a><span class="fn-bracket">]</span></span>
+<p><strong>interlocking</strong> (adj., C1) - connected together by fitting into each other.</p>
+</aside>
+<aside class="footnote brackets" id="id250" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id50">50</a><span class="fn-bracket">]</span></span>
+<p><strong>lunar</strong> (adj., C1) - relating to the moon.</p>
+</aside>
+<aside class="footnote brackets" id="id251" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id51">51</a><span class="fn-bracket">]</span></span>
+<p><strong>concentrated</strong> (adj., C1) - (of a substance) strong, or (of an effort or activity) directed towards one thing.</p>
+</aside>
+<aside class="footnote brackets" id="id252" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id52">52</a><span class="fn-bracket">]</span></span>
+<p><strong>unseen</strong> (adj., B2) - not seen.</p>
+</aside>
+<aside class="footnote brackets" id="id253" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id53">53</a><span class="fn-bracket">]</span></span>
+<p><strong>bathed</strong> (v., C1) - to cover something with a lot of light, liquid, etc.</p>
+</aside>
+<aside class="footnote brackets" id="id254" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id54">54</a><span class="fn-bracket">]</span></span>
+<p><strong>ethereal</strong> (adj., C1) - light, delicate, and airy; not of this world.</p>
+</aside>
+<aside class="footnote brackets" id="id255" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id55">55</a><span class="fn-bracket">]</span></span>
+<p><strong>dissolve</strong> (v., B2) - (of a solid) to mix with a liquid and become part of it. (Here, used metaphorically for consciousness)</p>
+</aside>
+<aside class="footnote brackets" id="id256" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id56">56</a><span class="fn-bracket">]</span></span>
+<p><strong>fluid</strong> (adj., B2) - (of a situation or plan) likely to change.</p>
+</aside>
+<aside class="footnote brackets" id="id257" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id57">57</a><span class="fn-bracket">]</span></span>
+<p><strong>sequence</strong> (n., B2) - a series of related things or events, or the order in which they follow one another.</p>
+</aside>
+<aside class="footnote brackets" id="id258" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id58">58</a><span class="fn-bracket">]</span></span>
+<p><strong>igniting</strong> (v., C1) - to start burning or cause to start burning.</p>
+</aside>
+<aside class="footnote brackets" id="id259" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id59">59</a><span class="fn-bracket">]</span></span>
+<p><strong>overwhelming</strong> (adj., B2) - difficult to fight against.</p>
+</aside>
+<aside class="footnote brackets" id="id260" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id60">60</a><span class="fn-bracket">]</span></span>
+<p><strong>deluge</strong> (n., C1) - a very large amount of something arriving at the same time.</p>
+</aside>
+<aside class="footnote brackets" id="id261" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id61">61</a><span class="fn-bracket">]</span></span>
+<p><strong>glimpse</strong> (n., B2) - a quick look at something or someone.</p>
+</aside>
+<aside class="footnote brackets" id="id262" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id62">62</a><span class="fn-bracket">]</span></span>
+<p><strong>eternal</strong> (adj., B2) - lasting forever or for a very long time.</p>
+</aside>
+<aside class="footnote brackets" id="id263" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id63">63</a><span class="fn-bracket">]</span></span>
+<p><strong>fabric</strong> (n., C1) - the basic structure of a society, an organization, or a system.</p>
+</aside>
+<aside class="footnote brackets" id="id264" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id64">64</a><span class="fn-bracket">]</span></span>
+<p><strong>purpose</strong> (n., B2) - the reason for which something is done or created or for which something exists.</p>
+</aside>
+<aside class="footnote brackets" id="id265" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id65">65</a><span class="fn-bracket">]</span></span>
+<p><strong>alter</strong> (v., B2) - to change something, usually slightly.</p>
+</aside>
+<aside class="footnote brackets" id="id266" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id66">66</a><span class="fn-bracket">]</span></span>
+<p><strong>reveal</strong> (v., B2) - to make known or show something that is surprising or that was previously secret.</p>
+</aside>
+<aside class="footnote brackets" id="id267" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id67">67</a><span class="fn-bracket">]</span></span>
+<p><strong>inherent</strong> (adj., C1) - existing as a natural or essential part of something.</p>
+</aside>
+<aside class="footnote brackets" id="id268" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id68">68</a><span class="fn-bracket">]</span></span>
+<p><strong>interconnectedness</strong> (n., C1) - the state of being connected with each other.</p>
+</aside>
+<aside class="footnote brackets" id="id269" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id69">69</a><span class="fn-bracket">]</span></span>
+<p><strong>comprehension</strong> (n., B2) - the ability to understand something.</p>
+</aside>
+<aside class="footnote brackets" id="id270" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id70">70</a><span class="fn-bracket">]</span></span>
+<p><strong>control</strong> (n., B2) - the power to make your own decisions about something, or to influence events.</p>
+</aside>
+<aside class="footnote brackets" id="id271" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id71">71</a><span class="fn-bracket">]</span></span>
+<p><strong>calm</strong> (n., B2) - peaceful and quiet; without worry or fear.</p>
+</aside>
+<aside class="footnote brackets" id="id272" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id72">72</a><span class="fn-bracket">]</span></span>
+<p><strong>descend</strong> (v., C1) - to go or come down.</p>
+</aside>
+<aside class="footnote brackets" id="id273" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id73">73</a><span class="fn-bracket">]</span></span>
+<p><strong>catalyst</strong> (n., C1) - something that causes change without being directly involved in the change.</p>
+</aside>
+<aside class="footnote brackets" id="id274" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id74">74</a><span class="fn-bracket">]</span></span>
+<p><strong>realization</strong> (n., B2) - the process of understanding something that you did not understand before.</p>
+</aside>
+<aside class="footnote brackets" id="id275" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id75">75</a><span class="fn-bracket">]</span></span>
+<p><strong>obligation</strong> (n., B2) - something that you must do.</p>
+</aside>
+<aside class="footnote brackets" id="id276" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id76">76</a><span class="fn-bracket">]</span></span>
+<p><strong>exploited</strong> (v., C1) - to use something in a way that helps you.</p>
+</aside>
+<aside class="footnote brackets" id="id277" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id77">77</a><span class="fn-bracket">]</span></span>
+<p><strong>safeguarded</strong> (v., C1) - to protect something from harm, damage, or loss.</p>
+</aside>
+<aside class="footnote brackets" id="id278" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id78">78</a><span class="fn-bracket">]</span></span>
+<p><strong>reckless</strong> (adj., B2) - doing something dangerous and not worrying about the risks and possible results.</p>
+</aside>
+<aside class="footnote brackets" id="id279" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id79">79</a><span class="fn-bracket">]</span></span>
+<p><strong>reverence</strong> (n., C1) - a feeling of great respect and admiration for someone or something.</p>
+</aside>
+<aside class="footnote brackets" id="id280" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id80">80</a><span class="fn-bracket">]</span></span>
+<p><strong>dormant</strong> (adj., C1) - (of an activity or emotion) not active or growing at the present time but capable of becoming active or growing in the future.</p>
+</aside>
+<aside class="footnote brackets" id="id281" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id81">81</a><span class="fn-bracket">]</span></span>
+<p><strong>conviction</strong> (n., B2) - a strong belief or opinion.</p>
+</aside>
+<aside class="footnote brackets" id="id282" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id82">82</a><span class="fn-bracket">]</span></span>
+<p><strong>essence</strong> (n., B2) - the basic or most important idea or quality of something.</p>
+</aside>
+<aside class="footnote brackets" id="id283" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id83">83</a><span class="fn-bracket">]</span></span>
+<p><strong>vocation</strong> (n., C1) - a type of work or way of life that you believe is especially suitable for you.</p>
+</aside>
+<aside class="footnote brackets" id="id284" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id84">84</a><span class="fn-bracket">]</span></span>
+<p><strong>shifted</strong> (v., B2) - to change position, or to make something change position.</p>
+</aside>
+<aside class="footnote brackets" id="id285" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id85">85</a><span class="fn-bracket">]</span></span>
+<p><strong>perception</strong> (n., B2) - the way that someone understands or thinks about something.</p>
+</aside>
+<aside class="footnote brackets" id="id286" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id86">86</a><span class="fn-bracket">]</span></span>
+<p><strong>radically</strong> (adj., B2) - in a new and very different way.</p>
+</aside>
+<aside class="footnote brackets" id="id287" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id87">87</a><span class="fn-bracket">]</span></span>
+<p><strong>transformed</strong> (v., B2) - to change completely the appearance or character of something or someone, especially so that that thing or person is improved.</p>
+</aside>
+<aside class="footnote brackets" id="id288" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id88">88</a><span class="fn-bracket">]</span></span>
+<p><strong>unlikely</strong> (adj., B2) - not probable or expected.</p>
+</aside>
+<aside class="footnote brackets" id="id289" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id89">89</a><span class="fn-bracket">]</span></span>
+<p><strong>protectors</strong> (n., C1) - people who protect someone or something.</p>
+</aside>
+<aside class="footnote brackets" id="id290" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id90">90</a><span class="fn-bracket">]</span></span>
+<p><strong>acquired</strong> (v., B2) - to get something.</p>
+</aside>
+<aside class="footnote brackets" id="id291" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id91">91</a><span class="fn-bracket">]</span></span>
+<p><strong>understanding</strong> (n., B2) - knowledge about a subject, situation, etc. or about how something works.</p>
+</aside>
+<aside class="footnote brackets" id="id292" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id92">92</a><span class="fn-bracket">]</span></span>
+<p><strong>nature</strong> (n., B2) - the basic character of a person or thing.</p>
+</aside>
+<aside class="footnote brackets" id="id293" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id93">93</a><span class="fn-bracket">]</span></span>
+<p><strong>devotion</strong> (n., C1) - loyalty and love or strong admiration for someone or something.</p>
+</aside>
+<aside class="footnote brackets" id="id294" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id94">94</a><span class="fn-bracket">]</span></span>
+<p><strong>revelation</strong> (n., C1) - the act of making something known that was secret, or a fact that is made known in this way.</p>
+</aside>
+<aside class="footnote brackets" id="id295" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id95">95</a><span class="fn-bracket">]</span></span>
+<p><strong>untainted</strong> (adj., C1) - not spoiled or damaged by something bad.</p>
+</aside>
+<aside class="footnote brackets" id="id296" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id96">96</a><span class="fn-bracket">]</span></span>
+<p><strong>insight</strong> (n., B2) - the ability to understand an exact truth about something.</p>
+</aside>
+<aside class="footnote brackets" id="id297" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id97">97</a><span class="fn-bracket">]</span></span>
+<p><strong>immense</strong> (adj., B2) - extremely large in size or degree.</p>
+</aside>
+<aside class="footnote brackets" id="id298" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id98">98</a><span class="fn-bracket">]</span></span>
+<p><strong>granted</strong> (v., B2) - to give or allow someone something, usually officially.</p>
+</aside>
+<aside class="footnote brackets" id="id299" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id99">99</a><span class="fn-bracket">]</span></span>
+<p><strong>privilege</strong> (n., B2) - a special right or advantage that a person or group has.</p>
+</aside>
+<aside class="footnote brackets" id="id300" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id100">100</a><span class="fn-bracket">]</span></span>
+<p><strong>measure</strong> (n., B2) - a way of judging something.</p>
+</aside>
+<aside class="footnote brackets" id="id301" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id101">101</a><span class="fn-bracket">]</span></span>
+<p><strong>respect</strong> (n., B2) - admiration felt or shown for someone or something that you believe has good qualities or achievements.</p>
+</aside>
+<aside class="footnote brackets" id="id302" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id102">102</a><span class="fn-bracket">]</span></span>
+<p><strong>balance</strong> (n., B2) - a state where things are of equal weight or force.</p>
+</aside>
+<aside class="footnote brackets" id="id303" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id103">103</a><span class="fn-bracket">]</span></span>
+<p><strong>cosmos</strong> (n., C1) - the universe, especially when it is thought of as an ordered system.</p>
+</aside>
+<aside class="footnote brackets" id="id304" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id104">104</a><span class="fn-bracket">]</span></span>
+<p><strong>custodian</strong> (n., C1) - a person with responsibility for protecting or taking care of something or someone.</p>
+</aside>
+<aside class="footnote brackets" id="id305" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id105">105</a><span class="fn-bracket">]</span></span>
+<p><strong>ambition</strong> (n., B2) - a strong desire to do or achieve something.</p>
+</aside>
+<aside class="footnote brackets" id="id306" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id106">106</a><span class="fn-bracket">]</span></span>
+<p><strong>trivial</strong> (adj., B2) - of little importance or value.</p>
+</aside>
+<aside class="footnote brackets" id="id307" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id107">107</a><span class="fn-bracket">]</span></span>
+<p><strong>magnitude</strong> (n., C1) - the great size or importance of something.</p>
+</aside>
+<aside class="footnote brackets" id="id308" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id108">108</a><span class="fn-bracket">]</span></span>
+<p><strong>responsibility</strong> (n., B2) - something that it is your job or duty to deal with.</p>
+</aside>
+<aside class="footnote brackets" id="id309" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id109">109</a><span class="fn-bracket">]</span></span>
+<p><strong>appreciating</strong> (v., B2) - to recognize how good or useful someone or something is.</p>
+</aside>
+<aside class="footnote brackets" id="id310" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id110">110</a><span class="fn-bracket">]</span></span>
+<p><strong>setting</strong> (n., B2) - the time and place in which the action of a book, movie, play, etc., happens.</p>
+</aside>
+<aside class="footnote brackets" id="id311" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id111">111</a><span class="fn-bracket">]</span></span>
+<p><strong>distinct</strong> (adj., B2) - clearly separate and different from something else.</p>
+</aside>
+<aside class="footnote brackets" id="id312" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id112">112</a><span class="fn-bracket">]</span></span>
+<p><strong>empty</strong> (adj., B2) - containing nothing.</p>
+</aside>
+<aside class="footnote brackets" id="id313" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id113">113</a><span class="fn-bracket">]</span></span>
+<p><strong>expanse</strong> (n., C1) - a large, open area of land, water, or sky.</p>
+</aside>
+<aside class="footnote brackets" id="id314" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id114">114</a><span class="fn-bracket">]</span></span>
+<p><strong>previous</strong> (adj., B2) - happening or existing before something or someone else.</p>
+</aside>
+<aside class="footnote brackets" id="id315" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id115">115</a><span class="fn-bracket">]</span></span>
+<p><strong>sequence</strong> (n., B2) - a series of related things or events, or the order in which they follow one another.</p>
+</aside>
+<aside class="footnote brackets" id="id316" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id116">116</a><span class="fn-bracket">]</span></span>
+<p><strong>shattered</strong> (v., C1) - to destroy something completely.</p>
+</aside>
+<aside class="footnote brackets" id="id317" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id117">117</a><span class="fn-bracket">]</span></span>
+<p><strong>dynamic</strong> (adj., C1) - (of a process or system) characterized by constant change, activity, or progress.</p>
+</aside>
+<aside class="footnote brackets" id="id318" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id118">118</a><span class="fn-bracket">]</span></span>
+<p><strong>tapestry</strong> (n., C1) - a picture or pattern that is woven into cloth.</p>
+</aside>
+<aside class="footnote brackets" id="id319" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id119">119</a><span class="fn-bracket">]</span></span>
+<p><strong>interwoven</strong> (adj., C1) - woven together or linked closely.</p>
+</aside>
+<aside class="footnote brackets" id="id320" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id120">120</a><span class="fn-bracket">]</span></span>
+<p><strong>infinite</strong> (adj., B2) - without limits; extremely large or great.</p>
+</aside>
+<aside class="footnote brackets" id="id321" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id121">121</a><span class="fn-bracket">]</span></span>
+<p><strong>lesson</strong> (n., B2) - an experience that helps you to learn something.</p>
+</aside>
+<aside class="footnote brackets" id="id322" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id122">122</a><span class="fn-bracket">]</span></span>
+<p><strong>purpose</strong> (n., B2) - the reason for which something is done or created or for which something exists.</p>
+</aside>
+<aside class="footnote brackets" id="id323" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id123">123</a><span class="fn-bracket">]</span></span>
+<p><strong>influenced</strong> (v., B2) - to affect or change how someone or something develops, behaves, or thinks.</p>
+</aside>
+<aside class="footnote brackets" id="id324" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id124">124</a><span class="fn-bracket">]</span></span>
+<p><strong>students</strong> (n., B2) - a person who is studying at a school, college, or university.</p>
+</aside>
+<aside class="footnote brackets" id="id325" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id125">125</a><span class="fn-bracket">]</span></span>
+<p><strong>obvious</strong> (adj., B2) - easy to see, recognize, or understand.</p>
+</aside>
+<aside class="footnote brackets" id="id326" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id126">126</a><span class="fn-bracket">]</span></span>
+<p><strong>academic</strong> (adj., B2) - relating to schools, colleges, and universities, or to subjects that are studied there.</p>
+</aside>
+<aside class="footnote brackets" id="id327" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id127">127</a><span class="fn-bracket">]</span></span>
+<p><strong>resonance</strong> (n., C1) - the quality in a sound of being deep, clear, and continuing. (Here, metaphorical: a quality that makes something strongly affect someone).</p>
+</aside>
+<aside class="footnote brackets" id="id328" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id128">128</a><span class="fn-bracket">]</span></span>
+<p><strong>context</strong> (n., B2) - the situation within which something exists or happens, and that helps explain it.</p>
+</aside>
+<aside class="footnote brackets" id="id329" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id129">129</a><span class="fn-bracket">]</span></span>
+<p><strong>phenomena</strong> (n., B2) - facts or situations that are observed to exist or happen, especially ones whose cause or explanation is in question.</p>
+</aside>
+<aside class="footnote brackets" id="id330" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id130">130</a><span class="fn-bracket">]</span></span>
+<p><strong>currents</strong> (n., B2) - a movement of water, air, or electricity in a particular direction. (Here, metaphorical: underlying influences).</p>
+</aside>
+<aside class="footnote brackets" id="id331" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id131">131</a><span class="fn-bracket">]</span></span>
+<p><strong>endeavor</strong> (n., C1) - an attempt to do something, especially something new or difficult.</p>
+</aside>
+<aside class="footnote brackets" id="id332" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id132">132</a><span class="fn-bracket">]</span></span>
+<p><strong>framework</strong> (n., B2) - a system of rules, ideas, or beliefs that is used to plan or control something.</p>
+</aside>
+<aside class="footnote brackets" id="id333" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id133">133</a><span class="fn-bracket">]</span></span>
+<p><strong>complexity</strong> (n., B2) - the state of being complicated.</p>
+</aside>
+<aside class="footnote brackets" id="id334" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id134">134</a><span class="fn-bracket">]</span></span>
+<p><strong>fluidity</strong> (n., C1) - the quality of being able to change easily and continuously.</p>
+</aside>
+<aside class="footnote brackets" id="id335" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id135">135</a><span class="fn-bracket">]</span></span>
+<p><strong>unprecedented</strong> (adj., B2) - never having happened or existed before.</p>
+</aside>
+<aside class="footnote brackets" id="id336" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id136">136</a><span class="fn-bracket">]</span></span>
+<p><strong>recognition</strong> (n., B2) - the act of accepting that something is true or exists.</p>
+</aside>
+<aside class="footnote brackets" id="id337" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id137">137</a><span class="fn-bracket">]</span></span>
+<p><strong>insight</strong> (n., B2) - the ability to understand an exact truth about something.</p>
+</aside>
+<aside class="footnote brackets" id="id338" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id138">138</a><span class="fn-bracket">]</span></span>
+<p><strong>articulate</strong> (v., C1) - to express something clearly in words.</p>
+</aside>
+<aside class="footnote brackets" id="id339" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id139">139</a><span class="fn-bracket">]</span></span>
+<p><strong>sensed</strong> (v., B2) - to feel or know something without being told or having proof.</p>
+</aside>
+<aside class="footnote brackets" id="id340" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id140">140</a><span class="fn-bracket">]</span></span>
+<p><strong>advocate</strong> (n., C1) - a person who publicly supports or recommends a particular cause or policy.</p>
+</aside>
+<aside class="footnote brackets" id="id341" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id141">141</a><span class="fn-bracket">]</span></span>
+<p><strong>understanding</strong> (n., B2) - knowledge about a subject, situation, etc. or about how something works.</p>
+</aside>
+<aside class="footnote brackets" id="id342" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id142">142</a><span class="fn-bracket">]</span></span>
+<p><strong>intersection</strong> (n., C1) - a place where two or more roads, lines, etc., meet or cross each other. (Here, metaphorical: common point).</p>
+</aside>
+<aside class="footnote brackets" id="id343" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id143">143</a><span class="fn-bracket">]</span></span>
+<p><strong>venerable</strong> (adj., C1) - deserving respect because of age, character, or position.</p>
+</aside>
+<aside class="footnote brackets" id="id344" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id144">144</a><span class="fn-bracket">]</span></span>
+<p><strong>hinted</strong> (v., B2) - to suggest something in an indirect way.</p>
+</aside>
+<aside class="footnote brackets" id="id345" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id145">145</a><span class="fn-bracket">]</span></span>
+<p><strong>explicitly</strong> (adv., C1) - in a clear and exact way.</p>
+</aside>
+<aside class="footnote brackets" id="id346" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id146">146</a><span class="fn-bracket">]</span></span>
+<p><strong>epiphanies</strong> (n., C1) - moments when you suddenly understand something important.</p>
+</aside>
+<aside class="footnote brackets" id="id347" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id147">147</a><span class="fn-bracket">]</span></span>
+<p><strong>widespread</strong> (adj., B2) - existing or happening in many places or among many people.</p>
+</aside>
+<aside class="footnote brackets" id="id348" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id148">148</a><span class="fn-bracket">]</span></span>
+<p><strong>generation</strong> (n., B2) - all the people of about the same age within a society or within a particular family.</p>
+</aside>
+<aside class="footnote brackets" id="id349" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id149">149</a><span class="fn-bracket">]</span></span>
+<p><strong>network</strong> (n., B2) - a large system of roads, railways, or other lines that cross each other or are connected. (Here, metaphorical: group of connected people).</p>
+</aside>
+<aside class="footnote brackets" id="id350" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id150">150</a><span class="fn-bracket">]</span></span>
+<p><strong>alliance</strong> (n., C1) - a group of countries, political parties, or people who have agreed to work together because of shared interests or aims.</p>
+</aside>
+<aside class="footnote brackets" id="id351" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id151">151</a><span class="fn-bracket">]</span></span>
+<p><strong>balance</strong> (n., B2) - a state where things are of equal weight or force.</p>
+</aside>
+<aside class="footnote brackets" id="id352" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id152">152</a><span class="fn-bracket">]</span></span>
+<p><strong>colleague</strong> (n., B2) - someone you work with.</p>
+</aside>
+<aside class="footnote brackets" id="id353" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id153">153</a><span class="fn-bracket">]</span></span>
+<p><strong>discovery</strong> (n., B2) - the process of finding something that was hidden or unknown.</p>
+</aside>
+<aside class="footnote brackets" id="id354" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id154">154</a><span class="fn-bracket">]</span></span>
+<p><strong>fragment</strong> (n., B2) - a small piece of something.</p>
+</aside>
+<aside class="footnote brackets" id="id355" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id155">155</a><span class="fn-bracket">]</span></span>
+<p><strong>palpable</strong> (adj., C1) - (of a feeling or atmosphere) so strong that it seems as if it can be touched or physically felt.</p>
+</aside>
+<aside class="footnote brackets" id="id356" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id156">156</a><span class="fn-bracket">]</span></span>
+<p><strong>allegedly</strong> (adv., C1) - used when something is said to be true but has not been proven.</p>
+</aside>
+<aside class="footnote brackets" id="id357" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id157">157</a><span class="fn-bracket">]</span></span>
+<p><strong>exterior</strong> (n., B2) - the outside part of something or someone.</p>
+</aside>
+<aside class="footnote brackets" id="id358" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id158">158</a><span class="fn-bracket">]</span></span>
+<p><strong>concern</strong> (n., B2) - a worried or anxious feeling.</p>
+</aside>
+<aside class="footnote brackets" id="id359" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id159">159</a><span class="fn-bracket">]</span></span>
+<p><strong>prophecy</strong> (n., C1) - a statement that tells what will happen in the future.</p>
+</aside>
+<aside class="footnote brackets" id="id360" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id160">160</a><span class="fn-bracket">]</span></span>
+<p><strong>exploit</strong> (v., C1) - to use something in a way that helps you.</p>
+</aside>
+<aside class="footnote brackets" id="id361" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id161">161</a><span class="fn-bracket">]</span></span>
+<p><strong>testament</strong> (n., C1) - proof or evidence that something exists or is true.</p>
+</aside>
+<aside class="footnote brackets" id="id362" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id162">162</a><span class="fn-bracket">]</span></span>
+<p><strong>uncontrolled</strong> (adj., C1) - not controlled or not able to be controlled.</p>
+</aside>
+<aside class="footnote brackets" id="id363" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id163">163</a><span class="fn-bracket">]</span></span>
+<p><strong>mission</strong> (n., B2) - an important job, especially one that involves travel.</p>
+</aside>
+<aside class="footnote brackets" id="id364" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id164">164</a><span class="fn-bracket">]</span></span>
+<p><strong>intervention</strong> (n., C1) - the act or fact of intervening.</p>
+</aside>
+<aside class="footnote brackets" id="id365" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id165">165</a><span class="fn-bracket">]</span></span>
+<p><strong>stewardship</strong> (n., C1) - the job of supervising or taking care of something, such as an organization or property.</p>
+</aside>
+<aside class="footnote brackets" id="id366" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id166">166</a><span class="fn-bracket">]</span></span>
+<p><strong>philosophies</strong> (n., B2) - the study of the nature and meaning of existence, truth, good and evil, etc.</p>
+</aside>
+<aside class="footnote brackets" id="id367" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id167">167</a><span class="fn-bracket">]</span></span>
+<p><strong>absolute</strong> (adj., B2) - complete; total.</p>
+</aside>
+<aside class="footnote brackets" id="id368" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id168">168</a><span class="fn-bracket">]</span></span>
+<p><strong>control</strong> (n., B2) - the power to make your own decisions about something, or to influence events.</p>
+</aside>
+<aside class="footnote brackets" id="id369" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id169">169</a><span class="fn-bracket">]</span></span>
+<p><strong>fabric</strong> (n., C1) - the basic structure of a society, an organization, or a system.</p>
+</aside>
+<aside class="footnote brackets" id="id370" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id170">170</a><span class="fn-bracket">]</span></span>
+<p><strong>skeptical</strong> (adj., B2) - doubting that something is true or useful.</p>
+</aside>
+<aside class="footnote brackets" id="id371" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id171">171</a><span class="fn-bracket">]</span></span>
+<p><strong>comprehend</strong> (v., B2) - to understand something completely.</p>
+</aside>
+<aside class="footnote brackets" id="id372" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id172">172</a><span class="fn-bracket">]</span></span>
+<p><strong>speculation</strong> (n., C1) - the act of guessing about the possible causes or effects of something without knowing all the facts, or the guesses themselves.</p>
+</aside>
+<aside class="footnote brackets" id="id373" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id173">173</a><span class="fn-bracket">]</span></span>
+<p><strong>visceral</strong> (adj., C1) - based on deep feeling and strong emotions rather than on reason or thought.</p>
+</aside>
+<aside class="footnote brackets" id="id374" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id174">174</a><span class="fn-bracket">]</span></span>
+<p><strong>understanding</strong> (n., B2) - knowledge about a subject, situation, etc. or about how something works.</p>
+</aside>
+<aside class="footnote brackets" id="id375" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id175">175</a><span class="fn-bracket">]</span></span>
+<p><strong>manipulation</strong> (n., C1) - the action of manipulating something in a skillful manner.</p>
+</aside>
+<aside class="footnote brackets" id="id376" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id176">176</a><span class="fn-bracket">]</span></span>
+<p><strong>foundation</strong> (n., B2) - an organization that has been created to provide money for a particular group of people or for a particular type of research.</p>
+</aside>
+<aside class="footnote brackets" id="id377" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id177">177</a><span class="fn-bracket">]</span></span>
+<p><strong>guidance</strong> (n., B2) - help and advice about how to do something or about problems relating to your life, work, or education.</p>
+</aside>
+<aside class="footnote brackets" id="id378" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id178">178</a><span class="fn-bracket">]</span></span>
+<p><strong>prudence</strong> (n., C1) - careful good judgment that allows someone to avoid danger or risks.</p>
+</aside>
+<aside class="footnote brackets" id="id379" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id179">179</a><span class="fn-bracket">]</span></span>
+<p><strong>restraint</strong> (n., B2) - calm and controlled behavior.</p>
+</aside>
+<aside class="footnote brackets" id="id380" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id180">180</a><span class="fn-bracket">]</span></span>
+<p><strong>vocation</strong> (n., C1) - a type of work or way of life that you believe is especially suitable for you.</p>
+</aside>
+<aside class="footnote brackets" id="id381" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id181">181</a><span class="fn-bracket">]</span></span>
+<p><strong>life’s</strong> (n., B2) - a period of existence, for example, of a person or animal, or a plant.</p>
+</aside>
+<aside class="footnote brackets" id="id382" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id182">182</a><span class="fn-bracket">]</span></span>
+<p><strong>sacred</strong> (adj., B2) - considered to be holy and deserving respect.</p>
+</aside>
+<aside class="footnote brackets" id="id383" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id183">183</a><span class="fn-bracket">]</span></span>
+<p><strong>compelling</strong> (adj., B2) - very exciting or interesting and making you want to watch or listen.</p>
+</aside>
+<aside class="footnote brackets" id="id384" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id184">184</a><span class="fn-bracket">]</span></span>
+<p><strong>unfold</strong> (v., B2) - to open or spread out something that is folded.</p>
+</aside>
+<aside class="footnote brackets" id="id385" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id185">185</a><span class="fn-bracket">]</span></span>
+<p><strong>deliberate</strong> (adj., B2) - (often of something bad) intentional or planned.</p>
+</aside>
+<aside class="footnote brackets" id="id386" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id186">186</a><span class="fn-bracket">]</span></span>
+<p><strong>interference</strong> (n., B2) - an act of interfering.</p>
+</aside>
+<aside class="footnote brackets" id="id387" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id187">187</a><span class="fn-bracket">]</span></span>
+<p><strong>treasure</strong> (n., B2) - very valuable things, usually in the form of a store of precious metals, precious stones, or money.</p>
+</aside>
+<aside class="footnote brackets" id="id388" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id188">188</a><span class="fn-bracket">]</span></span>
+<p><strong>ongoing</strong> (adj., B2) - continuing to exist or develop, or happening at the present moment.</p>
+</aside>
+<aside class="footnote brackets" id="id389" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id189">189</a><span class="fn-bracket">]</span></span>
+<p><strong>journey</strong> (n., B2) - the act of traveling from one place to another, especially in a vehicle.</p>
+</aside>
+<aside class="footnote brackets" id="id390" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id190">190</a><span class="fn-bracket">]</span></span>
+<p><strong>persistent</strong> (adj., B2) - continuing to exist or happen, especially for longer than is usual or desirable.</p>
+</aside>
+<aside class="footnote brackets" id="id391" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id191">191</a><span class="fn-bracket">]</span></span>
+<p><strong>quest</strong> (n., B2) - a long search for something that is difficult to find, or an attempt to achieve something difficult.</p>
+</aside>
+<aside class="footnote brackets" id="id392" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id192">192</a><span class="fn-bracket">]</span></span>
+<p><strong>understanding</strong> (n., B2) - knowledge about a subject, situation, etc. or about how something works.</p>
+</aside>
+<aside class="footnote brackets" id="id393" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id193">193</a><span class="fn-bracket">]</span></span>
+<p><strong>humility</strong> (n., C1) - the quality of not being proud because you are aware of your bad qualities.</p>
+</aside>
+<aside class="footnote brackets" id="id394" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id194">194</a><span class="fn-bracket">]</span></span>
+<p><strong>observe</strong> (v., B2) - to watch carefully the way something happens or the way someone does something.</p>
+</aside>
+<aside class="footnote brackets" id="id395" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id195">195</a><span class="fn-bracket">]</span></span>
+<p><strong>design</strong> (n., B2) - a drawing or set of drawings showing how a building or product is to be made.</p>
+</aside>
+<aside class="footnote brackets" id="id396" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id196">196</a><span class="fn-bracket">]</span></span>
+<p><strong>purpose</strong> (n., B2) - the reason for which something is done or created or for which something exists.</p>
+</aside>
+<aside class="footnote brackets" id="id397" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id197">197</a><span class="fn-bracket">]</span></span>
+<p><strong>dominate</strong> (v., B2) - to have control over a place or person.</p>
+</aside>
+<aside class="footnote brackets" id="id398" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id198">198</a><span class="fn-bracket">]</span></span>
+<p><strong>contributions</strong> (n., B2) - a gift or payment to a common fund or collection.</p>
+</aside>
+<aside class="footnote brackets" id="id399" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id199">199</a><span class="fn-bracket">]</span></span>
+<p><strong>legendary</strong> (adj., C1) - very famous and talked about for a long time.</p>
+</aside>
+<aside class="footnote brackets" id="id400" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id200">200</a><span class="fn-bracket">]</span></span>
+<p><strong>genesis</strong> (n., C1) - the origin or beginning of something.</p>
+</aside>
+</aside>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-1-the-scholar-s-conviction">Chapter 1: The Scholar’s Conviction</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-2-the-cryptic-arrival">Chapter 2: The Cryptic Arrival</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-3-the-weathered-observatory">Chapter 3: The Weathered Observatory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-4-the-heart-of-the-scroll">Chapter 4: The Heart of the Scroll</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-5-glimpses-of-eternity">Chapter 5: Glimpses of Eternity</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-6-a-new-vocation">Chapter 6: A New Vocation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-7-the-unfolding-tapestry">Chapter 7: The Unfolding Tapestry</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-8-guiding-the-new-generation">Chapter 8: Guiding the New Generation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-9-a-familiar-fragment">Chapter 9: A Familiar Fragment</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-10-protecting-the-essence">Chapter 10: Protecting the Essence</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#chapter-11-the-enduring-trust">Chapter 11: The Enduring Trust</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By v1.0.0
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2030, Song XU.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

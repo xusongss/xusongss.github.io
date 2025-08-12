@@ -1,0 +1,470 @@
+2025/08/12
+======================================================
+
+
+================================================================================
+:ref:`Conduct<conduct>`
+================================================================================
+
+* **Pronunciation**: :code:`/kənˈdʌkt/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Verb*
+* **Simple Meaning**: To organize and carry out an activity; to behave in a particular way.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "conduct" is to **perform or manage an activity in an organized, systematic way**. It implies a sense of control and active management over a process or an action.
+
+**What it really means**: To "**conduct**" means to carry out or perform a particular activity. This can be a formal activity like a scientific study or a business meeting, or a more :ref:`routine<routine>` action like a transaction. As seen in the sentence you provided, the word is used to mean that a system "Conducts regular transactions," which means it performs or carries out those transactions in a systematic way.
+
+**When to use it**: Use it to describe the act of organizing or carrying out a specific activity.
+    * **Common phrases**:
+        * **(Verb)** "to **conduct** an experiment," "to **conduct** an interview," "to **conduct** a meeting."
+    * **Examples**:
+        * **Daily Use**:
+            * "The teacher will **conduct** the tour of the museum this afternoon."
+            * "The company is **conducting** a survey to get feedback from customers."
+            * "The students were asked to **conduct** themselves appropriately during the assembly."
+        * **Formal/IELTS Use**:
+            * "The research team will **conduct** a series of experiments to test the hypothesis."
+            * "The auditor's responsibility is to **conduct** a thorough review of the company's financial records."
+            * "The report highlights the need for organizations to **conduct** business in an ethical and transparent manner."
+            * "The government is **conducting** an investigation into the causes of the recent power outage."
+
+**Synonyms**: Carry out, perform, manage, organize, execute, administer.
+
+**Opposite words**: Neglect, abandon, fail, halt, mismanage.
+
+**Where it comes from**: From Latin *conducere* (to lead together, to bring together), from *com-* (with, together) + *ducere* (to lead).
+
+**Context**:
+    * **Conducts** regular transactions (fast or standard) with all devices that have a valid and registered Digital Key
+
+
+.. _routine:
+
+================================================================================
+Routine
+================================================================================
+
+* **Pronunciation**: :code:`/ruːˈtiːn/`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun*, *Adjective*
+* **Simple Meaning**: (Noun) A regular sequence of actions; (Adjective) Done as a regular procedure.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "routine" is a **fixed, regular, and often predictable sequence of actions or events**. It implies a sense of habit, procedure, or a lack of variation.
+
+**What it really means**: As a **noun**, a "**routine**" is a regular, fixed pattern of doing things. It's the usual way something is done, such as a morning **routine** or a weekly work **routine**. As an **adjective**, "**routine**" describes an action or task that is part of this regular procedure and is therefore considered normal or unexceptional. For example, a **routine** checkup is a standard appointment, not an emergency one.
+
+**When to use it**: Use it to describe something that happens regularly and predictably, or an action that is part of a fixed procedure.
+    * **Common phrases**:
+        * **(Noun)** "daily **routine**," "a change of **routine**," "work **routine**."
+        * **(Adjective)** "a **routine** checkup," "a **routine** matter," "**routine** maintenance."
+    * **Examples**:
+        * **Daily Use**:
+            * "My morning **routine** starts with a cup of coffee and a short walk."
+            * "I enjoy the predictability of my daily **routine**."
+            * "He had a **routine** dentist appointment this morning."
+        * **Formal/IELTS Use**:
+            * "The factory's daily operations follow a precise and efficient production **routine** to maximize output."
+            * "The analyst's job involves a series of **routine** tasks, such as data entry and report generation, in addition to more complex projects."
+            * "The police described the traffic stop as a **routine** procedure until the driver failed to produce a valid license."
+            * "A consistent exercise **routine** is crucial for maintaining good physical health over the long term."
+
+**Synonyms**: (Noun) Habit, custom, pattern, procedure; (Adjective) Standard, normal, regular, ordinary.
+
+**Opposite words**: (Noun) Spontaneity, randomness; (Adjective) Unusual, exceptional, special.
+
+**Where it comes from**: From French *routine*, from *route* (a way, a path).
+
+
+
+.. _attestation:
+
+================================================================================
+Attestation
+================================================================================
+
+\see :ref:`attest` 
+
+* **Pronunciation**: :code:`/ˌætɛˈsteɪʃən/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: The act of giving evidence or confirming that something is true.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "attestation" is the **official, formal, or authoritative act of providing evidence or testimony** to prove the truth, validity, or genuineness of something.
+
+**What it really means**: "**Attestation**" is the noun form of the verb *attest*. It refers to the formal process or act of bearing witness or certifying something. It can be a written statement or declaration (like a letter of **attestation**) that confirms a fact, or, as in the sentence you provided, a digital process to confirm a device's identity. In this context, the "**attestations**" are the pieces of digital evidence or certifications that the vehicle receives to confirm that the friend's Digital Key is valid and can be trusted.
+
+**When to use it**: Use it to describe the formal act of confirmation or certification.
+    * **Common phrases**:
+        * **(Noun)** "a letter of **attestation**," "digital **attestation**," "the **attestation** of a witness."
+    * **Examples**:
+        * **Daily Use**:
+            * "You might need a letter of **attestation** from your bank to confirm your account details for a loan."
+            * "The company requires **attestation** from a supervisor before you can claim overtime."
+            * "The official document requires the **attestation** of a third-party witness to be valid."
+        * **Formal/IELTS Use**:
+            * "The **attestation** of the document by a notary public is a legal requirement for its official use abroad."
+            * "The study examines the role of digital **attestation** in securing transactions on mobile devices."
+            * "The final report included a sworn **attestation** from the auditor, confirming the accuracy of the financial records."
+            * "The new regulation requires an **attestation** from a qualified engineer that all safety standards have been met."
+
+**Synonyms**: Certification, confirmation, verification, testimony, proof, validation.
+
+**Opposite words**: Denial, refutation, contradiction, invalidation.
+
+**Where it comes from**: From Latin *attestatio*, from *attestari* (to bear witness to).
+
+**Context**:
+    * Conducts first transaction for a friend device during Key Sharing, transmitting necessary **attestations** so that the vehicle can verify the Digital Key of the friend device
+
+
+.. _bear_witness:
+
+================================================================================
+Bear witness
+================================================================================
+
+\see :ref:`attest` :ref:`attestation` 
+
+* **Pronunciation**: :code:`/bɛər ˈwɪtnɪs/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (phrasal, transitive)
+* **Simple Meaning**: To provide evidence or testify to the truth of something.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "bear witness" is to **give an account of something, often based on personal knowledge or observation**, thereby confirming its truth or existence. It has a formal or solemn connotation, suggesting the act of testifying.
+
+**What it really means**: To "**bear witness**" is a phrasal verb meaning to testify or provide proof, either in a formal setting like a court or in a more figurative way to show that something is true. It implies that a person or thing is serving as evidence of an event, a fact, or a quality.
+
+**When to use it**: Use it to describe the act of testifying to or confirming the truth of something.
+    * **Common phrases**:
+        * **(Verb)** "to **bear witness** to an event," "to **bear witness** to the fact that."
+    * **Examples**:
+        * **Daily Use**:
+            * "He was at the scene of the accident, so he can **bear witness** to what actually happened."
+            * "The team's success this season **bears witness** to all their hard work in the off-season."
+            * "I can **bear witness** to the fact that she is an excellent cook."
+        * **Formal/IELTS Use**:
+            * "The ancient texts **bear witness** to the existence of a highly advanced civilization that once thrived in the region."
+            * "In a court of law, a person is required to take an oath to **bear witness** to the truth, the whole truth, and nothing but the truth."
+            * "The report's extensive data and testimonials **bear witness** to the efficacy of the new educational program."
+            * "The personal journals of the early settlers **bear witness** to the extreme hardships they faced on their journey."
+
+**Synonyms**: Testify, attest, confirm, certify, provide evidence, vouch for.
+
+**Opposite words**: Deny, conceal, refute, contradict.
+
+**Where it comes from**: The word *bear* here means "to carry" or "to hold," while *witness* comes from Old English for knowledge. The phrase thus means to carry the knowledge of an event.
+
+
+.. _bear:
+
+================================================================================
+Bear
+================================================================================
+
+* **Pronunciation**: :code:`/bɛər/`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Verb*, *Noun*
+* **Simple Meaning**: (Verb) To carry, to endure, or to give birth to; (Noun) A large mammal.
+
+**Underlying Meaning / Core Meaning**: The core meaning for the **verb** is to **carry, support, or hold something up**, which extends to enduring a burden or responsibility. For the **noun**, it is simply a large, heavy mammal.
+
+**What it really means**: As a **verb**, "**bear**" has several common meanings. It can mean to **carry or support a physical or abstract weight** ("to **bear** a heavy load" or "to **bear** responsibility"). It also means to **endure or tolerate something difficult or unpleasant** ("I can't **bear** the noise"). Finally, it is a formal way to say **to give birth** to a child or to produce a result ("She **bore** three children"). As a **noun**, a "**bear**" is a large, wild mammal with thick fur, such as a grizzly **bear** or a polar **bear**.
+
+When to use it**: Use it to describe carrying something, enduring a difficult situation, giving birth, or to refer to the animal.
+    * **Common phrases**:
+        * **(Verb)** "to **bear** a burden," "to **bear** a grudge," "**bear** with me."
+        * **(Noun)** "a grizzly **bear**," "a teddy **bear**."
+    * **Examples**:
+        * **Daily Use**:
+            * "The foundation of the house has to **bear** a lot of weight."
+            * "I can't **bear** to watch scary movies alone."
+            * "She was the first woman to **bear** a child in her family in over 20 years."
+        * **Formal/IELTS Use**:
+            * "The bridge was built with a specific design to **bear** the weight of heavy traffic for over a century."
+            * "Historians often discuss the immense challenges the population had to **bear** during the post-war economic depression."
+            * "The study **bore** out the initial hypothesis, providing conclusive evidence for the theory."
+            * "In the wild, mother **bears** are known for their fierce protective instincts toward their cubs."
+
+**Synonyms**: (Verb - carry) Support, hold, carry; (Verb - endure) Tolerate, endure, withstand; (Verb - give birth) Produce.
+
+**Opposite words**: (Verb - endure) Give in, succumb; (Verb - carry) Drop, release.
+
+**Where it comes from**: The verb is from Old English *beran* (to carry, to wear, to bring forth). The noun is from Old English *bera*.
+
+
+.. _prevalent:
+
+================================================================================
+Prevalent
+================================================================================
+
+* **Pronunciation**: :code:`/ˈprɛvələnt/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Adjective*
+* **Simple Meaning**: Widespread or very common in a particular place or time.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "prevalent" is to be **widespread, in a dominant position, or very common**, indicating that something exists in a large number of places or among many people.
+
+**What it really means**: "**Prevalent**" is an adjective used to describe something that is common and widespread, especially in a particular area or at a specific time. It suggests that the thing is not an exception but a general rule. In the sentence you provided, a technology is described as **prevalent** in industrial automation, meaning it is commonly and widely used in that specific field.
+
+**When to use it**: Use it to describe something that is common or widespread.
+    * **Common phrases**:
+        * **(Adjective)** "**prevalent** issue," "a **prevalent** trend," "**prevalent** in."
+    * **Examples**:
+        * **Daily Use**:
+            * "Social media has become so **prevalent** in our lives that it's hard to imagine a time without it."
+            * "The use of plastic bags is still very **prevalent** in this country."
+            * "The disease is more **prevalent** during the summer months."
+        * **Formal/IELTS Use**:
+            * "The report notes that this species of bird is more **prevalent** in coastal regions than in inland areas."
+            * "Data analysis showed that mobile phone usage is extremely **prevalent** among young adults worldwide."
+            * "A lack of access to clean water is a **prevalent** issue in many rural areas."
+            * "The study explores why certain dietary habits became **prevalent** in specific cultures over time."
+
+**Synonyms**: Common, widespread, frequent, extensive, dominant, rife.
+
+**Opposite words**: Rare, uncommon, infrequent, scarce, isolated.
+
+**Where it comes from**: From Latin *praevalent-* (being powerful, prevailing), from *prae-* (before) + *valere* (to be strong).
+
+**Context**:
+    * Used in electronic passports, national ID cards, and some public transportation systems. It's also **prevalent** in industrial automation and logistics for tracking and management.
+
+
+.. _set_forth:
+
+================================================================================
+Set forth
+================================================================================
+
+* **Pronunciation**: :code:`/sɛt fɔːrθ/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (phrasal, transitive)
+* **Simple Meaning**: To state, describe, or present something in a formal way.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "set forth" is to **formally present, state, or explain** something in a clear, systematic, or official manner, such as in a document, rule, or plan. It implies an orderly and authoritative presentation of information.
+
+**What it really means**: To "**set forth**" means to state or explain a series of ideas, rules, or requirements in a clear and often official manner. It is used to introduce or lay out information in a structured way for others to follow. In the sentence you provided, the phrase "rules **set forth** in the NFC Analog Technical Specification" means that the rules are formally stated and described within that technical document.
+
+**When to use it**: Use it to describe the act of formally stating or explaining rules, principles, or ideas.
+    * **Common phrases**:
+        * **(Verb)** "to **set forth** a plan," "as **set forth** in the document," "to **set forth** principles."
+    * **Examples**:
+        * **Daily Use**:
+            * "The company's new policy **sets forth** the guidelines for working from home."
+            * "He **set forth** his arguments clearly and logically during the debate."
+            * "The lawyer **set forth** all the facts of the case to the jury."
+        * **Formal/IELTS Use**:
+            * "The preamble of the constitution **sets forth** the fundamental principles upon which the nation was founded."
+            * "The report **sets forth** a series of recommendations to address the city's infrastructure problems."
+            * "The contract terms, as **set forth** in the official agreement, are binding on all parties."
+            * "The research paper **sets forth** a new theoretical model for understanding social behavior."
+
+**Synonyms**: State, present, outline, describe, stipulate, articulate.
+
+**Opposite words**: Conceal, obscure, retract, withdraw.
+
+**Where it comes from**: From the verb *set* and the adverb *forth*, meaning "forward." The phrase combines these to mean "to put forward" or "to put out."
+
+**Context**:
+    * The phrase "be compliant with" is a more formal or technical way of saying "comply with." In the context of a technical specification or a requirement, both phrases convey that the NFC readers must meet the standards and rules **set forth** in the NFC Analog Technical Specification.
+
+        - The vehicle NFC readers shall be compliant with the poller requirements of the NFC Analog Technical Specification.
+        - The vehicle NFC readers shall comply with the poller requirements of the NFC Analog Technical Specification.
+
+.. _premise:
+
+================================================================================
+Premise
+================================================================================
+
+* **Pronunciation**: (singular) :code:`/ˈprɛmɪs/`, (plural) :code:`/ˈprɛmɪsɪz/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun*
+* **Simple Meaning**: (Singular) A basis for an argument; (Plural) A building and the land it stands on.
+
+**Underlying Meaning / Core Meaning**: The core meaning of the singular "**premise**" is a **foundational statement or assumption** that forms the basis of a logical argument or theory. In its plural form, "**premises**," the word refers to a **physical property**, including a building and the land immediately surrounding it.
+
+**What it really means**: As a **singular noun**, a "**premise**" is a starting point for reasoning or a fundamental idea that an argument is built upon. As a **plural noun**, "**premises**" refers to a specific property, such as a company's offices or an event venue. This is the meaning used in the sentence you provided.
+
+**When to use it**: Use the singular form to refer to a foundational idea for an argument. Use the plural form to refer to a physical location or property.
+    * **Common phrases**:
+        * **(Singular)** "on the **premise** that," "a false **premise**."
+        * **(Plural)** "on the company **premises**," "to leave the **premises**."
+    * **Examples**:
+        * **Daily Use**:
+            * "The whole argument is based on the false **premise** that people are always rational."
+            * "You must report to the security desk before entering the **premises**."
+            * "We ask all visitors to please exit the **premises** by 5 p.m."
+        * **Formal/IELTS Use**:
+            * "The central **premise** of the study is that a lack of sleep affects cognitive function."
+            * "The lease agreement requires the tenants to maintain the **premises** in a clean and safe state at all times."
+            * "The new law is founded on the **premise** that every citizen has a right to free education."
+            * "The audit found several safety violations on the factory **premises**."
+
+**Synonyms**: (Singular) Hypothesis, assumption, proposition; (Plural) Property, grounds, location, establishment.
+
+**Opposite words**: (Singular) Conclusion, outcome; (Plural) N/A.
+
+**Where it comes from**: From Latin *praemissa* (thing placed before), from *praemittere* (to send before).
+
+**Context**:
+    * When the event is over, we do ask that the **premises** are left in good condition.
+
+
+.. _presume:
+
+================================================================================
+Presume
+================================================================================
+
+* **Pronunciation**: :code:`/prɪˈzjuːm/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Verb* (transitive, intransitive)
+* **Simple Meaning**: To suppose that something is true without proof; to take for granted.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "presume" is to **assume or take something for granted** based on probability, previous experience, or a lack of contradictory evidence.
+
+**What it really means**: To "**presume**" means to believe that something is true or correct because it seems highly likely, even if you don't have absolute proof. It is a more formal synonym for the word "assume." In the sentence you provided, the speaker is making a polite assumption that decorations are allowed ("We can have decorations") and then uses "**I presume**" to signal this assumption and seek confirmation.
+
+**When to use it**: Use it when you are making a likely guess or an assumption that you expect to be correct.
+    * **Common phrases**:
+        * **(Verb)** "I **presume** that...", "we can **presume**...", "to **presume** innocence."
+    * **Examples**:
+        * **Daily Use**:
+            * "I **presume** you've already had lunch, so I didn't make you any."
+            * "She didn't answer my call, so I **presumed** she was in a meeting."
+            * "I **presume** we'll meet at the usual time tomorrow, right?"
+        * **Formal/IELTS Use**:
+            * "The legal system operates on the principle that a person is **presumed** innocent until proven guilty."
+            * "Based on the evidence, the researchers **presumed** the fossil to be over two million years old."
+            * "The report notes that the current economic stability should not be **presumed** to be a permanent condition."
+            * "You must not **presume** that the cause of the problem is obvious without a thorough investigation."
+
+**Synonyms**: Assume, suppose, infer, surmise, guess, believe.
+
+**Opposite words**: Know, prove, verify, doubt, question.
+
+**Where it comes from**: From Latin *praesumere* (to take beforehand, to assume).
+
+**Context**:
+    * I forgot to ask I **presume** we can have decorations in the room
+
+.. _afterwards:
+
+================================================================================
+Afterwards
+================================================================================
+
+* **Pronunciation**: :code:`/ˈɑːftəwədz/` (British) or :code:`/ˈæftərwərdz/` (American)
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Adverb*
+* **Simple Meaning**: At a later time; subsequently.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "afterwards" is to refer to a **time or event that follows another specified event**. It is used to sequence actions in time.
+
+**What it really means**: "**Afterwards**" is an adverb of time used to tell the reader or listener that an action will happen at a time that is subsequent to a mentioned event. In your sentence, "you must take them down **afterwards**" means the action of taking the decorations down happens at a time following the initial event of putting them up. It is often used to connect two actions in a sequence.
+
+**When to use it**: Use it to indicate that an action or event will happen at a time following another one.
+    * **Common phrases**:
+        * **(Adverb)** "**afterwards**, we...", "and **afterwards**."
+    * **Examples**:
+        * **Daily Use**:
+            * "We went to the movie, and **afterwards**, we got ice cream."
+            * "You can eat the cake now and have a drink **afterwards**."
+            * "Let's meet for lunch; we can go shopping **afterwards**."
+        * **Formal/IELTS Use**:
+            * "The initial report was completed, and a full analysis of the data will be conducted **afterwards**."
+            * "The experiment was successful, but the real challenge began **afterwards** when we had to interpret the results."
+            * "The participants completed a survey, and **afterwards**, they were asked to provide a short interview."
+            * "A public announcement was made, and a press conference was held **afterwards** to answer questions."
+
+**Synonyms**: Later, subsequently, thereafter, then, next.
+
+**Opposite words**: Beforehand, previously, earlier.
+
+**Where it comes from**: From Old English *æfterweardes* (in a rearward direction).
+
+**Context**:
+    * you must take them down **afterwards**
+
+
+.. _deposit:
+
+================================================================================
+Deposit
+================================================================================
+
+* **Pronunciation**: :code:`/dɪˈpɒzɪt/`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Noun*, *Verb*
+* **Simple Meaning**: (Noun) A sum of money paid as a pledge or for safekeeping; (Verb) To put money into an account.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "deposit" is to **place something, usually money, in a secure place** for a specific purpose, such as a down payment, a security, or savings.
+
+**What it really means**: As a **noun**, a "**deposit**" is a sum of money that is paid to secure something, like a rental property, and is often refundable. It can also be the initial payment made when buying a larger item. As a **verb**, to "**deposit**" means to place money into a bank account. In the sentence you provided, the word is used as a noun, referring to a sum of money paid as security against potential damage.
+
+**When to use it**: Use it when talking about money paid as a pledge or security, or the action of putting money into an account.
+    * **Common phrases**:
+        * **(Noun)** "a security **deposit**," "to pay a **deposit**."
+        * **(Verb)** "to **deposit** money," "to **deposit** a check."
+    * **Examples**:
+        * **Daily Use**:
+            * "I need to pay a **deposit** of $100 to book the hotel room."
+            * "The landlord will return your **deposit** if there's no damage."
+            * "I'm going to the bank to **deposit** my paycheck."
+        * **Formal/IELTS Use**:
+            * "The bank requires a minimum **deposit** to open a new savings account, which is a common practice in the industry."
+            * "The company's new policy requires a non-refundable **deposit** of 25% for all large orders."
+            * "The report advises that citizens should **deposit** their savings in a government-insured account for security."
+            * "A significant **deposit** is required to secure the reservation for the new conference venue."
+
+**Synonyms**: (Noun) Down payment, security, pledge; (Verb) Place, put, lodge, lodge.
+
+**Opposite words**: (Noun) Refund, withdrawal; (Verb) Withdraw, remove.
+
+**Where it comes from**: From Latin *depositum* (a thing laid down), from *deponere* (to put down, to entrust).
+
+**Context**:
+    * I have to tell you there's also a **deposit** of 250 pounds which is returnable of course as long as there's no damage but we do insist that this is paid in cash.
+
+
+.. _however:
+
+================================================================================
+However
+================================================================================
+
+* **Pronunciation**: :code:`/haʊˈɛvər/`
+* **IELTS/CEFR Level**: B1
+* **Word Type**: *Adverb*, *Conjunction*
+* **Simple Meaning**: (Adverb) In whatever way; (Conjunction) In spite of that; nevertheless.
+
+**Underlying Meaning / Core Meaning**: As an **adverb**, "however" signifies **"by whatever means or method."** As a **conjunction**, its core meaning is to introduce a statement that contrasts with what was previously said.
+
+**What it really means**: "**However**" can be used in two main ways. As an **adverb**, it means "in whatever way" or "to whatever extent." This is the meaning used in your sentence, where it indicates a choice of method for paying the rent. As a **conjunction**, it acts as a transition word, meaning "nevertheless" or "but." It is used to connect two contrasting ideas.
+
+**When to use it**: Use it as an adverb to express a choice of method, or as a conjunction to introduce a contrasting idea.
+    * **Common phrases**:
+        * **(Adverb)** "**however** you like," "**however** you want."
+        * **(Conjunction)** "the project was successful; **however**,..."
+    * **Examples**:
+        * **Daily Use**:
+            * "You can cook the chicken **however** you want; just make sure it's cooked through."
+            * "I would love to help; **however**, I'm busy that day."
+            * "I can make it to the party, **however** late I am."
+        * **Formal/IELTS Use**:
+            * "The report presented a number of solutions; **however**, all of them had significant drawbacks."
+            * "The experiment was successful; **however**, the results were not statistically significant enough to **prove** the hypothesis."
+            * "The organization's guidelines specify that the work must be completed **however** the team sees fit, as long as it meets the final criteria."
+            * "The government increased spending on education; **however**, the student performance levels did not improve as expected."
+
+**Synonyms**: (Adverb) In whatever way, by any means; (Conjunction) Nevertheless, nonetheless, but, yet.
+
+**Opposite words**: N/A.
+
+**Where it comes from**: From the word *how* combined with *ever*.
+
+**Context**:
+    * You can pay the actual rent of the room **however** you like: cash, credit card, or check.

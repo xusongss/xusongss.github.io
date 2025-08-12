@@ -1,0 +1,75 @@
+
+2025/08/08
+======================================================
+
+.. _aptitude:
+
+================================================================================
+Aptitude
+================================================================================
+
+* **Pronunciation**: :code:`/ˈæptɪtjuːd/`
+* **IELTS/CEFR Level**: B2
+* **Word Type**: *Noun* (countable, uncountable)
+* **Simple Meaning**: A natural ability or talent to do something.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "aptitude" is an **inherent, natural ability or talent to do something well**, suggesting a readiness to learn and a potential for success in a particular area.
+
+**What it really means**: "**Aptitude**" is a noun that refers to a natural talent or a special capacity for learning something quickly and performing it well. It is often distinguished from a "skill," which is something learned and developed over time. It suggests that a person is naturally well-suited for a particular task or field, like having a natural **aptitude** for music or a mechanical **aptitude**. As shown in the context you provided, the author contrasts **aptitude** as an inborn talent with a `skill` that can be acquired by anyone through practice.
+
+**When to use it**: Use it to describe a natural ability or potential for a specific activity.
+    * **Common phrases**:
+        * **(Noun)** "natural **aptitude**," "mechanical **aptitude**," "a high **aptitude** for."
+    * **Examples**:
+        * **Daily Use**:
+            * "She showed an amazing **aptitude** for learning new languages from a very young age."
+            * "My friend has a natural **aptitude** for fixing things; he can repair anything around the house."
+            * "The new employee's **aptitude** for problem-solving was clear to everyone."
+        * **Formal/IELTS Use**:
+            * "Psychologists often use specialized tests to assess a child's **aptitude** for mathematics or music, helping to identify potential strengths."
+            * "The company values not only technical skills but also a candidate's inherent **aptitude** for creative thinking and teamwork."
+            * "The report suggests that while formal training is crucial, a natural **aptitude** for a particular craft can significantly accelerate the learning process."
+            * "A high **aptitude** for abstract reasoning is a key trait sought in candidates for advanced scientific research positions."
+
+**Synonyms**: Talent, gift, knack, flair, propensity, inclination, capacity.
+**Opposite words**: Inability, incompetence, unsuitability, disinclination, weakness.
+**Where it comes from**: From Latin *aptitudo* (suitability), from *aptus* (fitted, suitable).
+
+**Context**:
+    * Dale approached public speaking not as a fine art requiring special talents and **aptitude**, but as a skill which any normally intelligent person could acquire and develop at will.
+
+.. _attest:
+
+================================================================================
+Attest
+================================================================================
+
+* **Pronunciation**: :code:`/əˈtɛst/`
+* **IELTS/CEFR Level**: C1
+* **Word Type**: *Verb* (transitive, intransitive)
+* **Simple Meaning**: To provide evidence or be a witness to something.
+
+**Underlying Meaning / Core Meaning**: The core meaning of "attest" is to **bear witness to, provide proof of, or declare to be true or authentic**. It implies providing a formal confirmation or serving as a strong indication of a fact.
+
+**What it really means**: To "**attest**" means to **confirm that something is true, valid, or authentic**, often by providing evidence or testimony. It is a formal term, frequently used in legal, academic, or professional contexts. For example, in the sentence you provided, the success of thousands of students **attests** to the validity of the concept. This means their success serves as powerful proof or confirmation that the concept works.
+
+**When to use it**: Use it when confirming or proving something, especially in a formal or legal sense.
+    * **Common phrases**:
+        * **(Verb)** "to **attest** to a fact," "to **attest** the document," "evidence that **attests** to."
+    * **Examples**:
+        * **Daily Use**:
+            * "The long lines at the store **attest** to its popularity; everyone wants to shop there."
+            * "My good grades **attest** to how hard I've been studying this semester."
+            * "Her constant kindness and patience **attest** to her good character."
+        * **Formal/IELTS Use**:
+            * "The official records of the expedition **attest** to the explorers reaching the summit on the scheduled date."
+            * "The new study's findings **attest** to the effectiveness of the policy in reducing urban pollution."
+            * "The company's long-term stability and consistent growth **attest** to the success of its sustainable business model."
+            * "As a notary public, a key responsibility is to **attest** to the authenticity of signatures on legal documents."
+
+**Synonyms**: Confirm, verify, certify, prove, authenticate, bear witness, vouch for.
+**Opposite words**: Contradict, disprove, deny, refute, challenge.
+**Where it comes from**: From Latin *attestari* (to bear witness to), from *ad-* (to) + *testari* (to be a witness).
+
+**Context**:
+    * Today, the Dale Carnegie courses circle the globe and the validity of Dale Carnegie's concept is **attested** to by thousands of his students everywhere, men and women from every walk of life, who have successfully improved their speaking as well as their personal effectiveness.
